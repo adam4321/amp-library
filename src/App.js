@@ -6,6 +6,15 @@ import firebase from 'firebase';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentItem:'',
+      username:''
+    }
+  }
+  
+
   render() {
     return (
       <div className='app'>
@@ -18,8 +27,8 @@ class App extends Component {
         <div className='container'>
           <section className='add-item'>
               <form>
-                <input type="text" name="username" placeholder="What's your name?" />
-                <input type="text" name="currentItem" placeholder="What are you bringing?" />
+                <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.user}/>
+                <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem}/>
                 <button>Add Item</button>
               </form>
           </section>
