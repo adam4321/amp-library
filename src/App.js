@@ -72,8 +72,8 @@ removeItem(itemId) {
         <div className='container'>
           <section className='add-item'>
               <form onSubmit={this.handleSubmit}>
-                <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.username}/>
-                <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem}/>
+                <input type="text" name="username" placeholder="What's the amp model?" onChange={this.handleChange} value={this.state.username}/>
+                <input type="text" name="currentItem" placeholder="Description of the amp?" onChange={this.handleChange} value={this.state.currentItem}/>
                 <button>Add a New Amplifier</button>
               </form>
           </section>
@@ -83,8 +83,8 @@ removeItem(itemId) {
                   {this.state.items.map((item) => {
                     return (
                       <li key={item.id}>
-                        <h3>{item.title}</h3>
-                        <p>brought by: {item.user}
+                        <h3>{item.user}</h3>
+                        <p>Description: {item.title}
                           <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button>
                         </p>
                       </li>
