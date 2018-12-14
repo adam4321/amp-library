@@ -84,7 +84,9 @@ removeItem(itemId) {
                     return (
                       <li key={item.id}>
                         <h3>{item.user}</h3>
+                        <img id='photo' src='https://i.imgur.com/tvwE6Yz.jpg' />
                         <p>Description: {item.title}
+                        <img id='schematic' src='https://i.imgur.com/Wein1gu.png' />
                           <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button>
                         </p>
                       </li>
