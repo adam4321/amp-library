@@ -86,9 +86,9 @@ removeItem(itemId) {
                     return (
                       <li key={item.id}>
                         <h3>{item.user}</h3>
-                        <img id='photo' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd' />
+                        <img id='photo' alt='Guitar amplifier' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd' />
                         <p>{item.title}
-                        <img id='schematic' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/firefox_2018-12-13_16-47-45.png?alt=media&token=3641bdcc-e75e-4c2a-af74-3bcbe3a49ff3' />
+                        <img id='schematic' alt='Amp schematic' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/firefox_2018-12-13_16-47-45.png?alt=media&token=3641bdcc-e75e-4c2a-af74-3bcbe3a49ff3' />
                           <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button>
                         </p>
                       </li>
