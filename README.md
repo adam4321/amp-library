@@ -1,3 +1,7 @@
+
+![app-card-image](https://i.imgur.com/hHwdef7.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
