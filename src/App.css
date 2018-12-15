@@ -60,7 +60,7 @@ header i {
 
 .display-item {
   width: 65%;
-  height:40vw;
+  height:25vw;
 
   margin-left: 50px;
 }
@@ -111,7 +111,7 @@ h2 {
 }
 
 li h3 {
-  background-color: #103D5D;
+  background-color: rgb(21, 82, 126);
   margin: 0;
   color: #fff;
   font-weight: 300;
