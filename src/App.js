@@ -61,6 +61,11 @@ handleSubmit(e) {
 }
 
 componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      } 
+    });
   const itemsRef = firebase.database().ref('items');
   itemsRef.on('value', (snapshot) => {
     let items = snapshot.val();
