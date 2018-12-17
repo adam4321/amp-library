@@ -20,12 +20,6 @@ class App extends Component {
     this.login = this.login.bind(this);
     this.logout= this.logout.bind(this);
   }
-  
-handleChange(e) {
-  this.setState({
-    [e.target.name]:e.target.value
-  });
-}
 
 logout() {
   auth.signOut()
@@ -35,6 +29,7 @@ logout() {
       });
     });
 }
+
 login() {
   auth.signInWithPopup(provider) 
     .then((result) => {
@@ -43,6 +38,12 @@ login() {
         user
       });
     });
+}
+  
+handleChange(e) {
+  this.setState({
+    [e.target.name]:e.target.value
+  });
 }
 
 handleSubmit(e) {
@@ -94,11 +95,7 @@ removeItem(itemId) {
         <header>
             <div className='wrapper'>
               <h1>Amp Information Library</h1>
-              {this.state.user ?
-                 <button onClick={this.logout}>Log Out</button>                
-    :
-                 <button onClick={this.login}>Log In</button>              
-  }
+              {this.state.user ? <button onClick={this.logout}>Log Out</button> : <button onClick={this.login}>Log In</button>}                          
             </div>
         </header>
         <div className='container'>
