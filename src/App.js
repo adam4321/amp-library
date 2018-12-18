@@ -98,8 +98,10 @@ removeItem(itemId) {
               {this.state.user ? <button onClick={this.logout}>Log Out</button> : <button onClick={this.login}>Log In</button>}                          
             </div>
         </header>
+
         <div className='container'>
           <section className='add-item'>
+            <h3 >Enter a New Amp</h3>
               <form onSubmit={this.handleSubmit}>
                 <input type="text" name="username" placeholder="What's the amp model?" onChange={this.handleChange} value={this.state.username}/>
                 <input type="file" name="amp-pic" accept="image/*" onChange={this.handleChange} value={this.state.userPic}/>
@@ -108,6 +110,7 @@ removeItem(itemId) {
                 <button>Add a New Amplifier</button>
               </form>
           </section>
+
           <section className='display-item'>
               <div className="wrapper">
                 <ul>
@@ -126,9 +129,11 @@ removeItem(itemId) {
                 </ul>
               </div>
           </section>
+
         </div>
       </div>
     );
   }
 }
+
 export default App;
