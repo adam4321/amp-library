@@ -152,7 +152,7 @@ button {
 .user-profile {
   position: fixed;
   bottom: 20px;
-  right: 40px;
+  left: 40px;
   width: 100px;
   height: 100px;
 }

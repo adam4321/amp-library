@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       currentItem:'',
       username:'',
+      description:'',
       items: [],
       user: null
     }
@@ -49,16 +50,24 @@ handleChange(e) {
 handleSubmit(e) {
   e.preventDefault();
   const itemsRef = firebase.database().ref('items');
+  // const item = {
+  //   title: this.state.currentItem,
+  //   user: this.state.username
+  // }
+
   const item = {
     title: this.state.currentItem,
-    user: this.state.username
+    user: this.state.user.displayName || this.state.user.email,
+    ampName: this.state.description
   }
+
   itemsRef.push(item);
   this.setState({
     currentItem: '',
     username: '',
-   
+    description: ''
   });
+  
 }
 
 componentDidMount() {
@@ -75,7 +84,8 @@ componentDidMount() {
       newState.push({
         id: item,
         title: items[item].title,
-        user: items[item].user
+        user: items[item].user,
+        ampName: items[item].ampName
       });
     }
     this.setState({
@@ -99,38 +109,46 @@ removeItem(itemId) {
             </div>
         </header>
 
-        <div className='container'>
-          <section className='add-item'>
-            <h3 >Enter a New Amp</h3>
-              <form onSubmit={this.handleSubmit}>
-                <input type="text" name="username" placeholder="What's the amp model?" onChange={this.handleChange} value={this.state.username}/>
-                <input type="file" name="amp-pic" accept="image/*" onChange={this.handleChange} value={this.state.userPic}/>
-                <input type="text" name="currentItem" placeholder="Description of the amp?" onChange={this.handleChange} value={this.state.currentItem}/>
-                <input type="file" name="schematic-pic" accept="image/*" onChange={this.handleChange} value={this.state.userSchematic}/>
-                <button>Add a New Amplifier</button>
-              </form>
-          </section>
-
-          <section className='display-item'>
-              <div className="wrapper">
-                <ul>
-                  {this.state.items.map((item) => {
-                    return (
-                      <li key={item.id}>
-                        <h3>{item.user}</h3>
-                        <img id='photo' alt='Guitar amplifier' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd' />
-                        <p>{item.title}
-                        <img id='schematic' alt='Amp schematic' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/firefox_2018-12-13_16-47-45.png?alt=media&token=3641bdcc-e75e-4c2a-af74-3bcbe3a49ff3' />
-                          <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button>
-                        </p>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-          </section>
-
-        </div>
+ {this.state.user ?
+    <div>
+      <div className='user-profile'>
+        <img src={this.state.user.photoURL} />
+      </div>
+      <div className='container'>
+    <section className='add-item'>
+    <h3 >Enter a New Amp</h3>
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" name="username" placeholder="What's your name?" value={this.state.user.displayName || this.state.user.email} />
+        <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem} />
+        <input type="text" name="username" placeholder="What's the amp model?" onChange={this.handleChange} value={this.state.description}/>
+        <button>Add Amplifier</button>
+      </form>
+    </section>
+    <section className='display-item'>
+    <div className="wrapper">
+      <ul>
+        {this.state.items.map((item) => {
+          return (
+            <li key={item.id}>
+              <h3>{item.title}</h3>
+              <p>Added by: {item.user}
+                 {item.user === this.state.user.displayName || item.user === this.state.user.email ?
+                   <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> : null}
+              </p>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
+  </section>
+  </div>
+    </div>
+    :
+    <div className='wrapper'>
+      <p>You must be logged in to see the amp library and to submit to it.</p>
+    </div>
+  }
+       
       </div>
     );
   }
