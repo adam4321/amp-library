@@ -58,14 +58,14 @@ handleSubmit(e) {
   const item = {
     title: this.state.currentItem,
     user: this.state.user.displayName || this.state.user.email,
-    ampName: this.state.description
+    description: this.state.ampDescription
   }
 
   itemsRef.push(item);
   this.setState({
     currentItem: '',
     username: '',
-    description: ''
+    ampDescription: ''
   });
   
 }
@@ -85,7 +85,7 @@ componentDidMount() {
         id: item,
         title: items[item].title,
         user: items[item].user,
-        ampName: items[item].ampName
+        description: items[item].description
       });
     }
     this.setState({
@@ -118,10 +118,10 @@ removeItem(itemId) {
     <section className='add-item'>
     <h3 >Enter a New Amp</h3>
       <form onSubmit={this.handleSubmit}>
-        <input type="text" name="username" placeholder="What's your name?" value={this.state.user.displayName || this.state.user.email} />
-        <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem} />
-        <input type="text" name="username" placeholder="What's the amp model?" onChange={this.handleChange} value={this.state.description}/>
-        <button>Add Amplifier</button>
+        <input type="text" name="username" placeholder="What's your name?" value={this.state.user.displayName || this.state.user.email}/>
+        <input type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
+        <input type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
+        <button>Add a new Amplifier</button>
       </form>
     </section>
     <section className='display-item'>
@@ -131,6 +131,9 @@ removeItem(itemId) {
           return (
             <li key={item.id}>
               <h3>{item.title}</h3>
+              <img id='photo' alt='Guitar amplifier' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd' />
+              <p>{item.description}</p>
+              <img id='schematic' alt='Amp schematic' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/firefox_2018-12-13_16-47-45.png?alt=media&token=3641bdcc-e75e-4c2a-af74-3bcbe3a49ff3' />
               <p>Added by: {item.user}
                  {item.user === this.state.user.displayName || item.user === this.state.user.email ?
                    <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> : null}
