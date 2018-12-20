@@ -91,6 +91,14 @@ header i {
   overflow: hidden;
 }
 
+#enterText {
+  margin-top:-10px;
+  margin-bottom: 40px;
+  margin-left: 80px;
+}
+
+
+
 input {
   font-size: 22px;
   color: #000;
@@ -169,6 +177,14 @@ button {
   position: fixed;
   bottom: 20px;
   left: 40px;
+  width: 100px;
+  height: 100px;
+}
+
+#userName {
+  position: fixed;
+  bottom: -40px;
+  left: 160px;
   width: 100px;
   height: 100px;
 }

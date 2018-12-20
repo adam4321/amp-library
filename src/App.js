@@ -95,13 +95,21 @@ removeItem(itemId) {
   itemRef.remove();
 }
 
+tempAmpImg = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd';
+tempSchematic = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/firefox_2018-12-13_16-47-45.png?alt=media&token=3641bdcc-e75e-4c2a-af74-3bcbe3a49ff3';
+
+
+ 
   render() {
     return (
       <div className='app'>
         <header>
             <div className='wrapper'>
               <h1 id='pageName'>Amp Information Library</h1>
-              {this.state.user ? <button className='logButton' onClick={this.logout}>Log Out</button> : <button className='logButton' onClick={this.login}>Log In</button>}                          
+              {this.state.user ?
+               <button className='logButton' onClick={this.logout}>Log Out</button>
+               : 
+               <button className='logButton' onClick={this.login}>Log In</button>}                          
             </div>
         </header>
 
@@ -109,16 +117,17 @@ removeItem(itemId) {
     <div>
       <div className='user-profile'>
         <img src={this.state.user.photoURL} />
+        <h3 id='userName'>{this.state.user.displayName || this.state.user.email} </h3>
       </div>
       <div className='container'>
     <section className='add-item'>
-    <h3 >Enter a New Amp</h3>
+    <h3 id='enterText'>Enter a New Amp</h3>
       <form onSubmit={this.handleSubmit}>
-        <input type="text" name="username" placeholder="What's your name?" value={this.state.user.displayName || this.state.user.email}/>
+        {/* <input type="text" name="username" placeholder="What's your name?" value={this.state.user.displayName || this.state.user.email}/> */}
         <input type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
-        <input type="file" name="pic" accept="image/*" />
+        <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.ampImg} />
         <input type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
-        <input type="file" name="pic" accept="image/*" />
+        <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.schematic} />
         <button>Add a new Amplifier</button>
       </form>
     </section>
@@ -129,9 +138,9 @@ removeItem(itemId) {
           return (
             <li key={item.id}>
               <h3>{item.title}</h3>
-              <img id='photo' alt='Guitar amplifier' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd' />
+              <img id='photo' alt='Guitar amplifier' src={this.tempAmpImg} />
               <p>{item.description}</p>
-              <img id='schematic' alt='Amp schematic' src='https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/firefox_2018-12-13_16-47-45.png?alt=media&token=3641bdcc-e75e-4c2a-af74-3bcbe3a49ff3' />
+              <img id='schematic' alt='Amp schematic' src={this.tempSchematic} />
               <p>Added by  {item.user}
                  {item.user === this.state.user.displayName || item.user === this.state.user.email ?
                    <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> : null}
