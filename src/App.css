@@ -53,11 +53,11 @@ header i {
   display: flex;
   max-width: 90vw;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 35px;
 }
 
 .wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -97,7 +97,14 @@ header i {
   margin-left: 80px;
 }
 
+#ampContributor {
+  display: block;
+  margin-top:20px;
+}
 
+#removeButton {
+  margin-top:-20px;
+}
 
 input {
   font-size: 22px;

@@ -141,9 +141,9 @@ tempSchematic = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot
               <img id='photo' alt='Guitar amplifier' src={this.tempAmpImg} />
               <p>{item.description}</p>
               <img id='schematic' alt='Amp schematic' src={this.tempSchematic} />
-              <p>Added by  {item.user}
+              <p id='ampContributor'>Added by  {item.user}
                  {item.user === this.state.user.displayName || item.user === this.state.user.email ?
-                   <button onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> : null}
+                   <button id='removeButton' onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> : null}
               </p>
             </li>
           )
