@@ -192,7 +192,7 @@ button {
   position: fixed;
   bottom: -40px;
   left: 160px;
-  width: 100px;
+  width: 200px;
   height: 100px;
 }
 
@@ -210,4 +210,5 @@ button {
 #schematic {
   width:23vw;
   padding-top:1vw;
+  margin-left:20px;
 }
