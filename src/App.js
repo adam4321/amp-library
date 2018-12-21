@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import './App.css';
 import firebase, { auth, provider } from './firebase.js';
 import FileUploader from "react-firebase-file-uploader";
+import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 
 
 class App extends Component {
@@ -18,6 +19,8 @@ class App extends Component {
       user: null,
       isUploading: false,
       progress: 0,
+      ampImg: '',
+      schematic:'',
       ampImgURL:'',
       schematicURL:''
     }
@@ -59,14 +62,18 @@ handleSubmit(e) {
   const item = {
     title: this.state.currentItem,
     user: this.state.user.displayName || this.state.user.email,
-    description: this.state.ampDescription
+    description: this.state.ampDescription,
+    photo: this.state.ampImgURL,
+    layout: this.state.schematicURL
   }
 
   itemsRef.push(item);
   this.setState({
     currentItem: '',
     username: '',
-    ampDescription: ''
+    ampDescription: '',
+    photo:'',
+    layout:''
   });
   
 }
@@ -86,7 +93,9 @@ componentDidMount() {
         id: item,
         title: items[item].title,
         user: items[item].user,
-        description: items[item].description
+        description: items[item].description,
+        photo: items[item].photo,
+        layout: items[item].layout
       });
     }
     this.setState({
@@ -109,13 +118,31 @@ this.setState({ isUploading: false });
 console.error(error);
 };
 handleUploadSuccess = filename => {
-this.setState({ avatar: filename, progress: 100, isUploading: false });
+this.setState({ ampImg: filename, progress: 100, isUploading: false });
 firebase
   .storage()
   .ref("images")
   .child(filename)
   .getDownloadURL()
-  .then(url => this.setState({ ampImgURL: url }));
+  .then(url => this.setState({ ampImgURL: url}));
+};
+
+handleSchematicUpload = event =>
+this.setState({ username: event.target.value });
+handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+handleProgress = progress => this.setState({ progress });
+handleUploadError = error => {
+this.setState({ isUploading: false });
+console.error(error);
+};
+handleUploadSuccess = filename => {
+this.setState({ schematic: filename, progress: 100, isUploading: false });
+firebase
+  .storage()
+  .ref("images")
+  .child(filename)
+  .getDownloadURL()
+  .then(url => this.setState({ schematicURL: url}));
 };
 
 tempAmpImg = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd';
@@ -150,21 +177,37 @@ tempSchematic = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot
           <form onSubmit={this.handleSubmit}>
             <input type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
             {/* <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.ampImg} /> */}
-            <FileUploader
-            accept="image/*"
-            name="avatar"
-            randomizeFilename
-            storageRef={firebase.storage().ref("images")}
-            onUploadStart={this.handleUploadStart}
-            onUploadError={this.handleUploadError}
-            onUploadSuccess={this.handleUploadSuccess}
-            onProgress={this.handleProgress}
-          />
+            <CustomUploadButton
+                  multiple
+                  handleImgUpload = {this.handleImgUpload}
+                  accept="image/*"
+                  storageRef={firebase.storage().ref('images')}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+              >
+            Add a Photo of the Amp
+            </CustomUploadButton>
             <input type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
-            <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.schematic} />
+            {/* <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.schematic} /> */}
+            <CustomUploadButton
+                  handleSchematicUpload = {this.handleSchematicUpload}
+                  accept="image/*"
+                  storageRef={firebase.storage().ref('images')}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+              >
+            Add the Amp's Schematic
+            </CustomUploadButton>
             <button>Add a new Amplifier</button>
           </form>
       </section>
+
       <section className='display-item'>
        <div className="wrapper">
           <ul>
@@ -172,9 +215,9 @@ tempSchematic = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot
           return (
             <li key={item.id}>
                <h3>{item.title}</h3>
-               <img id='photo' alt='Guitar amplifier' src={this.tempAmpImg} />
+               <img id='photo' alt='Guitar amplifier' src={item.photo} />
                <p>{item.description}</p>
-               <img id='schematic' alt='Amp schematic' src={this.tempSchematic} />
+               <img id='schematic' alt='Amp schematic' src={item.layout} />
                <p id='ampContributor'>Added by  {item.user}
                   {item.user === this.state.user.displayName || item.user === this.state.user.email 
                     ?
