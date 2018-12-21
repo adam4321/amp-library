@@ -151,6 +151,7 @@ firebase
         <header>
             <div className='wrapper'>
               <h1 id='pageName'>Amp Information Library</h1>
+              <a id='back-button' onClick={() => window.history.back()}>Back</a>
               {this.state.user 
                ?
                <button className='logButton' onClick={this.logout}>Log Out</button>
