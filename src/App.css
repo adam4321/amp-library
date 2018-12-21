@@ -64,18 +64,19 @@ header i {
 .add-item {
   border-radius: 2px;
   border-top: 3px solid #103D5D;
-  margin-right: 50px;
+  /* margin-right: 50px; */
   background-color: rgb(237, 237, 237);
   padding: 60px 18px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-  margin-bottom: 34px;  
-  width: 20%;
+  margin-bottom: 30px;  
+  width: 22%;
   margin-right: auto;
+  height:390px;
 }
 
 .display-item {
   width: 65%;
-  height:25vw;
+  height:10vw;
 
   margin-left: 50px;
 }
@@ -94,16 +95,23 @@ header i {
 #enterText {
   margin-top:-10px;
   margin-bottom: 40px;
-  margin-left: 80px;
+  margin-left: 100px;
 }
 
-#ampContributor {
+.ampNameField {
   display: block;
-  margin-top:20px;
+  margin-bottom: 40px;
 }
+
+.descriptionField {
+  display: block;
+  /* margin-top:25px; */
+  margin-bottom: 40px;
+}
+
 
 #removeButton {
-  margin-top:-20px;
+  margin-top:-25px;
 }
 
 input {
@@ -153,8 +161,10 @@ li p {
 }
 
 form button {
-  width: 100%;
+  width: 95%;
   margin-top: 10px;
+  margin-left:25px;
+
 }
 
 button {
@@ -168,6 +178,7 @@ button {
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   padding: 10px 6px;
+  
 }
 
 .logButton {
@@ -201,6 +212,12 @@ button {
   max-width: 100%;
 }
 
+.addButton {
+  height:40px;
+  margin-top:45px;
+  width:380px;
+}
+
 #photo {
   width:16vw;
   margin-left:1vw;
@@ -211,4 +228,19 @@ button {
   width:23vw;
   padding-top:1vw;
   margin-left:20px;
+}
+
+.ampImgButton {
+  display: block;
+  margin:25px;
+  margin-top:-20px;
+  width:190px
+}
+
+.schmaticButton {
+  display: block;
+  margin:25px;
+  margin-top:-20px;
+  width:190px
+
 }
