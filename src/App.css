@@ -245,15 +245,15 @@ button {
 }
 
 #back-button {
-  width:8vw;
-  height:2vw;
+  width:7.5vw;
+  height:1.75vw;
   background-color:#04536d;
   position:absolute;
-  left:11.5vw;
-  margin-top:34vw;
+  left:78vw;
+  margin-top:-6px;
   border-radius: 11px;
   font-family:verdana;
-  padding-top: .5vw;
+  padding-top: .35vw;
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
 a{
