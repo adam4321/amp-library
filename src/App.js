@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import firebase, { auth, provider } from './firebase.js';
+import FileUploader from "react-firebase-file-uploader";
 
 
 class App extends Component {
@@ -14,7 +15,11 @@ class App extends Component {
       username:'',
       description:'',
       items: [],
-      user: null
+      user: null,
+      isUploading: false,
+      progress: 0,
+      ampImgURL:'',
+      schematicURL:''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -95,6 +100,24 @@ removeItem(itemId) {
   itemRef.remove();
 }
 
+handleImgUpload = event =>
+this.setState({ username: event.target.value });
+handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+handleProgress = progress => this.setState({ progress });
+handleUploadError = error => {
+this.setState({ isUploading: false });
+console.error(error);
+};
+handleUploadSuccess = filename => {
+this.setState({ avatar: filename, progress: 100, isUploading: false });
+firebase
+  .storage()
+  .ref("images")
+  .child(filename)
+  .getDownloadURL()
+  .then(url => this.setState({ ampImgURL: url }));
+};
+
 tempAmpImg = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/SlCk5d3.png?alt=media&token=2052df95-da0b-489f-9022-b7726a8343fd';
 tempSchematic = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot.com/o/firefox_2018-12-13_16-47-45.png?alt=media&token=3641bdcc-e75e-4c2a-af74-3bcbe3a49ff3';
 
@@ -126,7 +149,17 @@ tempSchematic = 'https://firebasestorage.googleapis.com/v0/b/amp-library.appspot
        <h3 id='enterText'>Enter a New Amp</h3>
           <form onSubmit={this.handleSubmit}>
             <input type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
-            <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.ampImg} />
+            {/* <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.ampImg} /> */}
+            <FileUploader
+            accept="image/*"
+            name="avatar"
+            randomizeFilename
+            storageRef={firebase.storage().ref("images")}
+            onUploadStart={this.handleUploadStart}
+            onUploadError={this.handleUploadError}
+            onUploadSuccess={this.handleUploadSuccess}
+            onProgress={this.handleProgress}
+          />
             <input type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
             <input type="file" name="pic" accept="image/*" onChange={this.handleChange} value={this.state.schematic} />
             <button>Add a new Amplifier</button>
