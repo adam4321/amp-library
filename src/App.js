@@ -151,12 +151,20 @@ firebase
         <header>
             <div className='wrapper'>
               <h1 id='pageName'>Amp Information Library</h1>
-              <a id='back-button' onClick={() => window.history.back()}>Back</a>
+              
               {this.state.user 
                ?
+               <div>
                <button className='logButton' onClick={this.logout}>Log Out</button>
+               <a className='back-button' style={{left:'12vw', marginTop:'650px'}}onClick={() => window.history.back()}>Back</a>
+               </div>
                : 
-               <button className='logButton' onClick={this.login}>Log In</button>}                          
+               <div>
+               <button className='logButton' onClick={this.login}>Log In</button>
+               <a className='back-button' style={{left:'44vw', marginTop:'140px'}}onClick={() => window.history.back()}>Back</a>
+               </div>
+               }   
+                  
             </div>
         </header>
 

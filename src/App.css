@@ -244,13 +244,11 @@ button {
 
 }
 
-#back-button {
+.back-button {
   width:7.5vw;
   height:1.75vw;
   background-color:#04536d;
   position:absolute;
-  left:78vw;
-  margin-top:-6px;
   border-radius: 11px;
   font-family:verdana;
   padding-top: .35vw;
