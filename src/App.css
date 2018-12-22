@@ -181,9 +181,10 @@ button {
 }
 
 .logButton {
+  position: absolute;
   height:35px;
-  /* margin-left:50vw; */
-  margin-right:-235px;
+  margin-left:5vw;
+  /* margin-right:-20vw; */
 }
 
 #logComment {
@@ -211,12 +212,6 @@ button {
   max-width: 100%;
 }
 
-.addButton {
-  height:40px;
-  margin-top:45px;
-  width:380px;
-}
-
 #photo {
   width:16vw;
   margin-left:1vw;
@@ -231,17 +226,24 @@ button {
 
 .ampImgButton {
   display: block;
-  margin:25px;
+  margin-bottom:20px;
   margin-top:-20px;
   width:190px
 }
 
 .schmaticButton {
   display: block;
-  margin:25px;
+  margin-bottom:20px;
   margin-top:-20px;
   width:190px
 
+}
+
+.addButton {
+  height:40px;
+  margin-top:50px;
+  margin-left:50px;
+  width:280px;
 }
 
 .back-button {
