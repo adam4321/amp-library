@@ -8,16 +8,16 @@ body {
 header {
   height:40px;
   color: #fff;
-  background-color: rgb(21, 82, 126);
+  background-color: #6b7a8f;
   padding: 33px 0 25px 15px;
   -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
   -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
   box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
 }
 
-/* #pageName {
-    width:40vw;
-} */
+#pageName {
+    color:#f7c331;
+}
 
 header p {
   width: 400px;
@@ -63,7 +63,7 @@ header i {
 
 .add-item {
   border-radius: 2px;
-  border-top: 3px solid #103D5D;
+  border-top: 3px solid #6b7a8f;
   /* margin-right: 50px; */
   background-color: rgb(237, 237, 237);
   padding: 60px 18px;

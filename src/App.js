@@ -6,6 +6,9 @@ import './App.css';
 import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import ModalImage from 'react-modal-image'
+import Drawer from '@material-ui/core/Drawer';
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 
 class App extends Component {
@@ -210,6 +213,7 @@ firebase
             </CustomUploadButton>
             <button className='addButton'>Add a new Amplifier</button>
           </form>
+         <TemporaryDrawer />
       </section>
 
       <section className='display-item'>
@@ -247,5 +251,98 @@ firebase
   );
  }
 }
+
+const styles = {
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+};
+
+
+
+// The menu drawer component
+
+class TemporaryDrawer extends React.Component {
+  state = {
+    left: false
+     };
+
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open,
+    });
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    const sideList = (
+      <div className='drawer'>
+         <section className='add-item'>
+       <h3 id='enterText'>Enter a New Amp</h3>
+          <form onSubmit={this.handleSubmit}>
+            <input className='ampNameField' type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
+            <CustomUploadButton
+                  handleImgUpload = {this.handleImgUpload}
+                  accept="image/*"
+                  storageRef={firebase.storage().ref('images')}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+                  className={'ampImgButton'}
+              >
+            Add a Photo of the Amp
+            </CustomUploadButton>
+            <input className='descriptionField' type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
+            <CustomUploadButton
+                  handleSchematicUpload = {this.handleSchematicUpload}
+                  accept="image/*"
+                  storageRef={firebase.storage().ref('images')}
+                  onUploadStart={this.handleUploadStartSch}
+                  onUploadError={this.handleUploadErrorSch}
+                  onUploadSuccess={this.handleUploadSuccessSch}
+                  onProgress={this.handleProgressSch}
+                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+                  className={'schmaticButton'}
+              >
+            Add the Amp's Schematic
+            </CustomUploadButton>
+            <button className='addButton'>Add a new Amplifier</button>
+          </form>
+      </section>
+      </div>
+    );
+
+    return (
+      <div>
+          <div onClick={this.toggleDrawer('left', true)} id='menu-container'>
+            {/* <img src={menu} alt='menu'  className={'menu'}/> */}
+              <p id='menu-text'>
+                  Menu
+              </p>
+          </div>
+         <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('left', false)}
+            onKeyDown={this.toggleDrawer('left', false)}
+          >
+            {sideList}
+          </div>
+        </Drawer>
+      </div>
+    );
+  }
+}
+
+TemporaryDrawer.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default App;
