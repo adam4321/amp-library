@@ -8,7 +8,7 @@ body {
 header {
   height:40px;
   color: #fff;
-  background-color: #6b7a8f;
+  background-color: #0b3c5d;
   padding: 33px 0 25px 15px;
   -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
   -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
@@ -16,7 +16,13 @@ header {
 }
 
 #pageName {
-    color:#f7c331;
+    color:#fff;
+}
+
+#mobileMenu {
+position:absolute;
+margin-left:23vw;
+top:8vw;
 }
 
 header p {
@@ -140,7 +146,7 @@ h2 {
 }
 
 li h3 {
-  background-color: rgb(21, 82, 126);
+  background-color: #0b3c5d;
   margin: 0;
   color: #fff;
   font-weight: 300;
@@ -161,7 +167,7 @@ form button {
 button {
   border-radius: 2px;
   min-width: 88px;
-  background-color: #FA6900;
+  background-color: #984b43;
   cursor: pointer;
   border: 0;
   min-width: 120px;

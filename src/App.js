@@ -12,8 +12,8 @@ import PropTypes from 'prop-types';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       currentItem:'',
       username:'',
@@ -192,7 +192,7 @@ firebase
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
                   className={'ampImgButton'}
               >
             Add a Photo of the Amp
@@ -206,7 +206,7 @@ firebase
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
                   className={'schmaticButton'}
               >
             Add the Amp's Schematic
@@ -281,9 +281,29 @@ class TemporaryDrawer extends React.Component {
 
     const sideList = (
       <div className='drawer'>
-         <section className='add-item'>
+         <section >
        <h3 id='enterText'>Enter a New Amp</h3>
-          <form onSubmit={this.handleSubmit}>
+          
+      </section>
+      </div>
+    );
+
+    return (
+      <div>
+          <button onClick={this.toggleDrawer('left', true)} id='mobileMenu'>
+            Enter a New Amp
+          </button>
+         <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('left', false)}
+            onKeyDown={this.toggleDrawer('left', false)}
+          >
+            {sideList}
+          </div>
+        <div>
+        <form onSubmit={this.handleSubmit}>
             <input className='ampNameField' type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
             <CustomUploadButton
                   handleImgUpload = {this.handleImgUpload}
@@ -293,7 +313,7 @@ class TemporaryDrawer extends React.Component {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
                   className={'ampImgButton'}
               >
             Add a Photo of the Amp
@@ -307,34 +327,14 @@ class TemporaryDrawer extends React.Component {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4}}
+                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
                   className={'schmaticButton'}
               >
             Add the Amp's Schematic
             </CustomUploadButton>
             <button className='addButton'>Add a new Amplifier</button>
           </form>
-      </section>
-      </div>
-    );
-
-    return (
-      <div>
-          <div onClick={this.toggleDrawer('left', true)} id='menu-container'>
-            {/* <img src={menu} alt='menu'  className={'menu'}/> */}
-              <p id='menu-text'>
-                  Menu
-              </p>
-          </div>
-         <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('left', false)}
-            onKeyDown={this.toggleDrawer('left', false)}
-          >
-            {sideList}
-          </div>
+        </div>
         </Drawer>
       </div>
     );
