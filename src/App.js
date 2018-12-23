@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import './App.css';
 import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
+import ModalImage from 'react-modal-image'
 
 
 class App extends Component {
@@ -155,13 +156,13 @@ firebase
               {this.state.user 
                ?
                <div>
-               <button className='logButton' onClick={this.logout}>Log Out</button>
-               <a className='back-button' style={{left:'12vw', marginTop:'650px'}}onClick={() => window.history.back()}>Back</a>
+                 <button className='logButton' onClick={this.logout}>Log Out</button>
+                 <a className='back-button' style={{left:'12vw', marginTop:'650px'}}onClick={() => window.history.back()}>Back</a>
                </div>
                : 
                <div>
-               <button className='logButton' onClick={this.login}>Log In</button>
-               <a className='back-button' style={{left:'44vw', marginTop:'140px'}}onClick={() => window.history.back()}>Back</a>
+                 <button className='logButton' onClick={this.login}>Log In</button>
+                 <a className='back-button' style={{left:'44vw', marginTop:'140px'}}onClick={() => window.history.back()}>Back</a>
                </div>
                }   
                   
@@ -218,9 +219,9 @@ firebase
           return (
             <li key={item.id}>
                <h3>{item.title}</h3>
-               <img id='photo' alt='Guitar amplifier' src={item.photo} />
+               <ModalImage className='photo' alt='Guitar amplifier' small={item.photo} large={item.photo}/>
                <p>{item.description}</p>
-               <img id='schematic' alt='Amp schematic' src={item.layout} />
+               <ModalImage className='schematic' alt='Amp schematic' small={item.layout} large={item.layout}/>
                <p id='ampContributor'>Added by  {item.user}
                   {item.user === this.state.user.displayName || item.user === this.state.user.email 
                     ?

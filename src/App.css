@@ -16,14 +16,14 @@ header {
 }
 
 /* #pageName {
-  
-  width:40vw;
+    width:40vw;
 } */
 
 header p {
   width: 400px;
   margin: 0 auto;
 }
+
 header .wrapper {
   display: flex;
   justify-content: space-between;
@@ -93,20 +93,12 @@ header i {
 }
 
 #enterText {
-  margin-top:-10px;
-  margin-bottom: 40px;
+  margin-top:-15px;
+  margin-bottom: 50px;
   margin-left: 100px;
 }
 
-.ampNameField {
-  display: block;
-  margin-bottom: 40px;
-}
 
-.descriptionField {
-  display: block;
-  margin-bottom: 40px;
-}
 
 
 #removeButton {
@@ -212,29 +204,39 @@ button {
   max-width: 100%;
 }
 
-#photo {
+.photo {
   width:16vw;
   margin-left:1vw;
   margin-top:.5vw;
 }
 
-#schematic {
+.schematic {
   width:23vw;
   padding-top:1vw;
   margin-left:20px;
 }
 
+.ampNameField {
+  display: block;
+  margin-bottom: 60px;
+}
+
+.descriptionField {
+  display: block;
+  margin-bottom: 40px;
+}
+
 .ampImgButton {
   display: block;
-  margin-bottom:20px;
-  margin-top:-20px;
+  margin-bottom:45px;
+  margin-top:-50px;
   width:190px
 }
 
 .schmaticButton {
   display: block;
   margin-bottom:20px;
-  margin-top:-20px;
+  margin-top:-30px;
   width:190px
 
 }
@@ -263,8 +265,7 @@ a{
   color:gold;
   font-size:1.1vw;
 }
-a:hover{
- }
+
  a {
   -webkit-transition: 0.4s;
   -moz-transition:  0.4s;
