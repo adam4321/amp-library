@@ -12,8 +12,8 @@ import PropTypes from 'prop-types';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       currentItem:'',
       username:'',
@@ -25,13 +25,21 @@ class App extends Component {
       ampImg: '',
       schematic:'',
       ampImgURL:'',
-      schematicURL:''
+      schematicURL:'',
+      left: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.login = this.login.bind(this);
     this.logout= this.logout.bind(this);
   }
+
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open,
+    });
+  };
+  
 
 logout() {
   auth.signOut()
@@ -149,7 +157,29 @@ firebase
 };
 
  
+
   render() {
+
+    const { classes } = this.props;
+
+    const sideList = (
+      <div className='drawer'>
+         <section >
+       <h3 id='enterText'>Enter a New Amp</h3>
+          
+      </section>
+      </div>
+    );
+
+    const styles = {
+      list: {
+        width: 250,
+      },
+      fullList: {
+        width: 'auto',
+      },
+    };
+
     return (
       <div className='app'>
         <header>
@@ -212,88 +242,10 @@ firebase
             Add the Amp's Schematic
             </CustomUploadButton>
             <button className='addButton'>Add a new Amplifier</button>
+           
+
           </form>
-         <TemporaryDrawer />
-      </section>
-
-      <section className='display-item'>
-       <div className="wrapper">
-          <ul>
-           {this.state.items.map((item) => {
-          return (
-            <li key={item.id}>
-               <h3>{item.title}</h3>
-               <ModalImage className='photo' alt='Guitar amplifier' small={item.photo} large={item.photo}/>
-               <p>{item.description}</p>
-               <ModalImage className='schematic' alt='Amp schematic' small={item.layout} large={item.layout}/>
-               <p id='ampContributor'>Added by  {item.user}
-                  {item.user === this.state.user.displayName || item.user === this.state.user.email 
-                    ?
-                   <button id='removeButton' onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> 
-                    : 
-                  null}
-               </p>
-            </li>
-            )
-          })}
-        </ul>
-      </div>
-     </section>
-    </div>
-  </div>
-      :
-    <div className='wrapper'>
-      <p id='logComment'>You must be logged in to see the amp library and to submit to it.</p>
-    </div>
-   }
-       
-    </div>
-  );
- }
-}
-
-const styles = {
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-};
-
-
-
-// The menu drawer component
-
-class TemporaryDrawer extends React.Component {
-  constructor(props) {
-    super(props);
-  this.state = {
-    left: false
-     }
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  toggleDrawer = (side, open) => () => {
-    this.setState({
-      [side]: open,
-    });
-  };
-  
-  render() {
-    const { classes } = this.props;
-
-    const sideList = (
-      <div className='drawer'>
-         <section >
-       <h3 id='enterText'>Enter a New Amp</h3>
-          
-      </section>
-      </div>
-    );
-
-    return (
-      <div>
+          <div>
           <button onClick={this.toggleDrawer('left', true)} id='mobileMenu'>
             Enter a New Amp
           </button>
@@ -336,17 +288,50 @@ class TemporaryDrawer extends React.Component {
               >
             Add the Amp's Schematic
             </CustomUploadButton>
-            <button className='addButton'>Add a new Amplifier</button>
+            <button className='addButton' onClick={this.toggleDrawer('left', false)}>Add a new Amplifier</button>
           </form>
         </div>
         </Drawer>
       </div>
-    );
-  }
+      </section>
+
+      <section className='display-item'>
+       <div className="wrapper">
+          <ul>
+           {this.state.items.map((item) => {
+          return (
+            <li key={item.id}>
+               <h3>{item.title}</h3>
+               <ModalImage className='photo' alt='Guitar amplifier' small={item.photo} large={item.photo}/>
+               <p>{item.description}</p>
+               <ModalImage className='schematic' alt='Amp schematic' small={item.layout} large={item.layout}/>
+               <p id='ampContributor'>Added by  {item.user}
+                  {item.user === this.state.user.displayName || item.user === this.state.user.email 
+                    ?
+                   <button id='removeButton' onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> 
+                    : 
+                  null}
+               </p>
+            </li>
+            )
+          })}
+        </ul>
+      </div>
+     </section>
+    </div>
+  </div>
+      :
+    <div className='wrapper'>
+      <p id='logComment'>You must be logged in to see the amp library and to submit to it.</p>
+    </div>
+   }
+       
+    </div>
+  );
+ }
 }
 
-TemporaryDrawer.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+
+
 
 export default App;
