@@ -266,16 +266,20 @@ const styles = {
 // The menu drawer component
 
 class TemporaryDrawer extends React.Component {
-  state = {
+  constructor(props) {
+    super(props);
+  this.state = {
     left: false
-     };
-
+     }
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    }
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open,
     });
   };
-
+  
   render() {
     const { classes } = this.props;
 
