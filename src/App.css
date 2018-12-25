@@ -12,7 +12,7 @@ body {
 header {
   height:40px;
   color: #fff;
-  background-color: #0b3c5d;
+  background-color: #021227;
   padding: 33px 0 25px 15px;
   -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
   -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
@@ -88,7 +88,7 @@ header i {
 
 .add-item {
   border-radius: 2px;
-  border-top: 3px solid #6b7a8f;
+  border-top: 3px solid #042d66;
   /* margin-right: 50px; */
   background-color: rgb(237, 237, 237);
   padding: 60px 18px;
@@ -163,7 +163,7 @@ h2 {
 }
 
 li h3 {
-  background-color: #0b3c5d;
+  background-color: #052a42;
   margin: 0;
   color: #fff;
   font-weight: 300;
@@ -184,7 +184,7 @@ form button {
 button {
   border-radius: 2px;
   min-width: 88px;
-  background-color: #984b43;
+  background-color: #8d2114;
   cursor: pointer;
   border: 0;
   min-width: 120px;
