@@ -1,8 +1,12 @@
 
-
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
+}
+
+.wrapper {
+  /* max-width: 1200px; */
+  margin: 0 auto;
 }
 
 header {
@@ -13,21 +17,6 @@ header {
   -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
   -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
   box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
-}
-
-#pageName {
-    color:#fff;
-}
-
-#mobileMenu {
-position:absolute;
-margin-left:23vw;
-top:8vw;
-}
-
-header p {
-  width: 400px;
-  margin: 0 auto;
 }
 
 header .wrapper {
@@ -42,7 +31,8 @@ header h1 {
   display: inline-block;
   margin: 0;
   vertical-align: middle;
-  margin-left:-15vw;
+  color:#fff;
+  margin-left:4vw;
 }
 
 .fa {
@@ -55,6 +45,35 @@ header i {
   margin-left: 12px;
 }
 
+#mobileMenu {
+  position:absolute;
+  margin-left:23vw;
+  top:8vw;
+  }
+
+.user-profile {
+  position: fixed;
+  bottom: 20px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+}
+
+#userName {
+  position: fixed;
+  bottom: -40px;
+  left: 160px;
+  width: 200px;
+  height: 100px;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+/* Add Amplifier Boxes */
+
 .container {
   display: flex;
   max-width: 90vw;
@@ -62,9 +81,9 @@ header i {
   padding-top: 35px;
 }
 
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+.add-item form {
+  width: 100%;
+  overflow: hidden;
 }
 
 .add-item {
@@ -80,6 +99,18 @@ header i {
   height:390px;
 }
 
+#enterText {
+  margin-top:-15px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+}
+#mobileEnterText {
+  margin-top:15px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+}
+
+
 .display-item {
   width: 65%;
   height:10vw;
@@ -92,20 +123,6 @@ header i {
   margin-left: auto;
   display: block;
 }
-
-.add-item form {
-  width: 100%;
-  overflow: hidden;
-}
-
-#enterText {
-  margin-top:-15px;
-  margin-bottom: 50px;
-  margin-left: 100px;
-}
-
-
-
 
 #removeButton {
   margin-top:-25px;
@@ -179,35 +196,15 @@ button {
 }
 
 .logButton {
-  position: absolute;
+  /* position: absolute; */
   height:35px;
-  margin-left:5vw;
-  /* margin-right:-20vw; */
+  /* margin-left:5vw; */
+  margin-right:5vw;
 }
 
 #logComment {
-  margin-left: 300px;
-}
-
-.user-profile {
-  position: fixed;
-  bottom: 20px;
-  left: 40px;
-  width: 100px;
-  height: 100px;
-}
-
-#userName {
-  position: fixed;
-  bottom: -40px;
-  left: 160px;
-  width: 200px;
-  height: 100px;
-}
-
-.user-profile img {
-  border-radius: 50%;
-  max-width: 100%;
+  margin-left: 35vw;
+  margin-top: 3vw;
 }
 
 .photo {
@@ -254,6 +251,16 @@ button {
   width:280px;
 }
 
+.mobileAmpNameField {
+  display: block;
+  margin-bottom: 60px;
+}
+
+.mobileDescriptionField {
+  display: block;
+  margin-bottom: 40px;
+}
+
 .back-button {
   width:7.5vw;
   height:1.75vw;
@@ -292,4 +299,11 @@ a:hover {
   width:210px;
   height:115px;
   margin-left:-40px;
+}
+
+@media only screen and (min-width: 1200px) {
+
+.mobileSubmit {
+  display:none;
+ }
 }

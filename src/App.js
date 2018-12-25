@@ -8,7 +8,7 @@ import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadBut
 import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 class App extends Component {
@@ -157,7 +157,6 @@ firebase
 };
 
  
-
   render() {
 
     const { classes } = this.props;
@@ -184,7 +183,7 @@ firebase
       <div className='app'>
         <header>
             <div className='wrapper'>
-              <h1 id='pageName'>Amp Information Library</h1>
+              <h1>Amp Information Library</h1>
               
               {this.state.user 
                ?
@@ -195,7 +194,7 @@ firebase
                : 
                <div>
                  <button className='logButton' onClick={this.login}>Log In</button>
-                 <a className='back-button' style={{left:'44vw', marginTop:'140px'}}onClick={() => window.history.back()}>Back</a>
+                 <a className='back-button' style={{left:'44vw', marginTop:'10vw'}}onClick={() => window.history.back()}>Back</a>
                </div>
                }   
                   
@@ -209,9 +208,15 @@ firebase
          <img alt='user thumbnail' src={this.state.user.photoURL} />
          <h3 id='userName'>{this.state.user.displayName || this.state.user.email} </h3>
         </div>
+
+      {/* Add New Amp Input Box */}
+
       <div className='container'>
      <section className='add-item'>
-       <h3 id='enterText'>Enter a New Amp</h3>
+
+         {/* Desktop Menu */}
+
+         <h3 id='enterText'>Enter a New Amp</h3>
           <form onSubmit={this.handleSubmit}>
             <input className='ampNameField' type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
             <CustomUploadButton
@@ -243,10 +248,11 @@ firebase
             </CustomUploadButton>
             <button className='addButton'>Add a new Amplifier</button>
            
+      {/* Mobile Menu */}
 
           </form>
-          <div>
-          <button onClick={this.toggleDrawer('left', true)} id='mobileMenu'>
+          <div >
+          <button className='mobileSubmit' onClick={this.toggleDrawer('left', true)} id='mobileMenu'>
             Enter a New Amp
           </button>
          <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
@@ -259,8 +265,9 @@ firebase
             {sideList}
           </div>
         <div>
+        <h3 id='mobileEnterText'>Enter a New Amp</h3>
         <form onSubmit={this.handleSubmit}>
-            <input className='ampNameField' type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
+            <input className='mobileAmpNameField' type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
             <CustomUploadButton
                   handleImgUpload = {this.handleImgUpload}
                   accept="image/*"
@@ -274,7 +281,7 @@ firebase
               >
             Add a Photo of the Amp
             </CustomUploadButton>
-            <input className='descriptionField' type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
+            <input className='mobileDescriptionField' type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
             <CustomUploadButton
                   handleSchematicUpload = {this.handleSchematicUpload}
                   accept="image/*"
@@ -330,8 +337,6 @@ firebase
   );
  }
 }
-
-
 
 
 export default App;
