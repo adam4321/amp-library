@@ -216,6 +216,7 @@ firebase
 
          {/* Desktop Menu */}
 
+      <div className='ampAddBox'>
          <h3 id='enterText'>Enter a New Amp</h3>
           <form onSubmit={this.handleSubmit}>
             <input className='ampNameField' type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
@@ -247,10 +248,12 @@ firebase
             Add the Amp's Schematic
             </CustomUploadButton>
             <button className='addButton'>Add a new Amplifier</button>
-           
-      {/* Mobile Menu */}
+            </form>
+           </div>
+           </section>
 
-          </form>
+      {/* Mobile Menu */}
+<section>
           <div >
           <button className='mobileSubmit' onClick={this.toggleDrawer('left', true)} id='mobileMenu'>
             Enter a New Amp
