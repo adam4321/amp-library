@@ -88,7 +88,7 @@ header i {
 
 .add-item {
   border-radius: 2px;
-  border-top: 3px solid #ac84042d;
+  border-top: 3px solid #8371382d;
   /* margin-right: 50px; */
   background-color: rgb(237, 237, 237);
   padding: 60px 18px;
@@ -114,7 +114,6 @@ header i {
 .display-item {
   width: 65%;
   height:10vw;
-
   margin-left: 50px;
 }
 
@@ -196,17 +195,17 @@ button {
 }
 
 .logButton {
-  /* position: absolute; */
-  background-color: #cc8d05;
-
+  background-color: #ffffffea;
+  color:black;
+  font-size: 1em;
+  padding-top:.5em;
   height:35px;
-  /* margin-left:5vw; */
   margin-right:5vw;
 }
 
 .upLoadButton {
-  background-color: #296f9e;
-  color: white;
+  background-color: #142c3b44;
+  color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 4px;
 }
@@ -238,22 +237,24 @@ button {
   margin-bottom: 40px;
 }
 
-.ampImgButton {
-  /* display: block; */
-  margin-bottom:45px;
-  margin-top:-70px;
+#ampImgButton {
+  display: block;
+
+  margin-bottom:20px;
+  margin-top:-90px;
   width:190px
 }
 
-.schmaticButton {
+#schmaticButton {
   display: block;
-  margin-bottom:20px;
-  margin-top:-30px;
+  margin-bottom:40px;
+  margin-top:-60px;
   width:190px
 
 }
 
 .addButton {
+  font-size:.9vw;
   height:40px;
   margin-top:50px;
   margin-left:50px;
@@ -285,7 +286,6 @@ button {
 #back-button-out {
   left:12vw;
   margin-top:650px;
-
   width:7.6vw;
   height:1.76vw;
   background-color:#04536d;

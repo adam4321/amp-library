@@ -215,8 +215,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  className='upLoadButton'
-                  id='ampImgButton'
+                  className={'upLoadButton'}
+                  id={'ampImgButton'}
               >
             Add a Photo of the Amp
             </CustomUploadButton>
@@ -229,8 +229,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  className='upLoadButton'
-                  id='schmaticButton'
+                  className={'upLoadButton'}
+                  id={'schmaticButton'}
               >
             Add the Amp's Schematic
             </CustomUploadButton>
@@ -266,8 +266,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  className='upLoadButton'
-                  id='ampImgButton'
+                  className={'upLoadButton'}
+                  id={'mobileAmpImgButton'}
               >
             Add a Photo of the Amp
             </CustomUploadButton>
@@ -280,8 +280,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  className='upLoadButton'
-                  id='schmaticButton'
+                  className={'upLoadButton'}
+                  id={'mobileSchmaticButton'}
               >
             Add the Amp's Schematic
             </CustomUploadButton>
