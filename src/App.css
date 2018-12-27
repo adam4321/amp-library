@@ -12,7 +12,7 @@ body {
 header {
   height:40px;
   color: #fff;
-  background-color: #b64a4a;
+  background-color: #070d2b;
   padding: 33px 0 25px 15px;
   -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
   -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
@@ -163,7 +163,7 @@ h2 {
 }
 
 li h3 {
-  background-color: #052a42;
+  background-color: #175177;
   margin: 0;
   color: #fff;
   font-weight: 300;
@@ -184,7 +184,7 @@ form button {
 button {
   border-radius: 2px;
   min-width: 88px;
-  background-color: #4078c2;
+  background-color: #3d8582;
   cursor: pointer;
   border: 0;
   min-width: 120px;
@@ -261,7 +261,9 @@ button {
   margin-bottom: 40px;
 }
 
-.back-button {
+#back-button-in {
+  left:44vw;
+  margin-top:10vw;
   width:7.5vw;
   height:1.75vw;
   background-color:#04536d;
@@ -271,6 +273,20 @@ button {
   padding-top: .35vw;
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
+#back-button-out {
+  left:12vw;
+  margin-top:650px;
+
+  width:7.5vw;
+  height:1.75vw;
+  background-color:#04536d;
+  position:absolute;
+  border-radius: 11px;
+  font-family:verdana;
+  padding-top: .35vw;
+  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+}
+
 a{
   text-decoration: none;
   text-align: center;

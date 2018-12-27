@@ -7,8 +7,6 @@ import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
-// import { withStyles } from '@material-ui/core/styles';
-// import PropTypes from 'prop-types';
 
 
 class App extends Component {
@@ -53,10 +51,13 @@ logout() {
 login() {
   auth.signInWithPopup(provider) 
     .then((result) => {
+      window.location.reload();
+
       const user = result.user;
       this.setState({
         user
       });
+
     });
 }
   
@@ -69,7 +70,6 @@ handleChange(e) {
 handleSubmit(e) {
   e.preventDefault();
   const itemsRef = firebase.database().ref('items');
-  
   const item = {
     title: this.state.currentItem,
     user: this.state.user.displayName || this.state.user.email,
@@ -77,7 +77,6 @@ handleSubmit(e) {
     photo: this.state.ampImgURL,
     layout: this.state.schematicURL
   }
-
   itemsRef.push(item);
   this.setState({
     currentItem: '',
@@ -86,7 +85,6 @@ handleSubmit(e) {
     photo:'',
     layout:''
   });
-  
 }
 
 removeItem(itemId) {
@@ -130,6 +128,8 @@ firebase
   .then(url => this.setState({ schematicURL: url}));
 };
 
+
+
 componentDidMount() {
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -149,35 +149,23 @@ itemsRef.on('value', (snapshot) => {
       photo: items[item].photo,
       layout: items[item].layout
     });
-    console.log(newState);
   }
   this.setState({
     items: newState
   });
-});
+ });
 }
 
+
    render() {
-
-    // const { classes } = this.props;
-
+  
     const sideList = (
       <div className='drawer'>
          <section >
-       <h3 id='enterText'>Enter a New Amp</h3>
-          
-      </section>
+            <h3 id='enterText'>Enter a New Amp</h3>
+          </section>
       </div>
     );
-
-    // const styles = {
-    //   list: {
-    //     width: 250,
-    //   },
-    //   fullList: {
-    //     width: 'auto',
-    //   },
-    // };
 
     return (
       <div className='app'>
@@ -189,12 +177,12 @@ itemsRef.on('value', (snapshot) => {
                ?
                <div>
                  <button className='logButton' onClick={this.logout}>Log Out</button>
-                 <a className='back-button' style={{left:'12vw', marginTop:'650px'}}onClick={() => window.history.back()}>Back</a>
+                 <a id='back-button-out' onClick={() => window.history.back()}>Back</a>
                </div>
                : 
                <div>
                  <button className='logButton' onClick={this.login}>Log In</button>
-                 <a className='back-button' style={{left:'44vw', marginTop:'10vw'}}onClick={() => window.history.back()}>Back</a>
+                 <a id='back-button-in' onClick={() => window.history.back()}>Back</a>
                </div>
                }   
                   
@@ -214,7 +202,7 @@ itemsRef.on('value', (snapshot) => {
       <div className='container'>
      <section className='add-item'>
 
-         {/* Desktop Menu */}
+      {/* Desktop Menu */}
 
       <div className='ampAddBox'>
          <h3 id='enterText'>Enter a New Amp</h3>
@@ -332,14 +320,12 @@ itemsRef.on('value', (snapshot) => {
   </div>
       :
     <div className='wrapper'>
-      <p id='logComment'>You must be logged in to see the amp library and to submit to it.</p>
+      <p id='logComment'>You must be logged in to see the Amp Library and to submit to it.</p>
     </div>
    }
-       
     </div>
   );
  }
 }
-
 
 export default App;
