@@ -182,7 +182,6 @@ itemsRef.on('value', (snapshot) => {
                : 
                <div>
                  <button className='logButton' onClick={this.login}>Log In</button>
-                 <a id='back-button-in' onClick={() => window.history.back()}>Back</a>
                </div>
                }   
                   
@@ -216,8 +215,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
-                  className={'ampImgButton'}
+                  className='upLoadButton'
+                  id='ampImgButton'
               >
             Add a Photo of the Amp
             </CustomUploadButton>
@@ -230,8 +229,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
-                  className={'schmaticButton'}
+                  className='upLoadButton'
+                  id='schmaticButton'
               >
             Add the Amp's Schematic
             </CustomUploadButton>
@@ -241,7 +240,7 @@ itemsRef.on('value', (snapshot) => {
            </section>
 
       {/* Mobile Menu */}
-<section>
+         <section>
           <div >
           <button className='mobileSubmit' onClick={this.toggleDrawer('left', true)} id='mobileMenu'>
             Enter a New Amp
@@ -267,8 +266,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
-                  className={'ampImgButton'}
+                  className='upLoadButton'
+                  id='ampImgButton'
               >
             Add a Photo of the Amp
             </CustomUploadButton>
@@ -281,8 +280,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  style={{backgroundColor: '#984b43', color: 'white', padding: 10, borderRadius: 4}}
-                  className={'schmaticButton'}
+                  className='upLoadButton'
+                  id='schmaticButton'
               >
             Add the Amp's Schematic
             </CustomUploadButton>
@@ -321,6 +320,7 @@ itemsRef.on('value', (snapshot) => {
       :
     <div className='wrapper'>
       <p id='logComment'>You must be logged in to see the Amp Library and to submit to it.</p>
+      <a id='back-button-in' onClick={() => window.history.back()}>Back</a>
     </div>
    }
     </div>

@@ -12,7 +12,7 @@ body {
 header {
   height:40px;
   color: #fff;
-  background-color: #070d2b;
+  background-color: #04536d;
   padding: 33px 0 25px 15px;
   -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
   -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
@@ -88,7 +88,7 @@ header i {
 
 .add-item {
   border-radius: 2px;
-  border-top: 3px solid #497177;
+  border-top: 3px solid #ac84042d;
   /* margin-right: 50px; */
   background-color: rgb(237, 237, 237);
   padding: 60px 18px;
@@ -163,7 +163,7 @@ h2 {
 }
 
 li h3 {
-  background-color: #175177;
+  background-color: #0e4b5fb2;
   margin: 0;
   color: #fff;
   font-weight: 300;
@@ -184,7 +184,7 @@ form button {
 button {
   border-radius: 2px;
   min-width: 88px;
-  background-color: #3d8582;
+  background-color: #031955c0;
   cursor: pointer;
   border: 0;
   min-width: 120px;
@@ -197,9 +197,18 @@ button {
 
 .logButton {
   /* position: absolute; */
+  background-color: #cc8d05;
+
   height:35px;
   /* margin-left:5vw; */
   margin-right:5vw;
+}
+
+.upLoadButton {
+  background-color: #296f9e;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 #logComment {
@@ -230,9 +239,9 @@ button {
 }
 
 .ampImgButton {
-  display: block;
+  /* display: block; */
   margin-bottom:45px;
-  margin-top:-50px;
+  margin-top:-70px;
   width:190px
 }
 
@@ -263,7 +272,7 @@ button {
 
 #back-button-in {
   left:44vw;
-  margin-top:10vw;
+  margin-top:60px;
   width:7.5vw;
   height:1.75vw;
   background-color:#04536d;
@@ -277,8 +286,8 @@ button {
   left:12vw;
   margin-top:650px;
 
-  width:7.5vw;
-  height:1.75vw;
+  width:7.6vw;
+  height:1.76vw;
   background-color:#04536d;
   position:absolute;
   border-radius: 11px;
