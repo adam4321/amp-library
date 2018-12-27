@@ -7,7 +7,7 @@ import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
-import { withStyles } from '@material-ui/core/styles';
+// import { withStyles } from '@material-ui/core/styles';
 // import PropTypes from 'prop-types';
 
 
@@ -89,32 +89,6 @@ handleSubmit(e) {
   
 }
 
-componentDidMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ user });
-      } 
-    });
-  const itemsRef = firebase.database().ref('items');
-  itemsRef.on('value', (snapshot) => {
-    let items = snapshot.val();
-    let newState = [];
-    for (let item in items) {
-      newState.push({
-        id: item,
-        title: items[item].title,
-        user: items[item].user,
-        description: items[item].description,
-        photo: items[item].photo,
-        layout: items[item].layout
-      });
-    }
-    this.setState({
-      items: newState
-    });
-  });
-}
-
 removeItem(itemId) {
   const itemRef = firebase.database().ref(`/items/${itemId}`);
   itemRef.remove();
@@ -156,10 +130,36 @@ firebase
   .then(url => this.setState({ schematicURL: url}));
 };
 
- 
-  render() {
+componentDidMount() {
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      this.setState({ user });
+    } 
+  });
+const itemsRef = firebase.database().ref('items');
+itemsRef.on('value', (snapshot) => {
+  let items = snapshot.val();
+  let newState = [];
+  for (let item in items) {
+    newState.push({
+      id: item,
+      title: items[item].title,
+      user: items[item].user,
+      description: items[item].description,
+      photo: items[item].photo,
+      layout: items[item].layout
+    });
+    console.log(newState);
+  }
+  this.setState({
+    items: newState
+  });
+});
+}
 
-    const { classes } = this.props;
+   render() {
+
+    // const { classes } = this.props;
 
     const sideList = (
       <div className='drawer'>
@@ -170,14 +170,14 @@ firebase
       </div>
     );
 
-    const styles = {
-      list: {
-        width: 250,
-      },
-      fullList: {
-        width: 'auto',
-      },
-    };
+    // const styles = {
+    //   list: {
+    //     width: 250,
+    //   },
+    //   fullList: {
+    //     width: 'auto',
+    //   },
+    // };
 
     return (
       <div className='app'>
