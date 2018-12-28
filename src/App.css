@@ -5,7 +5,6 @@ body {
 }
 
 .wrapper {
-  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -49,9 +48,10 @@ header i {
 }
 
 #mobileMenu {
-  position:absolute;
-  margin-left:23vw;
-  top:8vw;
+  position: fixed;
+  margin-left:9.5%;
+  top:63px;
+  width: 90%;
   }
 
 .user-profile {
@@ -70,6 +70,14 @@ header i {
   height: 100px;
 }
 
+#mobileUserName {
+  position: fixed;
+  bottom: -40px;
+  left: 160px;
+  width: 200px;
+  height: 100px;
+}
+
 .user-profile img {
   border-radius: 50%;
   max-width: 100%;
@@ -77,16 +85,10 @@ header i {
 
 /* Add Amplifier Boxes */
 
-
-
-
-
 #enterText {
-  /* margin: 0 auto; */
   margin-top:-15px;
   margin-bottom: 50px;
   margin-left: 5vw;
-  /* justify-content:center; */
 }
 
 .ampNameField {
@@ -114,7 +116,6 @@ header i {
 
 .schematicButton {
   display: block;
-  /* margin-bottom:40px; */
   margin-top:-25px;
   margin-left:15px;
   width:190px;
@@ -151,7 +152,6 @@ header i {
 
 .mobileSchematicButton {
   display: block;
-  /* margin-bottom:40px; */
   margin-top:-25px;
   margin-left:15px;
   width:190px;
@@ -292,17 +292,9 @@ button {
   margin-right:5vw;
 }
 
-/* #mobileMenu {
-  display:inline-block;
-  position: absolute;
-  margin-top:45px;
-  left:-5.5vw;
- } */
-
 #logComment {
-  margin-left: 35vw;
-  margin-top: 7vw;
-  /* height:100%; */
+  text-align: center;
+  margin-top: 150px;
 }
 
 .photo {
@@ -318,7 +310,7 @@ button {
 }
 
 #back-button-in {
-  left:44vw;
+  left:46%;
   margin-top:60px;
   width:7.5vw;
   height:1.75vw;
@@ -374,7 +366,6 @@ a:hover {
  }
  .add-item form {
   width: 88%;
-  /* overflow: hidden; */
 }
 
 .add-item {
@@ -387,8 +378,6 @@ a:hover {
   margin-top: 90px;
   margin-bottom: 30px;  
   width: 20%;
-  /* margin-right: 30vw; */
-  /* margin-left:5vw; */
   height:400px;
 }
 .container {
@@ -412,17 +401,21 @@ a:hover {
     margin-left: 4vw;
     margin-top:120px;
   }
-  #back-button-out {
-    left:84.5vw;
-    margin-top:75px;
-    width:7.6vw;
-    height:1.76vw;
+  #back-button-out-mobile {
+    left:28px;
+    margin-top:750px;
+    width:120px;
+    height:28px;
     background-color:#04536d;
     position: absolute;
     border-radius: 11px;
     font-family: verdana;
-    padding-top: .35vw;
+    font-size:18px;
+    padding-top: 7px;
     box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+  }
+  #back-button-out {
+    display:none;
   }
   #mobileMenu {
    /* display:block; */
@@ -436,6 +429,16 @@ a:hover {
     /* max-width: 90vw; */
     margin: 0 auto;
     padding-top: 35px;
+  }
+  #drawerDiv {
+    width:350px;
+    background-color: black;
+  }
+  #userName{
+   display: none;
+  }
+  #userIcon {
+  display:none;
   }
 }
 
@@ -454,5 +457,9 @@ a:hover {
     color: #000;
     margin-bottom: 30px;
     box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  }
+  #drawerDiv {
+    width:300px;
+    background-color: black;
   }
 }

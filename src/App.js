@@ -51,9 +51,9 @@ logout() {
 login() {
   auth.signInWithPopup(provider) 
     .then((result) => {
+      const user = result.user;
       window.location.reload();
 
-      const user = result.user;
       this.setState({
         user
       });
@@ -177,6 +177,9 @@ itemsRef.on('value', (snapshot) => {
                ?
                <div>
                  <button className='logButton' onClick={this.logout}>Log Out</button>
+                 <button id='mobileMenu' onClick={this.toggleDrawer('left', true)}>
+                     Enter a New Amp
+                  </button>
                  <a id='back-button-out' onClick={() => window.history.back()}>Back</a>
                </div>
                : 
@@ -187,12 +190,12 @@ itemsRef.on('value', (snapshot) => {
                   
             </div>
         </header>
-
+               
        {this.state.user 
          ?
        <div>
         <div className='user-profile'>
-         <img alt='user thumbnail' src={this.state.user.photoURL} />
+         <img id='userIcon' alt='user thumbnail' src={this.state.user.photoURL} />
          <h3 id='userName'>{this.state.user.displayName || this.state.user.email} </h3>
         </div>
 
@@ -246,9 +249,8 @@ itemsRef.on('value', (snapshot) => {
 
          <section>
           <div>
-          <button id='mobileMenu' onClick={this.toggleDrawer('left', true)}>
-            Enter a New Amp
-          </button>
+          
+          
          <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
           <div
             tabIndex={0}
@@ -291,6 +293,13 @@ itemsRef.on('value', (snapshot) => {
             <button className='mobileAddButton' onClick={this.toggleDrawer('left', false)}>Add a new Amplifier</button>
           </form>
         </div>
+        <a id='back-button-out-mobile' onClick={() => window.history.back()}>Back</a>
+
+        <div className='user-profile'>
+         <img id='mobileUserIcon' alt='user thumbnail' src={this.state.user.photoURL} />
+         <h3 id='mobileUserName'>{this.state.user.displayName || this.state.user.email} </h3>
+        </div>
+        
         </Drawer>
       </div>
       </section>
