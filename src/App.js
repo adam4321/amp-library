@@ -243,9 +243,10 @@ itemsRef.on('value', (snapshot) => {
            </section>
 
       {/* Mobile Menu */}
+
          <section>
-          <div >
-          <button className='mobileSubmit' onClick={this.toggleDrawer('left', true)} id='mobileMenu'>
+          <div>
+          <button id='mobileMenu' onClick={this.toggleDrawer('left', true)}>
             Enter a New Amp
           </button>
          <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
@@ -254,6 +255,7 @@ itemsRef.on('value', (snapshot) => {
             role="button"
             onClick={this.toggleDrawer('left', false)}
             onKeyDown={this.toggleDrawer('left', false)}
+            id='drawerDiv'
           >
             {sideList}
           </div>
@@ -269,7 +271,7 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  className='mobileAmpImgButton'
+                  className={'mobileAmpImgButton'}
               >
             Add a Photo of the Amp
             </CustomUploadButton>
@@ -282,11 +284,11 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  className='mobileSchmaticButton'
+                  className={'mobileSchematicButton'}
               >
             Add the Amp's Schematic
             </CustomUploadButton>
-            <button className='addButton' onClick={this.toggleDrawer('left', false)}>Add a new Amplifier</button>
+            <button className='mobileAddButton' onClick={this.toggleDrawer('left', false)}>Add a new Amplifier</button>
           </form>
         </div>
         </Drawer>

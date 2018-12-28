@@ -28,7 +28,7 @@ header .wrapper {
 }
 
 header h1 {
-  font-size: 1.3vw;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: .004vw;
   display: inline-block;
@@ -77,42 +77,16 @@ header i {
 
 /* Add Amplifier Boxes */
 
-.container {
-  display: flex;
-  max-width: 90vw;
-  margin: 0 auto;
-  padding-top: 35px;
-}
 
-.add-item form {
-  width: 90%;
-  /* overflow: hidden; */
-}
 
-.add-item {
-  position:fixed;
-  border-radius: 2px;
-  border-top: 3px solid #8371382d;
-  background-color: rgb(237, 237, 237);
-  padding: 60px 18px;
-  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-  margin-top: 90px;
-  margin-bottom: 30px;  
-  width: 20%;
-  /* margin-right: 30vw; */
-  /* margin-left:5vw; */
-  height:400px;
-}
+
 
 #enterText {
+  /* margin: 0 auto; */
   margin-top:-15px;
   margin-bottom: 50px;
-  margin-left: 100px;
-}
-#mobileEnterText {
-  margin-top:15px;
-  margin-bottom: 50px;
-  margin-left: 100px;
+  margin-left: 5vw;
+  /* justify-content:center; */
 }
 
 .ampNameField {
@@ -130,7 +104,7 @@ header i {
   margin-top:-45px;
   margin-bottom:40px;
   margin-left:15px;
-  width:10vw;
+  width:190px;
   background-color: #142c3b44;
   color: rgb(0, 0, 0);
   padding: 10px;
@@ -143,12 +117,60 @@ header i {
   /* margin-bottom:40px; */
   margin-top:-25px;
   margin-left:15px;
-  width:10vw;
+  width:190px;
   background-color: #142c3b44;
   color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+#drawerDiv {
+  width:300px;
+  background-color: black;
+}
+
+#mobileEnterText {
+  margin-top:30px;
+  margin-bottom: 40px;
+  margin-left: 70px;
+}
+
+.mobileAmpImgButton {
+  display: block;
+  margin-top:-45px;
+  margin-bottom:40px;
+  margin-left:15px;
+  width:190px;
+  background-color: #142c3b44;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mobileSchematicButton {
+  display: block;
+  /* margin-bottom:40px; */
+  margin-top:-25px;
+  margin-left:15px;
+  width:190px;
+  background-color: #142c3b44;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mobileAmpNameField {
+  display: block;
+  margin-bottom: 60px;
+  border-color: black;
+}
+
+.descriptionField {
+  display: block;
+  margin-bottom: 40px;
 }
 
 .addButton {
@@ -157,6 +179,14 @@ header i {
   margin-top:65px;
   margin-left:.5vw;
   width:19vw;
+}
+
+.mobileAddButton {
+  font-size:18px;
+  height:40px;
+  margin-top:65px;
+  margin-left:20px;
+  width:260px;
 }
 
 .mobileAmpNameField {
@@ -262,11 +292,16 @@ button {
   margin-right:5vw;
 }
 
-
+/* #mobileMenu {
+  display:inline-block;
+  position: absolute;
+  margin-top:45px;
+  left:-5.5vw;
+ } */
 
 #logComment {
   margin-left: 35vw;
-  margin-top: 3vw;
+  margin-top: 7vw;
   /* height:100%; */
 }
 
@@ -295,7 +330,7 @@ button {
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
 #back-button-out {
-  left:12vw;
+  left:10.5vw;
   margin-top:650px;
   width:7.6vw;
   height:1.76vw;
@@ -334,18 +369,90 @@ a:hover {
 
 
 @media only screen and (min-width: 1200px) {
-
-.mobileSubmit {
+#mobileMenu {
   display:none;
  }
+ .add-item form {
+  width: 88%;
+  /* overflow: hidden; */
+}
+
+.add-item {
+  position:fixed;
+  border-radius: 2px;
+  border-top: 3px solid #8371382d;
+  background-color: rgb(237, 237, 237);
+  padding: 60px 18px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  margin-top: 90px;
+  margin-bottom: 30px;  
+  width: 20%;
+  /* margin-right: 30vw; */
+  /* margin-left:5vw; */
+  height:400px;
+}
+.container {
+  display: flex;
+  max-width: 92vw;
+  margin: 0 auto;
+  padding-top: 35px;
+}
 }
 
 @media only screen and (max-width: 1200px) {
-
   .add-item {
     display:none;
    }
    #enterText{
      display: none;
    }
+   .display-item {
+    width: 100%;
+    height:10vw;
+    margin-left: 4vw;
+    margin-top:120px;
   }
+  #back-button-out {
+    left:84.5vw;
+    margin-top:75px;
+    width:7.6vw;
+    height:1.76vw;
+    background-color:#04536d;
+    position: absolute;
+    border-radius: 11px;
+    font-family: verdana;
+    padding-top: .35vw;
+    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+  }
+  #mobileMenu {
+   /* display:block; */
+   position: absolute;
+   margin-top:45px;
+   left:-5.5vw;
+
+  }
+  .container {
+    display: flex;
+    /* max-width: 90vw; */
+    margin: 0 auto;
+    padding-top: 35px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    width: 88%;
+    list-style-type: none;
+    margin-left: 4vw;
+    background-color: rgb(237, 237, 237);
+    color: #000;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  }
+}
