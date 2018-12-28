@@ -10,6 +10,9 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   height:40px;
   color: #fff;
   background-color: #04536d;
@@ -25,9 +28,9 @@ header .wrapper {
 }
 
 header h1 {
-  font-size: 25px;
+  font-size: 1.3vw;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  letter-spacing: .004vw;
   display: inline-block;
   margin: 0;
   vertical-align: middle;
@@ -82,21 +85,23 @@ header i {
 }
 
 .add-item form {
-  width: 100%;
-  overflow: hidden;
+  width: 90%;
+  /* overflow: hidden; */
 }
 
 .add-item {
+  position:fixed;
   border-radius: 2px;
   border-top: 3px solid #8371382d;
-  /* margin-right: 50px; */
   background-color: rgb(237, 237, 237);
   padding: 60px 18px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  margin-top: 90px;
   margin-bottom: 30px;  
-  width: 22%;
+  width: 20%;
   margin-right: auto;
-  height:390px;
+  /* margin-left:5vw; */
+  height:400px;
 }
 
 #enterText {
@@ -112,9 +117,10 @@ header i {
 
 
 .display-item {
-  width: 65%;
+  width: 75%;
   height:10vw;
-  margin-left: 50px;
+  margin-left: 25vw;
+  margin-top:90px;
 }
 
 .display-item button {
@@ -208,11 +214,13 @@ button {
   color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 #logComment {
   margin-left: 35vw;
   margin-top: 3vw;
+  /* height:100%; */
 }
 
 .photo {
@@ -254,11 +262,11 @@ button {
 }
 
 .addButton {
-  font-size:.9vw;
+  font-size:1vw;
   height:40px;
   margin-top:50px;
-  margin-left:50px;
-  width:280px;
+  margin-left:2vw;
+  width:18vw;
 }
 
 .mobileAmpNameField {

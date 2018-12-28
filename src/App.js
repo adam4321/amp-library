@@ -219,7 +219,7 @@ itemsRef.on('value', (snapshot) => {
                   id={'ampImgButton'}
               >
             Add a Photo of the Amp
-            </CustomUploadButton>
+            </CustomUploadButton> 
             <input className='descriptionField' type="text" name="ampDescription" placeholder="Describe the Amplifier" onChange={this.handleChange} value={this.state.ampDescription}/>
             <CustomUploadButton
                   handleSchematicUpload = {this.handleSchematicUpload}
@@ -233,7 +233,7 @@ itemsRef.on('value', (snapshot) => {
                   id={'schmaticButton'}
               >
             Add the Amp's Schematic
-            </CustomUploadButton>
+            </CustomUploadButton> 
             <button className='addButton'>Add a new Amplifier</button>
             </form>
            </div>
