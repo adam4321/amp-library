@@ -99,7 +99,7 @@ header i {
   margin-top: 90px;
   margin-bottom: 30px;  
   width: 20%;
-  margin-right: auto;
+  /* margin-right: 30vw; */
   /* margin-left:5vw; */
   height:400px;
 }
@@ -115,11 +115,64 @@ header i {
   margin-left: 100px;
 }
 
+.ampNameField {
+  display: block;
+  margin-bottom: 60px;
+}
+
+.descriptionField {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.ampImgButton {
+  display: block;
+  margin-top:-45px;
+  margin-bottom:40px;
+  margin-left:15px;
+  width:10vw;
+  background-color: #142c3b44;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.schematicButton {
+  display: block;
+  /* margin-bottom:40px; */
+  margin-top:-25px;
+  margin-left:15px;
+  width:10vw;
+  background-color: #142c3b44;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addButton {
+  font-size:1vw;
+  height:40px;
+  margin-top:65px;
+  margin-left:.5vw;
+  width:19vw;
+}
+
+.mobileAmpNameField {
+  display: block;
+  margin-bottom: 60px;
+}
+
+.mobileDescriptionField {
+  display: block;
+  margin-bottom: 40px;
+}
 
 .display-item {
   width: 75%;
   height:10vw;
-  margin-left: 25vw;
+  margin-left: 28vw;
   margin-top:90px;
 }
 
@@ -209,13 +262,7 @@ button {
   margin-right:5vw;
 }
 
-.upLoadButton {
-  background-color: #142c3b44;
-  color: rgb(0, 0, 0);
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
+
 
 #logComment {
   margin-left: 35vw;
@@ -233,50 +280,6 @@ button {
   width:23vw;
   padding-top:1vw;
   margin-left:20px;
-}
-
-.ampNameField {
-  display: block;
-  margin-bottom: 60px;
-}
-
-.descriptionField {
-  display: block;
-  margin-bottom: 40px;
-}
-
-#ampImgButton {
-  display: block;
-
-  margin-bottom:20px;
-  margin-top:-90px;
-  width:190px
-}
-
-#schmaticButton {
-  display: block;
-  margin-bottom:40px;
-  margin-top:-60px;
-  width:190px
-
-}
-
-.addButton {
-  font-size:1vw;
-  height:40px;
-  margin-top:50px;
-  margin-left:2vw;
-  width:18vw;
-}
-
-.mobileAmpNameField {
-  display: block;
-  margin-bottom: 60px;
-}
-
-.mobileDescriptionField {
-  display: block;
-  margin-bottom: 40px;
 }
 
 #back-button-in {
@@ -328,11 +331,7 @@ a:hover {
   -o-transition: 0.4s;
   transition: 0.4s;
 }
-.darken{
-  width:210px;
-  height:115px;
-  margin-left:-40px;
-}
+
 
 @media only screen and (min-width: 1200px) {
 

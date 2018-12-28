@@ -215,8 +215,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  className={'upLoadButton'}
-                  id={'ampImgButton'}
+                  // style={{backgroundColor: '#142c3b44', color: 'black', padding: 10, borderRadius: 4}}
+                  className="ampImgButton"
               >
             Add a Photo of the Amp
             </CustomUploadButton> 
@@ -229,8 +229,11 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  className={'upLoadButton'}
-                  id={'schmaticButton'}
+                  // style={{backgroundColor: '#142c3b44', color: 'black', padding: 10, borderRadius: 4}}
+                  className="schematicButton"
+
+                  // style={{marginBottom: 40, marginTop: -60}}
+                    
               >
             Add the Amp's Schematic
             </CustomUploadButton> 
@@ -266,8 +269,7 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  className={'upLoadButton'}
-                  id={'mobileAmpImgButton'}
+                  className='mobileAmpImgButton'
               >
             Add a Photo of the Amp
             </CustomUploadButton>
@@ -280,8 +282,7 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  className={'upLoadButton'}
-                  id={'mobileSchmaticButton'}
+                  className='mobileSchmaticButton'
               >
             Add the Amp's Schematic
             </CustomUploadButton>
@@ -302,7 +303,7 @@ itemsRef.on('value', (snapshot) => {
                <ModalImage className='photo' alt='Guitar amplifier' small={item.photo} large={item.photo}/>
                <p>{item.description}</p>
                <ModalImage className='schematic' alt='Amp schematic' small={item.layout} large={item.layout}/>
-               <p id='ampContributor'>Added by  {item.user}
+               <p id='ampContributor'>Contributed by  {item.user}
                   {item.user === this.state.user.displayName || item.user === this.state.user.email 
                     ?
                    <button id='removeButton' onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> 
