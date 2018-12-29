@@ -272,7 +272,7 @@ form button {
 button {
   border-radius: 2px;
   min-width: 88px;
-  background-color: #031955c0;
+  background-color: #3f5080;
   cursor: pointer;
   border: 0;
   min-width: 120px;
@@ -312,13 +312,14 @@ button {
 #back-button-in {
   left:46%;
   margin-top:60px;
-  width:7.5vw;
-  height:1.75vw;
+  width:120px;
+  height:30px;
   background-color:#04536d;
   position:absolute;
   border-radius: 11px;
   font-family:verdana;
-  padding-top: .35vw;
+  font-size:18px;
+  padding-top: 5px;
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
 #back-button-out {
@@ -386,6 +387,19 @@ a:hover {
   margin: 0 auto;
   padding-top: 35px;
 }
+#back-button-out-mobile {
+  left:35%;
+  margin-top:750px;
+  width:120px;
+  height:28px;
+  background-color:#04536d;
+  position: absolute;
+  border-radius: 11px;
+  font-family: verdana;
+  font-size:18px;
+  padding-top: 7px;
+  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -402,7 +416,7 @@ a:hover {
     margin-top:120px;
   }
   #back-button-out-mobile {
-    left:28px;
+    left:35%;
     margin-top:750px;
     width:120px;
     height:28px;
@@ -418,9 +432,9 @@ a:hover {
     display:none;
   }
   #mobileMenu {
-   /* display:block; */
-   position: absolute;
-   margin-top:45px;
+    font-size:16px;
+    position: absolute;
+   margin-top:43px;
    left:-5.5vw;
 
   }
@@ -439,6 +453,17 @@ a:hover {
   }
   #userIcon {
   display:none;
+  }
+  .photo {
+    width:25vw;
+    margin-left:1vw;
+    margin-top:.5vw;
+  }
+  
+  .schematic {
+    width:35vw;
+    padding-top:1vw;
+    margin-left:20px;
   }
 }
 
@@ -461,5 +486,16 @@ a:hover {
   #drawerDiv {
     width:300px;
     background-color: black;
+  }
+  .photo {
+    width:60vw;
+    margin-left:1vw;
+    margin-top:.5vw;
+  }
+  
+  .schematic {
+    width:70vw;
+    padding-top:1vw;
+    margin-left:20px;
   }
 }
