@@ -7,6 +7,8 @@ import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
+import Divider from '@material-ui/core/Divider';
+
 
 
 class App extends Component {
@@ -251,14 +253,14 @@ itemsRef.on('value', (snapshot) => {
           <div>
           
           
-         <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+         <Drawer style={{modal: 'black'}} open={this.state.left} onClose={this.toggleDrawer('left', false)}>
           <div
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('left', false)}
             onKeyDown={this.toggleDrawer('left', false)}
             id='drawerDiv'
-          >
+            >
             {sideList}
           </div>
         <div>
@@ -293,6 +295,7 @@ itemsRef.on('value', (snapshot) => {
             <button className='mobileAddButton' onClick={this.toggleDrawer('left', false)}>Add a new Amplifier</button>
           </form>
         </div>
+        <Divider id='mobileDivide'/>
         <a id='back-button-out-mobile' onClick={() => window.history.back()}>Back</a>
 
         <div className='user-profile'>

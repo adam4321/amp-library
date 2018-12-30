@@ -83,6 +83,15 @@ header i {
   max-width: 100%;
 }
 
+/* .drawerDiv.paper {
+  background-color:gray;
+} */
+
+#mobileDivide {
+margin-top:25px;
+border:1px solid;
+}
+
 /* Add Amplifier Boxes */
 
 #enterText {
@@ -204,31 +213,16 @@ header i {
   height:10vw;
   margin-left: 28vw;
   margin-top:90px;
-  /* display:flex; */
-  /* justify-content:space-between; */
-}
-
-.display-item button {
-  /* margin-top: 10px; */
-  /* margin-left: auto; */
-  /* display: block; */
-  
 }
 
 #removeButton {
-  /* display:inline-block; */
-  /* margin-left: 20%; */
-margin-bottom:15px;
+  margin-bottom:15px;
   float:right;
-  /* right:10px; */
   height:40px;
 }
 
 #ampContributor {
-  /* display:inline-block; */
-    /* top:10px; */
-    /* margin-bottom:-30px; */
-    margin-left:2%;
+  margin-left:2%;
 
 }
 
