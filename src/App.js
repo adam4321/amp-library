@@ -10,7 +10,6 @@ import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 
 
-
 class App extends Component {
   constructor() {
     super();
@@ -130,7 +129,7 @@ firebase
   .then(url => this.setState({ schematicURL: url}));
 };
 
-
+// Return from Database after a user is logged in
 
 componentDidMount() {
   auth.onAuthStateChanged((user) => {
@@ -168,6 +167,7 @@ itemsRef.on('value', (snapshot) => {
           </section>
       </div>
     );
+
 
     return (
       <div className='app'>
@@ -220,7 +220,6 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
-                  // style={{backgroundColor: '#142c3b44', color: 'black', padding: 10, borderRadius: 4}}
                   className="ampImgButton"
               >
             Add a Photo of the Amp
@@ -234,12 +233,8 @@ itemsRef.on('value', (snapshot) => {
                   onUploadError={this.handleUploadErrorSch}
                   onUploadSuccess={this.handleUploadSuccessSch}
                   onProgress={this.handleProgressSch}
-                  // style={{backgroundColor: '#142c3b44', color: 'black', padding: 10, borderRadius: 4}}
                   className="schematicButton"
-
-                  // style={{marginBottom: 40, marginTop: -60}}
-                    
-              >
+               >
             Add the Amp's Schematic
             </CustomUploadButton> 
             <button className='addButton'>Add a new Amplifier</button>
@@ -250,17 +245,15 @@ itemsRef.on('value', (snapshot) => {
       {/* Mobile Menu */}
 
          <section>
-          <div>
-          
-          
-         <Drawer style={{modal: 'black'}} open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+          <div>          
+         <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
           <div
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('left', false)}
             onKeyDown={this.toggleDrawer('left', false)}
             id='drawerDiv'
-            >
+          >
             {sideList}
           </div>
         <div>
@@ -306,6 +299,8 @@ itemsRef.on('value', (snapshot) => {
         </Drawer>
       </div>
       </section>
+
+      {/* Display the cards of Amps */}
 
       <section className='display-item'>
        <div className="wrapper">
