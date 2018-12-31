@@ -258,6 +258,7 @@ itemsRef.on('value', (snapshot) => {
           </div>
         <div>
         <h3 id='mobileEnterText'>Enter a New Amp</h3>
+        <Divider id='mobileDivide'/>
         <form onSubmit={this.handleSubmit}>
             <input className='mobileAmpNameField' type="text" name="currentItem" placeholder="What is the Amp model?" onChange={this.handleChange} value={this.state.currentItem} />
             <CustomUploadButton

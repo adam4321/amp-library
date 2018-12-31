@@ -473,6 +473,22 @@ a:hover {
     padding-top:1vw;
     margin-left:20px;
   }
+  .mobileAmpNameField {
+    display: block;
+    margin-bottom: 60px;
+    border-color: black;
+    background-color: #b0bdc544;
+    width:80%;
+    margin-left:10px;
+  }
+  
+  .mobileDescriptionField {
+    display: block;
+    margin-bottom: 40px;
+    background-color: #b0bdc544;
+    width:80%;
+    margin-left:10px;
+  }
 }
 
 @media only screen and (max-width: 650px) {
