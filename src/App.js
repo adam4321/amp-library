@@ -331,7 +331,8 @@ itemsRef.on('value', (snapshot) => {
       :
     <div className='wrapper'>
       <p id='logComment'>You must be logged in to see the Amp Library and to submit to it.</p>
-      <a id='back-button-in' onClick={() => window.history.back()}>Back</a>
+      <a className='back-button-in'onClick={() => window.history.back()}>Back</a>
+      <a  className='back-button-in-mobile' onClick={() => window.history.back()}>Back</a>
     </div>
    }
     </div>
