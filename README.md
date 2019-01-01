@@ -1,7 +1,7 @@
 
 ![app-card-image](https://i.imgur.com/hHwdef7.png)
 
-This project is a single page app for uploading schematics, images, and information about tube guitar amplifiers to create a knowledgebase for them.
+This project is a single page app for uploading schematics, images, and information about tube guitar amplifiers to create a knowledgebase for them. You will be able to view the library of amp once you have signed in with a Google account.
     
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
