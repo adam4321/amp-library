@@ -506,6 +506,13 @@ a:hover {
     width:80%;
     margin-left:10px;
   }
+  .mobile-user-profile {
+    position: fixed;
+    /* bottom: 20px; */
+    left: 40px;
+    width: 100px;
+    height: 100px;
+  }
   #mobileUserName {
     /* position: fixed; */
     top: 530px;
@@ -514,10 +521,10 @@ a:hover {
     height: 100px;
   }
   #mobileUserIcon {
-    position: absolute;
-    margin-top: -300px;
+    margin-top: 515px;
     border-radius: 50%;
-  max-width: 80%;
+    max-width: 100%;
+    
   }
   #back-button-out-mobile {
     left:32%;
@@ -574,17 +581,14 @@ a:hover {
     margin-left: 70px;
   }
   #mobileUserName {
-    /* position: fixed; */
     top: 510px;
     left: 160px;
     width: 200px;
     height: 100px;
   }
   #mobileUserIcon {
-    /* position: fixed; */
-    margin-top: -45px;
-    border-radius: 50%;
-  max-width: 80%;
+    margin-top: 500px;
+    width: 90%;
   }
   #back-button-out-mobile {
     left:32%;

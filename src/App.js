@@ -292,7 +292,7 @@ itemsRef.on('value', (snapshot) => {
         <Divider id='mobileDivide'/>
         <a id='back-button-out-mobile' onClick={() => window.history.back()}>Back</a>
 
-        <div className='user-profile'>
+        <div className='mobile-user-profile'>
          <img id='mobileUserIcon' alt='user thumbnail' src={this.state.user.photoURL} />
          <h3 id='mobileUserName'>{this.state.user.displayName || this.state.user.email} </h3>
         </div>
