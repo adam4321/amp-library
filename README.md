@@ -1,5 +1,5 @@
 
-## This project is a single page web application for uploading schematics, images, and information about tube guitar amplifiers to create a knowledgebase for guitar circuit discovery. You will be able to view the library of amplifiers once you have signed in with a valid Google account.
+## This project is a single page web application for uploading schematics, images, and information about tube guitar amplifiers to create a knowledgebase for guitar circuit discovery. You will be able to view the library of amplifiers once you have signed in with a valid Google account. There are three layouts for the UI which depend on the screen width. The component for creating a new amp card is placed into a drawer on the left in the two movile views and the drawer can be opened by selecting the enter a new amp button.
     
 
 ## Desktop View
