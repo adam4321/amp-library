@@ -39,7 +39,6 @@ class App extends Component {
     });
   };
   
-
 logout() {
   auth.signOut()
     .then(() => {
@@ -54,11 +53,9 @@ login() {
     .then((result) => {
       const user = result.user;
       window.location.reload();
-
       this.setState({
         user
       });
-
     });
 }
   
@@ -71,6 +68,7 @@ handleChange(e) {
 handleSubmit(e) {
   e.preventDefault();
   const itemsRef = firebase.database().ref('items');
+
   const item = {
     title: this.state.currentItem,
     user: this.state.user.displayName || this.state.user.email,
@@ -78,6 +76,7 @@ handleSubmit(e) {
     photo: this.state.ampImgURL,
     layout: this.state.schematicURL
   }
+
   itemsRef.push(item);
   this.setState({
     currentItem: '',
@@ -101,6 +100,7 @@ handleUploadError = error => {
 this.setState({ isUploading: false });
 console.error(error);
 };
+
 handleUploadSuccess = filename => {
 this.setState({ ampImg: filename, progress: 100, isUploading: false });
 firebase
@@ -119,6 +119,7 @@ handleUploadErrorSch = error => {
 this.setState({ isUploading: false });
 console.error(error);
 };
+
 handleUploadSuccessSch = filename => {
 this.setState({ schematic: filename, progress: 100, isUploading: false });
 firebase
@@ -158,7 +159,7 @@ itemsRef.on('value', (snapshot) => {
 }
 
 
-   render() {
+  render() {
   
     const sideList = (
       <div className='drawer'>
