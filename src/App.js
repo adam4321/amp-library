@@ -33,12 +33,16 @@ class App extends Component {
     this.logout= this.logout.bind(this);
   }
 
+//Toggle Drawer Function
+
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open,
     });
   };
   
+//Logout Function
+
 logout() {
   auth.signOut()
     .then(() => {
@@ -47,6 +51,8 @@ logout() {
       });
     });
 }
+
+// Login Function
 
 login() {
   auth.signInWithPopup(provider) 
@@ -59,11 +65,15 @@ login() {
     });
 }
   
+//Function to handle UI changes
+
 handleChange(e) {
   this.setState({
     [e.target.name]:e.target.value
   });
 }
+
+//Function to handle new amp submission
 
 handleSubmit(e) {
   e.preventDefault();
@@ -76,7 +86,6 @@ handleSubmit(e) {
     photo: this.state.ampImgURL,
     layout: this.state.schematicURL
   }
-
   itemsRef.push(item);
   this.setState({
     currentItem: '',
@@ -87,10 +96,14 @@ handleSubmit(e) {
   });
 }
 
+//Function For removing amps
+
 removeItem(itemId) {
   const itemRef = firebase.database().ref(`/items/${itemId}`);
   itemRef.remove();
 }
+
+//Funtioncs for uploading Images to database
 
 handleImgUpload = event =>
 this.setState({ username: event.target.value });
@@ -100,6 +113,8 @@ handleUploadError = error => {
 this.setState({ isUploading: false });
 console.error(error);
 };
+
+//Function to change UI after Image upload
 
 handleUploadSuccess = filename => {
 this.setState({ ampImg: filename, progress: 100, isUploading: false });
@@ -111,6 +126,8 @@ firebase
   .then(url => this.setState({ ampImgURL: url}));
 };
 
+//Function for uploading schematic to database
+
 handleSchematicUpload = event =>
 this.setState({ username: event.target.value });
 handleUploadStartSch = () => this.setState({ isUploading: true, progress: 0 });
@@ -119,6 +136,8 @@ handleUploadErrorSch = error => {
 this.setState({ isUploading: false });
 console.error(error);
 };
+
+//Function for updating UI after schematic upload
 
 handleUploadSuccessSch = filename => {
 this.setState({ schematic: filename, progress: 100, isUploading: false });
@@ -130,7 +149,7 @@ firebase
   .then(url => this.setState({ schematicURL: url}));
 };
 
-// Return from Database after a user is logged in
+// Function for return cards from the database after a user is logged in
 
 componentDidMount() {
   auth.onAuthStateChanged((user) => {
