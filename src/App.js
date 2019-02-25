@@ -103,7 +103,7 @@ removeItem(itemId) {
   itemRef.remove();
 }
 
-//Funtioncs for uploading Images to database
+//Functions for uploading Images to database
 
 handleImgUpload = event =>
 this.setState({ username: event.target.value });

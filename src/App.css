@@ -52,7 +52,7 @@ header i {
   margin-left:9.5%;
   top:63px;
   width: 90%;
-  }
+}
 
 .user-profile {
   position: fixed;
@@ -82,7 +82,6 @@ header i {
   border-radius: 50%;
   max-width: 100%;
 }
-
 
 #mobileDivide {
 margin-top:25px;
@@ -221,7 +220,6 @@ border:1px solid;
 
 #ampContributor {
   margin-left:2%;
-
 }
 
 input {
@@ -328,6 +326,7 @@ button {
   padding-top: 5px;
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
+
 #back-button-out {
   left:10.5vw;
   margin-top:650px;
@@ -367,55 +366,58 @@ a:hover {
   transition: 0.4s;
 }
 
-/* Media Queries */
+/* Media Query above 1200 px */
 
 @media only screen and (min-width: 1200px) {
-#mobileMenu {
-  display:none;
- }
 
- .add-item form {
-  width: 88%;
+  #mobileMenu {
+    display:none;
+   }
+
+   .add-item form {
+    width: 88%;
+  }
+
+  .add-item {
+    position:fixed;
+    border-radius: 2px;
+    border-top: 3px solid #8371382d;
+    background-color: rgb(237, 237, 237);
+    padding: 60px 18px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+    margin-top: 90px;
+    margin-bottom: 30px;  
+    width: 20%;
+    height:400px;
+  }
+
+  .container {
+    display: flex;
+    max-width: 92vw;
+    margin: 0 auto;
+    padding-top: 35px;
+  }
+
+  #back-button-out-mobile {
+    left:35%;
+    margin-top:750px;
+    width:120px;
+    height:28px;
+    background-color:#04536d;
+    position: absolute;
+    border-radius: 11px;
+    font-family: verdana;
+    font-size:18px;
+    padding-top: 7px;
+    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+  }
+
+  .back-button-in-mobile {
+    display:none;
+  } 
 }
 
-.add-item {
-  position:fixed;
-  border-radius: 2px;
-  border-top: 3px solid #8371382d;
-  background-color: rgb(237, 237, 237);
-  padding: 60px 18px;
-  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-  margin-top: 90px;
-  margin-bottom: 30px;  
-  width: 20%;
-  height:400px;
-}
-
-.container {
-  display: flex;
-  max-width: 92vw;
-  margin: 0 auto;
-  padding-top: 35px;
-}
-
-#back-button-out-mobile {
-  left:35%;
-  margin-top:750px;
-  width:120px;
-  height:28px;
-  background-color:#04536d;
-  position: absolute;
-  border-radius: 11px;
-  font-family: verdana;
-  font-size:18px;
-  padding-top: 7px;
-  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
-}
-
-.back-button-in-mobile {
- display:none;
-}
-}
+/* Media query below 1200 px */
 
 @media only screen and (max-width: 1200px) {
   .add-item {
@@ -448,17 +450,17 @@ a:hover {
   }
 
   .back-button-in-mobile {
-  left:44vw;
-  margin-top:60px;
-  width:120px;
-  height:30px;
-  background-color:#04536d;
-  position:absolute;
-  border-radius: 11px;
-  font-family:verdana;
-  font-size:18px;
-  padding-top: 5px;
-  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+    left:44vw;
+    margin-top:60px;
+    width:120px;
+    height:30px;
+    background-color:#04536d;
+    position:absolute;
+    border-radius: 11px;
+    font-family:verdana;
+    font-size:18px;
+    padding-top: 5px;
+    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
   }
 
   #back-button-out {
@@ -468,8 +470,8 @@ a:hover {
   #mobileMenu {
     font-size:16px;
     position: absolute;
-   margin-top:43px;
-   left:-5.5vw;
+    margin-top:43px;
+    left:-5.5vw;
   }
 
   .container {
@@ -484,11 +486,11 @@ a:hover {
   }
 
   #userName{
-   display: none;
+    display: none;
   }
 
   #userIcon {
-  display:none;
+    display:none;
   }
 
   .photo {
@@ -560,7 +562,10 @@ a:hover {
   }
 }
 
+/* Media query below 650 px */
+
 @media only screen and (max-width: 650px) {
+
   ul {
     display: flex;
     flex-direction: column;
@@ -628,17 +633,17 @@ a:hover {
   }
 
   .back-button-in-mobile {
-  left:33vw;
-  margin-top:60px;
-  width:120px;
-  height:30px;
-  background-color:#04536d;
-  position:absolute;
-  border-radius: 11px;
-  font-family:verdana;
-  font-size:18px;
-  padding-top: 5px;
-  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+    left:33vw;
+    margin-top:60px;
+    width:120px;
+    height:30px;
+    background-color:#04536d;
+    position:absolute;
+    border-radius: 11px;
+    font-family:verdana;
+    font-size:18px;
+    padding-top: 5px;
+    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
   }
 
   #logComment {
