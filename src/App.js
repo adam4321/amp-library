@@ -1,5 +1,5 @@
 
-//ts-check
+// ts-check
 
 import React, { Component } from 'react';
 import './App.css';
@@ -33,7 +33,7 @@ class App extends Component {
     this.logout= this.logout.bind(this);
   }
 
-//Toggle Drawer Function
+// toggle drawer function
 
   toggleDrawer = (side, open) => () => {
     this.setState({
@@ -41,7 +41,7 @@ class App extends Component {
     });
   };
   
-//Logout Function
+// logout function
 
 logout() {
   auth.signOut()
@@ -52,7 +52,7 @@ logout() {
     });
 }
 
-// Login Function
+// login function
 
 login() {
   auth.signInWithPopup(provider) 
@@ -65,7 +65,7 @@ login() {
     });
 }
   
-//Function to handle UI changes
+// function to handle UI changes
 
 handleChange(e) {
   this.setState({
@@ -73,7 +73,7 @@ handleChange(e) {
   });
 }
 
-//Function to handle new amp submission
+// function to handle new amp submission
 
 handleSubmit(e) {
   e.preventDefault();
@@ -96,14 +96,14 @@ handleSubmit(e) {
   });
 }
 
-//Function For removing amps
+// function For removing amps
 
 removeItem(itemId) {
   const itemRef = firebase.database().ref(`/items/${itemId}`);
   itemRef.remove();
 }
 
-//Functions for uploading Images to database
+// functions for uploading images to the database
 
 handleImgUpload = event =>
 this.setState({ username: event.target.value });
@@ -114,7 +114,7 @@ this.setState({ isUploading: false });
 console.error(error);
 };
 
-//Function to change UI after Image upload
+// function to change UI after image upload
 
 handleUploadSuccess = filename => {
 this.setState({ ampImg: filename, progress: 100, isUploading: false });
@@ -126,7 +126,7 @@ firebase
   .then(url => this.setState({ ampImgURL: url}));
 };
 
-//Function for uploading schematic to database
+// function for uploading a schematic to database
 
 handleSchematicUpload = event =>
 this.setState({ username: event.target.value });
@@ -137,7 +137,7 @@ this.setState({ isUploading: false });
 console.error(error);
 };
 
-//Function for updating UI after schematic upload
+// function for updating UI after schematic upload
 
 handleUploadSuccessSch = filename => {
 this.setState({ schematic: filename, progress: 100, isUploading: false });
@@ -149,7 +149,7 @@ firebase
   .then(url => this.setState({ schematicURL: url}));
 };
 
-// Function for return cards from the database after a user is logged in
+// function for return cards from the database after a user is logged in
 
 componentDidMount() {
   auth.onAuthStateChanged((user) => {
@@ -221,12 +221,12 @@ itemsRef.on('value', (snapshot) => {
          <h3 id='userName'>{this.state.user.displayName || this.state.user.email} </h3>
         </div>
 
-      {/* Add New Amp Input Box */}
+      {/* new amp input box */}
 
       <div className='container'>
      <section className='add-item'>
 
-      {/* Desktop Menu */}
+      {/* desktop menu */}
 
       <div className='ampAddBox'>
          <h3 id='enterText'>Enter a New Amp</h3>
@@ -262,7 +262,7 @@ itemsRef.on('value', (snapshot) => {
            </div>
            </section>
 
-      {/* Mobile Menu */}
+      {/* mobile menu */}
 
          <section>
           <div>          
@@ -321,7 +321,7 @@ itemsRef.on('value', (snapshot) => {
       </div>
       </section>
 
-      {/* Display the cards of Amps */}
+      {/* display the cards of amps */}
 
       <section className='display-item'>
        <div className="wrapper">
