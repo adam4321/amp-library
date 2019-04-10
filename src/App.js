@@ -1,5 +1,5 @@
 
-// @ts-check
+// @ts-nocheck
 
 import React, { Component } from 'react';
 import './App.css';
@@ -202,7 +202,7 @@ class App extends Component {
                  <button id='mobileMenu' onClick={this.toggleDrawer('left', true)}>
                      Enter a New Amp
                   </button>
-                 <a id='back-button-out' onClick={() => window.history.back()}>Back</a>
+                 <button className='back-button' id='back-button-out' onClick={() => window.history.back()}>Back</button>
                </div>
                : 
                <div>
@@ -310,7 +310,7 @@ class App extends Component {
           </form>
         </div>
         <Divider id='mobileDivide'/>
-        <a id='back-button-out-mobile' onClick={() => window.history.back()}>Back</a>
+        <button className='back-button' id='back-button-out-mobile' onClick={() => window.history.back()}>Back</button>
 
         <div className='mobile-user-profile'>
          <img id='mobileUserIcon' alt='user thumbnail' src={this.state.user.photoURL} />
@@ -330,10 +330,20 @@ class App extends Component {
           return (
             <li key={item.id}>
                <h3>{item.title}</h3>
-               <ModalImage className='photo' alt='Guitar amplifier' small={item.photo} large={item.photo}/>
-               <p>{item.description}</p>
-               <ModalImage className='schematic' alt='Amp schematic' small={item.layout} large={item.layout}/>
-               <p id='ampContributor'>Contributed by  {item.user}
+               <ModalImage 
+                   className='photo' 
+                   alt='Guitar amplifier'
+                   small={item.photo}
+                   large={item.photo}
+                />
+                <p>{item.description}</p>
+               <ModalImage 
+                   className='schematic'
+                   alt='Amp schematic'
+                   small={item.layout}
+                   large={item.layout}
+                />
+                  <p id='ampContributor'>Contributed by  {item.user}
                   {item.user === this.state.user.displayName || item.user === this.state.user.email 
                     ?
                    <button id='removeButton' onClick={() => this.removeItem(item.id)}>Remove Amplifier</button> 
@@ -351,8 +361,8 @@ class App extends Component {
       :
     <div className='wrapper'>
       <p id='logComment'>You must be logged in to see the Amp Library and to submit to it.</p>
-      <a className='back-button-in'onClick={() => window.history.back()}>Back</a>
-      <a  className='back-button-in-mobile' onClick={() => window.history.back()}>Back</a>
+      <button className='back-button' id='back-button-in' onClick={() => window.history.back()}>Back</button>
+      <button  className='back-button' id='back-button-in-mobile' onClick={() => window.history.back()}>Back</button>
     </div>
    }
     </div>
