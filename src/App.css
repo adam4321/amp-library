@@ -312,7 +312,7 @@ button {
   margin-left: 20px;
 }
 
-.back-button-in {
+#back-button-in {
   left: 46%;
   margin-top: 60px;
   width: 120px;
@@ -337,6 +337,29 @@ button {
   font-family: verdana;
   padding-top: .35vw;
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+}
+
+.back-button {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  color: gold;
+  font-size:1vw;
+  -webkit-transition: 0.4s;
+  -moz-transition:  0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  color: rgba(154, 182, 196, 0.582);
+  opacity: 0.7;
+  -webkit-transition: 0.4s;
+  -moz-transition:  0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 a {
@@ -408,7 +431,7 @@ a:hover {
     box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
   }
 
-  .back-button-in-mobile {
+  #back-button-in-mobile {
     display: none;
   } 
 }
@@ -446,7 +469,7 @@ a:hover {
     box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
   }
 
-  .back-button-in-mobile {
+  #back-button-in-mobile {
     left: 44vw;
     margin-top: 60px;
     width: 120px;
@@ -554,7 +577,7 @@ a:hover {
     box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
   }
 
-  .back-button-in {
+  #back-button-in {
     display: none;
   }
 }
@@ -629,7 +652,7 @@ a:hover {
     box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
   }
 
-  .back-button-in-mobile {
+  #back-button-in-mobile {
     left: 33vw;
     margin-top: 60px;
     width: 120px;
