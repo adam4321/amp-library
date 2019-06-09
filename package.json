@@ -5,6 +5,8 @@
   "homepage": "https://adamjwright.com/amp_library",
   "dependencies": {
     "@material-ui/core": "^3.7.1",
+    "handlebars": "^4.1.2",
+    "js-yaml": "^3.13.1",
     "querystringify": "^2.1.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
