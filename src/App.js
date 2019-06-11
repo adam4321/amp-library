@@ -1,5 +1,5 @@
 
-// @ts-nocheck
+// @ts-check
 
 import React, { Component } from 'react';
 import './App.css';
@@ -330,6 +330,8 @@ class App extends Component {
           return (
             <li key={item.id}>
                <h3>{item.title}</h3>
+               
+               // @ts-ignore
                <ModalImage 
                    className='photo' 
                    alt='Guitar amplifier'
@@ -337,6 +339,8 @@ class App extends Component {
                    large={item.photo}
                 />
                 <p>{item.description}</p>
+
+                // @ts-ignore
                <ModalImage 
                    className='schematic'
                    alt='Amp schematic'
