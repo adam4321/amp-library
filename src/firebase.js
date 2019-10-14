@@ -1,11 +1,15 @@
+/*****************************************************************
+**  Description: Firebase database and storage configuration file
+*****************************************************************/
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database'; 
-import 'firebase/storage';  
+import 'firebase/storage';
+import firebase_credential from './credentials.js'; 
 
 const config = {
-    apiKey: "AIzaSyCCXa44cNLeF1pGaqASZzdPk42jFhY9cUQ",
+    apiKey: firebase_credential,
     authDomain: "amp-library.firebaseapp.com",
     databaseURL: "https://amp-library.firebaseio.com",
     projectId: "amp-library",
