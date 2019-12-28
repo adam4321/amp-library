@@ -6,9 +6,10 @@
 
 // @ts-check
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import firebase, {auth, provider} from './firebase.js';
+import './media-query.css';
+import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
