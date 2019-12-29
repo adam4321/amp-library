@@ -15,30 +15,41 @@ import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import HeaderWrapper from './HeaderWrapper.js';
+import LoggedOutView from './LoggedOutView.js';
 
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentItem: '',
+            user: null,
             username: '',
+            left: false,
+            currentItem: '',
             description: '',
             items: [],
-            user: null,
-            isUploading: false,
-            progress: 0,
             ampImg: '',
             schematic: '',
             ampImgURL: '',
             schematicURL: '',
-            left: false
+            isUploading: false,
+            progress: 0
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
+    }
+
+
+    // Login function
+    login() {
+        auth.signInWithPopup(provider).then(result => {
+            const user = result.user;
+            // window.location.reload();
+            this.setState({user});
+        });
     }
 
     // Logout function
@@ -48,21 +59,12 @@ class App extends Component {
         });
     }
 
-    // Login function
-    login() {
-        auth.signInWithPopup(provider).then(result => {
-            const user = result.user;
-            window.location.reload();
-            this.setState({user});
-        });
-    }
-
-    // Toggle drawer function
+    // Toggle mobile add amplifier drawer function
     toggleDrawer = (side, open) => () => {
         this.setState({[side]: open});
     };
 
-    // Function to handle UI changes
+    // Function to handle the form input fields
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value});
     }
@@ -87,6 +89,13 @@ class App extends Component {
             photo: '',
             layout: ''
         });
+        if (document.getElementById("desktopForm") !== null) {
+            document.getElementById("desktopForm").reset();
+        }
+
+        if (document.getElementById("mobileForm") !== null) {
+            document.getElementById("mobileForm").reset();
+        }
     }
 
     // Function For removing amps
@@ -191,13 +200,13 @@ class App extends Component {
 
                 {this.state.user ? (
                     <div>
-                        <div className="user-profile">
+                        <div className = "user-profile">
                             <img
-                                id="userIcon"
-                                alt="user thumbnail"
-                                src={this.state.user.photoURL}
+                                id = "userIcon"
+                                alt = "user thumbnail"
+                                src = {this.state.user.photoURL}
                             />
-                            <h3 id="userName">
+                            <h3 id = "userName">
                                 {this.state.user.displayName || this.state.user.email}{' '}
                             </h3>
                         </div>
@@ -209,9 +218,10 @@ class App extends Component {
                                 {/* Desktop menu */}
                                 <div className = "ampAddBox">
                                     <h3 id = "enterText">Enter a New Amp</h3>
-                                    <form onSubmit = {this.handleSubmit}>
+                                    <form id="desktopForm" onSubmit = {this.handleSubmit}>
 
                                         <input
+                                            required
                                             className = "ampNameField"
                                             type = "text"
                                             name = "currentItem"
@@ -233,6 +243,7 @@ class App extends Component {
                                         </CustomUploadButton>
 
                                         <input
+                                            required
                                             className = "descriptionField"
                                             type = "text"
                                             name = "ampDescription"
@@ -272,10 +283,10 @@ class App extends Component {
                                             {sideList}
                                         </div>
                                         <div>
-                                            <h3 id="mobileEnterText"> Enter a New Amp </h3>
+                                            <h3 id = "mobileEnterText"> Enter a New Amp </h3>
                                             <Divider id = "mobileDivide"/>
 
-                                            <form onSubmit = {this.handleSubmit}>
+                                            <form id="mobileForm" onSubmit = {this.handleSubmit}>
 
                                                 <input
                                                     className = "mobileAmpNameField"
@@ -293,7 +304,7 @@ class App extends Component {
                                                     onUploadError = {this.handleUploadError}
                                                     onUploadSuccess = {this.handleUploadSuccess}
                                                     onProgress = {this.handleProgress}
-                                                    className = {'mobileAmpImgButton'}
+                                                    className = 'mobileAmpImgButton'
                                                 >
                                                     Add a Photo of the Amp
                                                 </CustomUploadButton>
@@ -314,7 +325,7 @@ class App extends Component {
                                                     onUploadError = {this.handleUploadErrorSch}
                                                     onUploadSuccess = {this.handleUploadSuccessSch}
                                                     onProgress = {this.handleProgressSch}
-                                                    className = {'mobileSchematicButton'}
+                                                    className = 'mobileSchematicButton'
                                                 >
                                                     Add the Amp's Schematic
                                                 </CustomUploadButton>
@@ -335,7 +346,7 @@ class App extends Component {
                                                 alt = "user thumbnail"
                                                 src = {this.state.user.photoURL}
                                             />
-                                            <h3 id="mobileUserName"> {this.state.user.displayName || this.state.user.email}{' '} </h3>
+                                            <h3 id = "mobileUserName"> {this.state.user.displayName || this.state.user.email}{' '} </h3>
                                         </div>
                                     </Drawer>
                                 </div>
@@ -393,14 +404,7 @@ class App extends Component {
                         </div>
                     </div>
                 ) : (
-                    <div className = "wrapper">
-                        <p id = "logComment">
-                            You must be logged in to see the Amp Library and to
-                            submit to it.
-                        </p>
-                        <button className = "back-button" id = "back-button-in" onClick={() => window.history.back()}> Back </button>
-                        <button className = "back-button" id = "back-button-in-mobile" onClick = {() => window.history.back()}> Back </button>
-                    </div>
+                    <LoggedOutView />
                 )}
             </div>
         );
