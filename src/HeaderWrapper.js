@@ -4,6 +4,8 @@
 **                find the current user's sign in status
 ********************************************************************/
 
+// @ts-check
+
 import React from 'react';
 import './App.css';
 import './media-query.css';
