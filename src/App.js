@@ -14,6 +14,7 @@ import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadBut
 import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
+import HeaderWrapper from './HeaderWrapper.js';
 
 
 class App extends Component {
@@ -40,11 +41,6 @@ class App extends Component {
         this.logout = this.logout.bind(this);
     }
 
-    // Toggle drawer function
-    toggleDrawer = (side, open) => () => {
-        this.setState({[side]: open});
-    };
-
     // Logout function
     logout() {
         auth.signOut().then(() => {
@@ -60,6 +56,11 @@ class App extends Component {
             this.setState({user});
         });
     }
+
+    // Toggle drawer function
+    toggleDrawer = (side, open) => () => {
+        this.setState({[side]: open});
+    };
 
     // Function to handle UI changes
     handleChange(e) {
@@ -177,22 +178,15 @@ class App extends Component {
 
         return (
             <div className = "app">
-                <header>
-                    <div className = "wrapper">
-                        <h1>Amp Information Library</h1>
 
-                        {this.state.user ? (
-                            <div>
-                                <button className = "logButton" onClick = {this.logout}> Log Out </button>
-                                <button id = "mobileMenu" onClick = {this.toggleDrawer('left', true)}> Enter a New Amp </button>
-                                <button className = "back-button" id="back-button-out" onClick={() => window.history.back()}> Back </button>   
-                            </div>
-                            ) : (
-                            <div>
-                                <button className = "logButton" onClick = {this.login}> Log In </button>
-                            </div>
-                        )}
-                    </div>
+                {/* Header with login and logout button */}
+                <header>
+                    <HeaderWrapper 
+                        user = {this.state.user}
+                        logout = {this.logout}
+                        login = {this.login}
+                        toggleDrawer = {this.toggleDrawer}
+                    />
                 </header>
 
                 {this.state.user ? (
