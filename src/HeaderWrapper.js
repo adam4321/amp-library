@@ -1,5 +1,8 @@
-
-
+/********************************************************************
+**  Description:  Header component which renders the log in and log
+**                out button. It checks the passed in user props to
+**                find the current user's sign in status
+********************************************************************/
 
 import React from 'react';
 import './App.css';
