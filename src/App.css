@@ -30,14 +30,14 @@ header .wrapper {
 }
 
 header h1 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: .004vw;
   display: inline-block;
   margin: 0;
   vertical-align: middle;
   color: #fff;
-  margin-left: 4vw;
+  margin-left: 5.5vw;
 }
 
 .fa {
@@ -99,12 +99,12 @@ border: 1px solid;
   margin-left: 5vw;
 }
 
-.ampNameField {
+#ampNameField {
   display: block;
   margin-bottom: 60px;
 }
 
-.descriptionField {
+#descriptionField {
   display: block;
   margin-bottom: 40px;
 }
@@ -150,6 +150,10 @@ border: 1px solid;
     -moz-transition:  0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
+}
+
+.invalid {
+    border:1px solid #ff0000
 }
 
 #drawerDiv {
@@ -206,15 +210,15 @@ border: 1px solid;
     transition: 0.4s;
 }
 
-.mobileAmpNameField {
+#mobileAmpNameField {
   display: block;
   margin-bottom: 60px;
   border-color: black;
 }
 
-.descriptionField {
-  display: block;
-  margin-bottom: 40px;
+#mobileDescriptionField {
+    display: block;
+    margin-bottom: 40px;
 }
 
 .addButton {
@@ -238,10 +242,7 @@ border: 1px solid;
   margin-bottom: 60px;
 }
 
-.mobileDescriptionField {
-  display: block;
-  margin-bottom: 40px;
-}
+
 
 .display-item {
   width: 75%;

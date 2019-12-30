@@ -47,8 +47,8 @@ class App extends Component {
     login() {
         auth.signInWithPopup(provider).then(result => {
             const user = result.user;
-            // window.location.reload();
             this.setState({user});
+            this.componentDidMount()
         });
     }
 
@@ -56,6 +56,31 @@ class App extends Component {
     logout() {
         auth.signOut().then(() => {
             this.setState({user: null});
+        });
+    }
+
+    // Function for return cards from the database after a user is logged in
+    componentDidMount() {
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                this.setState({user});
+            }
+        });
+        const itemsRef = firebase.database().ref('items');
+        itemsRef.on('value', snapshot => {
+            let items = snapshot.val();
+            let newState = [];
+            for (let item in items) {
+                newState.push({
+                    id: item,
+                    title: items[item].title,
+                    user: items[item].user,
+                    description: items[item].description,
+                    photo: items[item].photo,
+                    layout: items[item].layout
+                });
+            }
+            this.setState({items: newState});
         });
     }
 
@@ -74,27 +99,26 @@ class App extends Component {
         e.preventDefault();
         const itemsRef = firebase.database().ref('items');
 
-        const item = {
-            title: this.state.currentItem,
-            user: this.state.user.displayName || this.state.user.email,
-            description: this.state.ampDescription,
-            photo: this.state.ampImgURL,
-            layout: this.state.schematicURL
-        };
-        itemsRef.push(item);
-        this.setState({
-            currentItem: '',
-            username: '',
-            ampDescription: '',
-            photo: '',
-            layout: ''
-        });
-        if (document.getElementById("desktopForm") !== null) {
-            document.getElementById("desktopForm").reset();
-        }
-
-        if (document.getElementById("mobileForm") !== null) {
-            document.getElementById("mobileForm").reset();
+        if (this.state.currentItem.length === 0 || this.state.ampDescription.length === 0)
+            this.setState({
+                inputClass: "invalid"
+        })
+        else {
+            const item = {
+                title: this.state.currentItem,
+                user: this.state.user.displayName || this.state.user.email,
+                description: this.state.ampDescription,
+                photo: this.state.ampImgURL,
+                layout: this.state.schematicURL
+            };
+            itemsRef.push(item);
+            this.setState({
+                currentItem: '',
+                username: '',
+                ampDescription: '',
+                photo: '',
+                layout: ''
+            });
         }
     }
 
@@ -151,30 +175,6 @@ class App extends Component {
             .then(url => this.setState({schematicURL: url}));
     };
 
-    // Function for return cards from the database after a user is logged in
-    componentDidMount() {
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                this.setState({user});
-            }
-        });
-        const itemsRef = firebase.database().ref('items');
-        itemsRef.on('value', snapshot => {
-            let items = snapshot.val();
-            let newState = [];
-            for (let item in items) {
-                newState.push({
-                    id: item,
-                    title: items[item].title,
-                    user: items[item].user,
-                    description: items[item].description,
-                    photo: items[item].photo,
-                    layout: items[item].layout
-                });
-            }
-            this.setState({items: newState});
-        });
-    }
 
     render() {
         const sideList = (
@@ -218,11 +218,11 @@ class App extends Component {
                                 {/* Desktop menu */}
                                 <div className = "ampAddBox">
                                     <h3 id = "enterText">Enter a New Amp</h3>
-                                    <form id="desktopForm" onSubmit = {this.handleSubmit}>
+                                    <form id = "desktopForm" onSubmit = {this.handleSubmit}>
 
                                         <input
-                                            required
-                                            className = "ampNameField"
+                                            className = "inputReqire"
+                                            id = "ampNameField"
                                             type = "text"
                                             name = "currentItem"
                                             placeholder = "What is the Amp model?"
@@ -243,8 +243,8 @@ class App extends Component {
                                         </CustomUploadButton>
 
                                         <input
-                                            required
-                                            className = "descriptionField"
+                                            className = "inputReqire"
+                                            id = "descriptionField"
                                             type = "text"
                                             name = "ampDescription"
                                             placeholder = "Describe the Amplifier"
@@ -264,7 +264,12 @@ class App extends Component {
                                             Add the Amp's Schematic
                                         </CustomUploadButton>
 
-                                        <button className="addButton"> Add a new Amplifier </button>
+                                        <button 
+                                            className = "addButton"
+                                            type = "submit"
+                                        > 
+                                            Add a new Amplifier 
+                                        </button>
                                     </form>
                                 </div>
                             </section>
@@ -289,7 +294,8 @@ class App extends Component {
                                             <form id="mobileForm" onSubmit = {this.handleSubmit}>
 
                                                 <input
-                                                    className = "mobileAmpNameField"
+                                                    className = "inputReqire"
+                                                    id = "mobileAmpNameField"
                                                     type = "text"
                                                     name = "currentItem"
                                                     placeholder = "What is the Amp model?"
@@ -310,7 +316,8 @@ class App extends Component {
                                                 </CustomUploadButton>
 
                                                 <input
-                                                    className = "mobileDescriptionField"
+                                                    className = "inputReqire"
+                                                    id = "mobileDescriptionField"
                                                     type = "text"
                                                     name = "ampDescription"
                                                     placeholder = "Describe the Amplifier"
