@@ -11,7 +11,6 @@ import './App.css';
 import './media-query.css';
 import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
-import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 
