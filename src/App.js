@@ -14,8 +14,10 @@ import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadBut
 import ModalImage from 'react-modal-image'
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
+
 import HeaderWrapper from './HeaderWrapper.js';
 import LoggedOutView from './LoggedOutView.js';
+import AmpCards from './AmpCards.js';
 
 
 class App extends Component {
@@ -35,7 +37,7 @@ class App extends Component {
             isUploading: false,
             progress: 0
         };
-
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.login = this.login.bind(this);
@@ -200,6 +202,7 @@ class App extends Component {
 
                 {this.state.user ? (
                     <div>
+                        {/* Display the user icon and name */}
                         <div className = "user-profile">
                             <img
                                 id = "userIcon"
@@ -360,53 +363,12 @@ class App extends Component {
                             </section>
 
                             {/* Display the cards of amps */}
-
                             <section className = "display-item">
-                                <div className = "wrapper">
-                                    <ul>
-                                        {this.state.items.map(item => {
-                                            return (
-                                                <li key = {item.id}>
-                                                    <h3>{item.title}</h3>
-                                                    
-                                                    {/* 
-                                                    // @ts-ignore */}
-                                                    <ModalImage
-                                                        className = "photo"
-                                                        alt = "Guitar amplifier"
-                                                        small = {item.photo}
-                                                        large = {item.photo}
-                                                    />
-
-                                                    <p>{item.description}</p>
-
-                                                    {/* 
-                                                    // @ts-ignore */}
-                                                    <ModalImage
-                                                        className = "schematic"
-                                                        alt = "Amp schematic"
-                                                        small = {item.layout}
-                                                        large = {item.layout}
-                                                    />
-                                                    
-                                                    <p id = "ampContributor">
-                                                        Contributed by{' '}
-                                                        {item.user}
-                                                        {item.user === this.state.user.displayName ||
-                                                         item.user === this.state.user.email ? (
-                                                            <button
-                                                                id = "removeButton"
-                                                                onClick = {() => this.removeItem(item.id)}
-                                                            >
-                                                                Remove Amplifier
-                                                            </button>
-                                                        ) : null}
-                                                    </p>
-                                                </li>
-                                            );
-                                        })}
-                                    </ul>
-                                </div>
+                                <AmpCards
+                                    items = {this.state.items}
+                                    user = {this.state.user}
+                                    removeItem = {this.removeItem}
+                                />
                             </section>
                         </div>
                     </div>
