@@ -59,7 +59,7 @@ class App extends Component {
         });
     }
 
-    // Function for return cards from the database after a user is logged in
+    // Function return cards from the database after a user is logged in
     componentDidMount() {
         auth.onAuthStateChanged(user => {
             if (user) {
