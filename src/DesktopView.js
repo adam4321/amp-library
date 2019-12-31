@@ -54,7 +54,7 @@ class DesktopView extends React.Component {
                     />
 
                     <CustomUploadButton
-                        handleSchematicUpload = {this.props.handleSchematicUpload}
+                        handleImgUpload = {this.props.handleImgUpload}
                         accept = "image/*"
                         storageRef = {firebase.storage().ref('images')}
                         onUploadStart = {this.props.handleUploadStart}

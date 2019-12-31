@@ -216,7 +216,6 @@ class App extends Component {
                                 handleProgress = {this.handleProgress}
                                 handleImgUpload = {this.handleImgUpload}
                                 handleUploadSuccess = {this.handleUploadSuccess}
-                                handleSchematicUpload = {this.handleSchematicUpload}
                                 handleUploadSuccessSch = {this.handleUploadSuccessSch}
                             />
                         </section>
