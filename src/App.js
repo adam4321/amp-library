@@ -151,14 +151,6 @@ class App extends Component {
             .then(url => this.setState({ampImgURL: url}));
     };
 
-    // Functions for uploading a schematic to database
-    handleSchematicUpload = event => this.setState({username: event.target.value});
-    handleUploadStartSch = () => this.setState({isUploading: true, progress: 0});
-    handleProgressSch = progress => this.setState({progress});
-    handleUploadErrorSch = error => {this.setState({isUploading: false});
-        console.error(error);
-    };
-
     // Function for updating UI after schematic upload
     handleUploadSuccessSch = filename => {
         this.setState({
