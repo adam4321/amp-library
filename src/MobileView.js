@@ -14,16 +14,6 @@ import Divider from '@material-ui/core/Divider';
 
 
 class MobileView extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         left: false,
-    //     }
-    // }
-
-
-
-
     render() {
         const sideList = (
             <div className = "drawer">
