@@ -205,9 +205,6 @@ class App extends Component {
                         {/* Mobile menu for Amp entry*/}
                         <section>
                             <MobileView
-                                user = {this.state.user}
-                                left = {this.state.left}
-                                toggleDrawer = {this.toggleDrawer}
                                 handleSubmit = {this.handleSubmit}
                                 handleChange = {this.handleChange}
                                 currentItem = {this.state.currentItem}
@@ -218,7 +215,9 @@ class App extends Component {
                                 handleImgUpload = {this.handleImgUpload}
                                 handleUploadSuccess = {this.handleUploadSuccess}
                                 handleUploadSuccessSchematic = {this.handleUploadSuccessSchematic}
-                                
+                                user = {this.state.user}
+                                left = {this.state.left}
+                                toggleDrawer = {this.toggleDrawer}
                             />
                         </section>
 

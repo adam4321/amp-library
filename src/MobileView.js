@@ -61,14 +61,14 @@ class MobileView extends React.Component {
                                 value = {this.props.currentItem}
                             />
                             <CustomUploadButton
-                                handleImgUpload = {this.props.handleImgUpload}
+                                className = 'mobileAmpImgButton'
                                 accept = "image/*"
                                 storageRef = {firebase.storage().ref('images')}
+                                handleImgUpload = {this.props.handleImgUpload}
                                 onUploadStart = {this.props.handleUploadStart}
                                 onUploadError = {this.props.handleUploadError}
-                                onUploadSuccess = {this.props.handleUploadSuccess}
                                 onProgress = {this.props.handleProgress}
-                                className = 'mobileAmpImgButton'
+                                onUploadSuccess = {this.props.handleUploadSuccess}
                             >
                                 Add a Photo of the Amp
                             </CustomUploadButton>
@@ -83,14 +83,14 @@ class MobileView extends React.Component {
                                 value = {this.props.ampDescription}
                             />
                             <CustomUploadButton
-                                handleImgUpload = {this.props.handleImgUpload}
+                                className = 'mobileSchematicButton'
                                 accept = "image/*"
                                 storageRef = {firebase.storage().ref('images')}
+                                handleImgUpload = {this.props.handleImgUpload}
                                 onUploadStart = {this.props.handleUploadStart}
                                 onUploadError = {this.props.handleUploadError}
-                                onUploadSuccess = {this.props.handleUploadSuccessSchematic}
                                 onProgress = {this.props.handleProgress}
-                                className = 'mobileSchematicButton'
+                                onUploadSuccess = {this.props.handleUploadSuccessSchematic}
                             >
                                 Add the Amp's Schematic
                             </CustomUploadButton>
