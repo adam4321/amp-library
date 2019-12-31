@@ -10,13 +10,11 @@ import React, { Component } from 'react';
 import './App.css';
 import './media-query.css';
 import firebase, { auth, provider } from './firebase.js';
-import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
-import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
 import HeaderWrapper from './HeaderWrapper.js';
 import LoggedOutView from './LoggedOutView.js';
 import AmpCards from './AmpCards.js';
 import DesktopView from './DesktopView';
+import MobileView from './MobileView.js';
 
 
 class App extends Component {
@@ -24,8 +22,8 @@ class App extends Component {
         super(props);
         this.state = {
             user: null,
-            username: '',
             left: false,
+            username: '',
             currentItem: '',
             description: '',
             items: [],
@@ -60,6 +58,11 @@ class App extends Component {
         });
     }
 
+    // Toggle mobile add amplifier drawer function
+    toggleDrawer = (side, open) => () => {
+        this.setState({[side]: open});
+    };
+
     // Function return cards from the database after a user is logged in
     componentDidMount() {
         auth.onAuthStateChanged(user => {
@@ -84,11 +87,6 @@ class App extends Component {
             this.setState({items: newState});
         });
     }
-
-    // Toggle mobile add amplifier drawer function
-    toggleDrawer = (side, open) => () => {
-        this.setState({[side]: open});
-    };
 
     // Function to handle the form input fields
     handleChange(e) {
@@ -178,14 +176,6 @@ class App extends Component {
 
 
     render() {
-        const sideList = (
-            <div className = "drawer">
-                <section>
-                    <h3 id = "enterText">Enter a New Amp</h3>
-                </section>
-            </div>
-        );
-
         return (
             <div className = "app">
 
@@ -220,89 +210,24 @@ class App extends Component {
                             />
                         </section>
 
-                        {/* Mobile menu */}
+                        {/* Mobile menu for Amp entry*/}
                         <section>
-                            <div>
-                                <Drawer open = {this.state.left} onClose = {this.toggleDrawer('left', false)}>
-                                    <div
-                                        tabIndex = {0}
-                                        role = "button"
-                                        onClick = {this.toggleDrawer('left', false)}
-                                        onKeyDown = {this.toggleDrawer('left', false)}
-                                        id = "drawerDiv"
-                                    >
-                                        {sideList}
-                                    </div>
-                                    <div>
-                                        <h3 id = "mobileEnterText"> Enter a New Amp </h3>
-                                        <Divider id = "mobileDivide"/>
-
-                                        <form id="mobileForm" onSubmit = {this.handleSubmit}>
-
-                                            <input
-                                                className = "inputReqire"
-                                                id = "mobileAmpNameField"
-                                                type = "text"
-                                                name = "currentItem"
-                                                placeholder = "What is the Amp model?"
-                                                onChange = {this.handleChange}
-                                                value = {this.state.currentItem}
-                                            />
-                                            <CustomUploadButton
-                                                handleImgUpload = {this.handleImgUpload}
-                                                accept = "image/*"
-                                                storageRef = {firebase.storage().ref('images')}
-                                                onUploadStart = {this.handleUploadStart}
-                                                onUploadError = {this.handleUploadError}
-                                                onUploadSuccess = {this.handleUploadSuccess}
-                                                onProgress = {this.handleProgress}
-                                                className = 'mobileAmpImgButton'
-                                            >
-                                                Add a Photo of the Amp
-                                            </CustomUploadButton>
-
-                                            <input
-                                                className = "inputReqire"
-                                                id = "mobileDescriptionField"
-                                                type = "text"
-                                                name = "ampDescription"
-                                                placeholder = "Describe the Amplifier"
-                                                onChange = {this.handleChange}
-                                                value = {this.state.ampDescription}
-                                            />
-                                            <CustomUploadButton
-                                                handleSchematicUpload = {this.handleSchematicUpload}
-                                                accept = "image/*"
-                                                storageRef = {firebase.storage().ref('images')}
-                                                onUploadStart = {this.handleUploadStartSch}
-                                                onUploadError = {this.handleUploadErrorSch}
-                                                onUploadSuccess = {this.handleUploadSuccessSch}
-                                                onProgress = {this.handleProgressSch}
-                                                className = 'mobileSchematicButton'
-                                            >
-                                                Add the Amp's Schematic
-                                            </CustomUploadButton>
-
-                                            <button className = "mobileAddButton" onClick={this.toggleDrawer('left', false)}> Add a new Amplifier </button>
-                                        </form>
-
-                                    </div>
-                                    <Divider id = "mobileDivide" />
-                                    <button
-                                        className = "back-button"
-                                        id = "back-button-out-mobile"
-                                        onClick = {() => window.history.back()}> Back </button>
-
-                                    <div className="mobile-user-profile">
-                                        <img
-                                            id = "mobileUserIcon"
-                                            alt = "user thumbnail"
-                                            src = {this.state.user.photoURL}
-                                        />
-                                        <h3 id = "mobileUserName"> {this.state.user.displayName || this.state.user.email}{' '} </h3>
-                                    </div>
-                                </Drawer>
-                            </div>
+                            <MobileView
+                                user = {this.state.user}
+                                left = {this.state.left}
+                                toggleDrawer = {this.toggleDrawer}
+                                handleSubmit = {this.handleSubmit}
+                                handleChange = {this.handleChange}
+                                currentItem = {this.state.currentItem}
+                                ampDescription = {this.state.ampDescription}
+                                handleUploadStart = {this.handleUploadStart}
+                                handleUploadError = {this.handleUploadError}
+                                handleProgress = {this.handleProgress}
+                                handleImgUpload = {this.handleImgUpload}
+                                handleUploadSuccess = {this.handleUploadSuccess}
+                                handleUploadSuccessSch = {this.handleUploadSuccessSch}
+                                
+                            />
                         </section>
 
                         {/* Display the user icon and name */}
