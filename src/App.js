@@ -17,6 +17,7 @@ import Divider from '@material-ui/core/Divider';
 import HeaderWrapper from './HeaderWrapper.js';
 import LoggedOutView from './LoggedOutView.js';
 import AmpCards from './AmpCards.js';
+import DesktopView from './DesktopView';
 
 
 class App extends Component {
@@ -199,23 +200,14 @@ class App extends Component {
                     />
                 </header>
 
+                {/* If the user is logged in then display the library */}
                 {this.state.user ? (
-                    <div>
-                        {/* Display the user icon and name */}
-                        <div className = "user-profile">
-                            <img
-                                id = "userIcon"
-                                alt = "user thumbnail"
-                                src = {this.state.user.photoURL}
-                            />
-                            <h3 id = "userName">
-                                {this.state.user.displayName || this.state.user.email}{' '}
-                            </h3>
-                        </div>
+                    
+                    <div className = "container">
 
-                        {/* New amp input box */}
-                        <div className = "container">
-                            <section className = "add-item">
+                        {/* Desktop Layout for Amp Entry */}
+                        <section className = "add-item">
+
 
                                 {/* Desktop menu */}
                                 <div className = "ampAddBox">
@@ -274,104 +266,119 @@ class App extends Component {
                                         </button>
                                     </form>
                                 </div>
-                            </section>
 
-                            {/* Mobile menu */}
-                            <section>
-                                <div>
-                                    <Drawer open = {this.state.left} onClose = {this.toggleDrawer('left', false)}>
-                                        <div
-                                            tabIndex = {0}
-                                            role = "button"
-                                            onClick = {this.toggleDrawer('left', false)}
-                                            onKeyDown = {this.toggleDrawer('left', false)}
-                                            id = "drawerDiv"
-                                        >
-                                            {sideList}
-                                        </div>
-                                        <div>
-                                            <h3 id = "mobileEnterText"> Enter a New Amp </h3>
-                                            <Divider id = "mobileDivide"/>
+                        </section>
 
-                                            <form id="mobileForm" onSubmit = {this.handleSubmit}>
+                        {/* Mobile menu */}
+                        <section>
+                            <div>
+                                <Drawer open = {this.state.left} onClose = {this.toggleDrawer('left', false)}>
+                                    <div
+                                        tabIndex = {0}
+                                        role = "button"
+                                        onClick = {this.toggleDrawer('left', false)}
+                                        onKeyDown = {this.toggleDrawer('left', false)}
+                                        id = "drawerDiv"
+                                    >
+                                        {sideList}
+                                    </div>
+                                    <div>
+                                        <h3 id = "mobileEnterText"> Enter a New Amp </h3>
+                                        <Divider id = "mobileDivide"/>
 
-                                                <input
-                                                    className = "inputReqire"
-                                                    id = "mobileAmpNameField"
-                                                    type = "text"
-                                                    name = "currentItem"
-                                                    placeholder = "What is the Amp model?"
-                                                    onChange = {this.handleChange}
-                                                    value = {this.state.currentItem}
-                                                />
-                                                <CustomUploadButton
-                                                    handleImgUpload = {this.handleImgUpload}
-                                                    accept = "image/*"
-                                                    storageRef = {firebase.storage().ref('images')}
-                                                    onUploadStart = {this.handleUploadStart}
-                                                    onUploadError = {this.handleUploadError}
-                                                    onUploadSuccess = {this.handleUploadSuccess}
-                                                    onProgress = {this.handleProgress}
-                                                    className = 'mobileAmpImgButton'
-                                                >
-                                                    Add a Photo of the Amp
-                                                </CustomUploadButton>
+                                        <form id="mobileForm" onSubmit = {this.handleSubmit}>
 
-                                                <input
-                                                    className = "inputReqire"
-                                                    id = "mobileDescriptionField"
-                                                    type = "text"
-                                                    name = "ampDescription"
-                                                    placeholder = "Describe the Amplifier"
-                                                    onChange = {this.handleChange}
-                                                    value = {this.state.ampDescription}
-                                                />
-                                                <CustomUploadButton
-                                                    handleSchematicUpload = {this.handleSchematicUpload}
-                                                    accept = "image/*"
-                                                    storageRef = {firebase.storage().ref('images')}
-                                                    onUploadStart = {this.handleUploadStartSch}
-                                                    onUploadError = {this.handleUploadErrorSch}
-                                                    onUploadSuccess = {this.handleUploadSuccessSch}
-                                                    onProgress = {this.handleProgressSch}
-                                                    className = 'mobileSchematicButton'
-                                                >
-                                                    Add the Amp's Schematic
-                                                </CustomUploadButton>
-
-                                                <button className = "mobileAddButton" onClick={this.toggleDrawer('left', false)}> Add a new Amplifier </button>
-                                            </form>
-
-                                        </div>
-                                        <Divider id = "mobileDivide" />
-                                        <button
-                                            className = "back-button"
-                                            id = "back-button-out-mobile"
-                                            onClick = {() => window.history.back()}> Back </button>
-
-                                        <div className="mobile-user-profile">
-                                            <img
-                                                id = "mobileUserIcon"
-                                                alt = "user thumbnail"
-                                                src = {this.state.user.photoURL}
+                                            <input
+                                                className = "inputReqire"
+                                                id = "mobileAmpNameField"
+                                                type = "text"
+                                                name = "currentItem"
+                                                placeholder = "What is the Amp model?"
+                                                onChange = {this.handleChange}
+                                                value = {this.state.currentItem}
                                             />
-                                            <h3 id = "mobileUserName"> {this.state.user.displayName || this.state.user.email}{' '} </h3>
-                                        </div>
-                                    </Drawer>
-                                </div>
-                            </section>
+                                            <CustomUploadButton
+                                                handleImgUpload = {this.handleImgUpload}
+                                                accept = "image/*"
+                                                storageRef = {firebase.storage().ref('images')}
+                                                onUploadStart = {this.handleUploadStart}
+                                                onUploadError = {this.handleUploadError}
+                                                onUploadSuccess = {this.handleUploadSuccess}
+                                                onProgress = {this.handleProgress}
+                                                className = 'mobileAmpImgButton'
+                                            >
+                                                Add a Photo of the Amp
+                                            </CustomUploadButton>
 
-                            {/* Display the cards of amps */}
-                            <section className = "display-item">
-                                <AmpCards
-                                    items = {this.state.items}
-                                    user = {this.state.user}
-                                    removeItem = {this.removeItem}
-                                />
-                            </section>
+                                            <input
+                                                className = "inputReqire"
+                                                id = "mobileDescriptionField"
+                                                type = "text"
+                                                name = "ampDescription"
+                                                placeholder = "Describe the Amplifier"
+                                                onChange = {this.handleChange}
+                                                value = {this.state.ampDescription}
+                                            />
+                                            <CustomUploadButton
+                                                handleSchematicUpload = {this.handleSchematicUpload}
+                                                accept = "image/*"
+                                                storageRef = {firebase.storage().ref('images')}
+                                                onUploadStart = {this.handleUploadStartSch}
+                                                onUploadError = {this.handleUploadErrorSch}
+                                                onUploadSuccess = {this.handleUploadSuccessSch}
+                                                onProgress = {this.handleProgressSch}
+                                                className = 'mobileSchematicButton'
+                                            >
+                                                Add the Amp's Schematic
+                                            </CustomUploadButton>
+
+                                            <button className = "mobileAddButton" onClick={this.toggleDrawer('left', false)}> Add a new Amplifier </button>
+                                        </form>
+
+                                    </div>
+                                    <Divider id = "mobileDivide" />
+                                    <button
+                                        className = "back-button"
+                                        id = "back-button-out-mobile"
+                                        onClick = {() => window.history.back()}> Back </button>
+
+                                    <div className="mobile-user-profile">
+                                        <img
+                                            id = "mobileUserIcon"
+                                            alt = "user thumbnail"
+                                            src = {this.state.user.photoURL}
+                                        />
+                                        <h3 id = "mobileUserName"> {this.state.user.displayName || this.state.user.email}{' '} </h3>
+                                    </div>
+                                </Drawer>
+                            </div>
+                        </section>
+
+                        {/* Display the user icon and name */}
+                        <div className = "user-profile">
+                            <img
+                                id = "userIcon"
+                                alt = "user thumbnail"
+                                src = {this.state.user.photoURL}
+                            />
+                            <h3 id = "userName">
+                                {this.state.user.displayName || this.state.user.email}{' '}
+                            </h3>
                         </div>
+
+                        {/* Display the cards of amps */}
+                        <section className = "display-item">
+                            <AmpCards
+                                items = {this.state.items}
+                                user = {this.state.user}
+                                removeItem = {this.removeItem}
+                            />
+                        </section>
+
                     </div>
+                    
                 ) : (
+                    // Else user is not logged in, so display the logged out layout
                     <LoggedOutView />
                 )}
             </div>
