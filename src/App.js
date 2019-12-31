@@ -13,7 +13,6 @@ import firebase, { auth, provider } from './firebase.js';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
-
 import HeaderWrapper from './HeaderWrapper.js';
 import LoggedOutView from './LoggedOutView.js';
 import AmpCards from './AmpCards.js';
@@ -207,66 +206,19 @@ class App extends Component {
 
                         {/* Desktop Layout for Amp Entry */}
                         <section className = "add-item">
-
-
-                                {/* Desktop menu */}
-                                <div className = "ampAddBox">
-                                    <h3 id = "enterText">Enter a New Amp</h3>
-                                    <form id = "desktopForm" onSubmit = {this.handleSubmit}>
-
-                                        <input
-                                            className = "inputReqire"
-                                            id = "ampNameField"
-                                            type = "text"
-                                            name = "currentItem"
-                                            placeholder = "What is the Amp model?"
-                                            onChange = {this.handleChange}
-                                            value = {this.state.currentItem}
-                                        />
-                                        <CustomUploadButton
-                                            handleImgUpload = {this.handleImgUpload}
-                                            accept = "image/*"
-                                            storageRef = {firebase.storage().ref('images')}
-                                            onUploadStart = {this.handleUploadStart}
-                                            onUploadError = {this.handleUploadError}
-                                            onUploadSuccess = {this.handleUploadSuccess}
-                                            onProgress = {this.handleProgress}
-                                            className = "ampImgButton"
-                                        >
-                                            Add a Photo of the Amp
-                                        </CustomUploadButton>
-
-                                        <input
-                                            className = "inputReqire"
-                                            id = "descriptionField"
-                                            type = "text"
-                                            name = "ampDescription"
-                                            placeholder = "Describe the Amplifier"
-                                            onChange = {this.handleChange}
-                                            value = {this.state.ampDescription}
-                                        />
-                                        <CustomUploadButton
-                                            handleSchematicUpload = {this.handleSchematicUpload}
-                                            accept = "image/*"
-                                            storageRef = {firebase.storage().ref('images')}
-                                            onUploadStart = {this.handleUploadStartSch}
-                                            onUploadError = {this.handleUploadErrorSch}
-                                            onUploadSuccess = {this.handleUploadSuccessSch}
-                                            onProgress = {this.handleProgressSch}
-                                            className = "schematicButton"
-                                        >
-                                            Add the Amp's Schematic
-                                        </CustomUploadButton>
-
-                                        <button 
-                                            className = "addButton"
-                                            type = "submit"
-                                        > 
-                                            Add a new Amplifier 
-                                        </button>
-                                    </form>
-                                </div>
-
+                            <DesktopView 
+                                handleSubmit = {this.handleSubmit}
+                                handleChange = {this.handleChange}
+                                currentItem = {this.state.currentItem}
+                                ampDescription = {this.state.ampDescription}
+                                handleUploadStart = {this.handleUploadStart}
+                                handleUploadError = {this.handleUploadError}
+                                handleProgress = {this.handleProgress}
+                                handleImgUpload = {this.handleImgUpload}
+                                handleUploadSuccess = {this.handleUploadSuccess}
+                                handleSchematicUpload = {this.handleSchematicUpload}
+                                handleUploadSuccessSch = {this.handleUploadSuccessSch}
+                            />
                         </section>
 
                         {/* Mobile menu */}
