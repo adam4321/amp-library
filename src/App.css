@@ -222,7 +222,7 @@ border: 1px solid;
 }
 
 .addButton {
-  font-size: 1vw;
+  font-size: 17px;
   height: 42px;
   margin-top: 65px;
   margin-left:.5vw;
@@ -352,8 +352,8 @@ button {
   margin-left: 20px;
 }
 
-#back-button-in {
-  left: 46%;
+#back-button-out {
+  left: 47%;
   margin-top: 60px;
   width: 120px;
   height: 30px;
@@ -363,19 +363,21 @@ button {
   font-family: verdana;
   font-size: 18px;
   padding-top: 5px;
+  padding-bottom: 26px;
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
 
-#back-button-out {
+#back-button-in {
   left: 10.5vw;
   margin-top: 650px;
-  width: 7.6vw;
-  height: 1.76vw;
+  width: 150px;
+  height: 30px;
   background-color: #04536d;
   position: absolute;
   border-radius: 11px;
   font-family: verdana;
-  padding-top: .35vw;
+  padding-top: 5px;
+  padding-bottom: 27px;
   box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
 
@@ -384,7 +386,7 @@ button {
   text-align: center;
   display: inline-block;
   color: gold;
-  font-size:1vw;
+  font-size: 18px;
   -webkit-transition: 0.4s;
   -moz-transition:  0.4s;
   -o-transition: 0.4s;

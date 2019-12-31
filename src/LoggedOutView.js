@@ -16,8 +16,8 @@ const LoggedOutView = (props) => {
                 You must be logged in to see the Amp Library and to
                 submit to it.
             </p>
-            <button className = "back-button" id = "back-button-in" onClick={() => window.history.back()}> Back </button>
-            <button className = "back-button" id = "back-button-in-mobile" onClick = {() => window.history.back()}> Back </button>
+            <button className = "back-button" id = "back-button-out" onClick={() => window.history.back()}> Back </button>
+            <button className = "back-button" id = "back-button-out-mobile" onClick = {() => window.history.back()}> Back </button>
         </div>
     )
 }

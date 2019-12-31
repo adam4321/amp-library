@@ -29,7 +29,7 @@ class HeaderWrapper extends React.Component {
                     <div>
                         <button className = "logButton" onClick = {this.props.logout}> Log Out </button>
                         <button id = "mobileMenu" onClick = {this.props.toggleDrawer('left', true)}> Enter a New Amp </button>
-                        <button className = "back-button" id="back-button-out" onClick={() => window.history.back()}> Back </button>   
+                        <button className = "back-button" id="back-button-in" onClick={() => window.history.back()}> Back </button>   
                     </div>
                     ) : (
                     <div>

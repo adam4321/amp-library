@@ -92,7 +92,7 @@ class MobileView extends React.Component {
                     <Divider id = "mobileDivide" />
                     <button
                         className = "back-button"
-                        id = "back-button-out-mobile"
+                        id = "back-button-in-mobile"
                         onClick = {() => window.history.back()}> Back </button>
 
                     <div className="mobile-user-profile">
