@@ -31,14 +31,14 @@ class DesktopView extends React.Component {
                     />
 
                     <CustomUploadButton
-                        handleImgUpload = {this.props.handleImgUpload}
+                        className = "ampImgButton"
                         accept = "image/*"
                         storageRef = {firebase.storage().ref('images')}
                         onUploadStart = {this.props.handleUploadStart}
                         onUploadError = {this.props.handleUploadError}
-                        onUploadSuccess = {this.props.handleUploadSuccess}
                         onProgress = {this.props.handleProgress}
-                        className = "ampImgButton"
+                        handleImgUpload = {this.props.handleImgUpload}
+                        onUploadSuccess = {this.props.handleUploadSuccess}
                     >
                         Add a Photo of the Amp
                     </CustomUploadButton>
@@ -54,14 +54,14 @@ class DesktopView extends React.Component {
                     />
 
                     <CustomUploadButton
-                        handleImgUpload = {this.props.handleImgUpload}
+                        className = "schematicButton"
                         accept = "image/*"
                         storageRef = {firebase.storage().ref('images')}
                         onUploadStart = {this.props.handleUploadStart}
                         onUploadError = {this.props.handleUploadError}
-                        onUploadSuccess = {this.props.handleUploadSuccessSchematic}
                         onProgress = {this.props.handleProgress}
-                        className = "schematicButton"
+                        handleImgUpload = {this.props.handleImgUpload}
+                        onUploadSuccess = {this.props.handleUploadSuccessSchematic}
                     >
                         Add the Amp's Schematic
                     </CustomUploadButton>
