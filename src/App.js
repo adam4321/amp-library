@@ -7,14 +7,14 @@
 // @ts-check
 
 import React, { Component } from 'react';
+import firebase, { auth, provider } from './firebase.js';
 import './App.css';
 import './media-query.css';
-import firebase, { auth, provider } from './firebase.js';
 import HeaderWrapper from './HeaderWrapper.js';
-import LoggedOutView from './LoggedOutView.js';
-import AmpCards from './AmpCards.js';
 import DesktopView from './DesktopView';
 import MobileView from './MobileView.js';
+import LoggedOutView from './LoggedOutView.js';
+import AmpCards from './AmpCards.js';
 
 
 class App extends Component {
@@ -152,7 +152,7 @@ class App extends Component {
     };
 
     // Function for updating UI after schematic upload
-    handleUploadSuccessSch = filename => {
+    handleUploadSuccessSchematic = filename => {
         this.setState({
             schematic: filename,
             progress: 100,
@@ -198,7 +198,7 @@ class App extends Component {
                                 handleProgress = {this.handleProgress}
                                 handleImgUpload = {this.handleImgUpload}
                                 handleUploadSuccess = {this.handleUploadSuccess}
-                                handleUploadSuccessSch = {this.handleUploadSuccessSch}
+                                handleUploadSuccessSchematic = {this.handleUploadSuccessSchematic}
                             />
                         </section>
 
@@ -217,7 +217,7 @@ class App extends Component {
                                 handleProgress = {this.handleProgress}
                                 handleImgUpload = {this.handleImgUpload}
                                 handleUploadSuccess = {this.handleUploadSuccess}
-                                handleUploadSuccessSch = {this.handleUploadSuccessSch}
+                                handleUploadSuccessSchematic = {this.handleUploadSuccessSchematic}
                                 
                             />
                         </section>

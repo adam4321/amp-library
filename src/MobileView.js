@@ -5,10 +5,10 @@
 // @ts-check
 
 import React from 'react';
+import firebase from './firebase.js';
 import './App.css';
 import './media-query.css';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
-import firebase from './firebase.js';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 
@@ -88,7 +88,7 @@ class MobileView extends React.Component {
                                 storageRef = {firebase.storage().ref('images')}
                                 onUploadStart = {this.props.handleUploadStart}
                                 onUploadError = {this.props.handleUploadError}
-                                onUploadSuccess = {this.props.handleUploadSuccessSch}
+                                onUploadSuccess = {this.props.handleUploadSuccessSchematic}
                                 onProgress = {this.props.handleProgress}
                                 className = 'mobileSchematicButton'
                             >
