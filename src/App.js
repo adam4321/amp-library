@@ -98,27 +98,21 @@ class App extends Component {
         e.preventDefault();
         const itemsRef = firebase.database().ref('items');
 
-        // if (this.state.currentItem.length === 0 || this.state.ampDescription.length === 0)
-        //     this.setState({
-        //         // inputRequire: "invalid"
-        // })
-        // else {
-            const item = {
-                title: this.state.currentItem,
-                user: this.state.user.displayName || this.state.user.email,
-                description: this.state.ampDescription,
-                photo: this.state.ampImgURL,
-                layout: this.state.schematicURL
-            };
-            itemsRef.push(item);
-            this.setState({
-                currentItem: '',
-                username: '',
-                ampDescription: '',
-                photo: '',
-                layout: ''
-            });
-        //}
+        const item = {
+            title: this.state.currentItem,
+            user: this.state.user.displayName || this.state.user.email,
+            description: this.state.ampDescription,
+            photo: this.state.ampImgURL,
+            layout: this.state.schematicURL
+        };
+        itemsRef.push(item);
+        this.setState({
+            currentItem: '',
+            username: '',
+            ampDescription: '',
+            photo: '',
+            layout: ''
+        });
     }
 
     // Function For removing amps
