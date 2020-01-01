@@ -316,9 +316,6 @@ form button {
 input:required {
     box-shadow:none;
 }
-/* input:invalid {
-    box-shadow:0 0 3px red;
-} */
 
 button {
   border-radius: 2px;
