@@ -28,6 +28,7 @@ class DesktopView extends React.Component {
                         placeholder = "What is the Amp model?"
                         onChange = {this.props.handleChange}
                         value = {this.props.currentItem}
+                        required
                     />
 
                     <CustomUploadButton
@@ -51,6 +52,7 @@ class DesktopView extends React.Component {
                         placeholder = "Describe the Amplifier"
                         onChange = {this.props.handleChange}
                         value = {this.props.ampDescription}
+                        required
                     />
 
                     <CustomUploadButton
