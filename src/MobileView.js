@@ -35,12 +35,15 @@ class MobileView extends React.Component {
                     >
                         {sideList}
                     </div>
+
                     <div>
                         <h3 id = "mobileEnterText"> Enter a New Amp </h3>
+
                         <Divider id = "mobileDivide"/>
 
                         <form id="mobileForm" onSubmit = {this.props.handleSubmit}>
 
+                            {/* Amp Type input field */}
                             <input
                                 className = "inputReqire"
                                 id = "mobileAmpNameField"
@@ -50,6 +53,8 @@ class MobileView extends React.Component {
                                 onChange = {this.props.handleChange}
                                 value = {this.props.currentItem}
                             />
+
+                            {/* Upload the amp photo */}
                             <CustomUploadButton
                                 className = 'mobileAmpImgButton'
                                 accept = "image/*"
@@ -63,6 +68,7 @@ class MobileView extends React.Component {
                                 Add a Photo of the Amp
                             </CustomUploadButton>
 
+                            {/* Amp Description input field */}
                             <input
                                 className = "inputReqire"
                                 id = "mobileDescriptionField"
@@ -72,6 +78,8 @@ class MobileView extends React.Component {
                                 onChange = {this.props.handleChange}
                                 value = {this.props.ampDescription}
                             />
+
+                            {/* Upload the amp schematic */}
                             <CustomUploadButton
                                 className = 'mobileSchematicButton'
                                 accept = "image/*"
@@ -87,13 +95,17 @@ class MobileView extends React.Component {
 
                             <button className = "mobileAddButton" onClick={this.props.toggleDrawer('left', false)}> Add a new Amplifier </button>
                         </form>
-
                     </div>
+
                     <Divider id = "mobileDivide" />
+
                     <button
                         className = "back-button"
                         id = "back-button-in-mobile"
-                        onClick = {() => window.history.back()}> Back </button>
+                        onClick = {() => window.history.back()}
+                    > 
+                        Back 
+                    </button>
 
                     <div className="mobile-user-profile">
                         <img
@@ -103,6 +115,7 @@ class MobileView extends React.Component {
                         />
                         <h3 id = "mobileUserName"> {this.props.user.displayName || this.props.user.email}{' '} </h3>
                     </div>
+
                 </Drawer>
             </div>
         )
