@@ -20,7 +20,7 @@ class DesktopView extends React.Component {
 
                 <form id = "desktopForm" onSubmit = {this.props.handleSubmit}>
 
-                    {/* Amp Type input field */}
+                    {/* Amp Type input field ------------------------------ */}
                     <input
                         className = "inputReqire"
                         id = "ampNameField"
@@ -32,7 +32,7 @@ class DesktopView extends React.Component {
                         required
                     />
 
-                    {/* Upload the amp photo */}
+                    {/* Upload the amp photo ------------------------------ */}
                     <CustomUploadButton
                         className = "ampImgButton"
                         accept = "image/*"
@@ -46,7 +46,7 @@ class DesktopView extends React.Component {
                         Add a Photo of the Amp
                     </CustomUploadButton>
 
-                    {/* Amp Description input field */}
+                    {/* Amp Description input field ----------------------- */}
                     <input
                         className = "inputReqire"
                         id = "descriptionField"
@@ -58,7 +58,7 @@ class DesktopView extends React.Component {
                         required
                     />
 
-                    {/* Upload the amp schematic */}
+                    {/* Upload the amp schematic -------------------------- */}
                     <CustomUploadButton
                         className = "schematicButton"
                         accept = "image/*"
@@ -78,8 +78,6 @@ class DesktopView extends React.Component {
                     > 
                         Add a new Amplifier 
                     </button>
-
-
 
                 </form>
             </div>

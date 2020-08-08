@@ -43,7 +43,7 @@ class MobileView extends React.Component {
 
                         <form id="mobileForm" onSubmit = {this.props.handleSubmit}>
 
-                            {/* Amp Type input field */}
+                            {/* Amp Type input field ---------------------- */}
                             <input
                                 className = "inputReqire"
                                 id = "mobileAmpNameField"
@@ -54,7 +54,7 @@ class MobileView extends React.Component {
                                 value = {this.props.currentItem}
                             />
 
-                            {/* Upload the amp photo */}
+                            {/* Upload the amp photo ---------------------- */}
                             <CustomUploadButton
                                 className = 'mobileAmpImgButton'
                                 accept = "image/*"
@@ -68,7 +68,7 @@ class MobileView extends React.Component {
                                 Add a Photo of the Amp
                             </CustomUploadButton>
 
-                            {/* Amp Description input field */}
+                            {/* Amp Description input field --------------- */}
                             <input
                                 className = "inputReqire"
                                 id = "mobileDescriptionField"
@@ -79,7 +79,7 @@ class MobileView extends React.Component {
                                 value = {this.props.ampDescription}
                             />
 
-                            {/* Upload the amp schematic */}
+                            {/* Upload the amp schematic ------------------ */}
                             <CustomUploadButton
                                 className = 'mobileSchematicButton'
                                 accept = "image/*"

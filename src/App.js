@@ -165,7 +165,7 @@ class App extends Component {
         return (
             <div className = "app">
 
-                {/* Header with login and logout button */}
+                {/* Header with login and logout button ------------------- */}
                 <header>
                     <HeaderWrapper 
                         user = {this.state.user}
@@ -175,7 +175,7 @@ class App extends Component {
                     />
                 </header>
 
-                {/* If the user is logged in then display the library */}
+                {/* If the user is logged in then display the library ----- */}
                 {this.state.user ? (
                     
                     <div className = "container">
@@ -196,7 +196,7 @@ class App extends Component {
                             />
                         </section>
 
-                        {/* Mobile menu for Amp entry*/}
+                        {/* Mobile menu for Amp entry --------------------- */}
                         <section>
                             <MobileView
                                 handleSubmit = {this.handleSubmit}
@@ -215,7 +215,7 @@ class App extends Component {
                             />
                         </section>
 
-                        {/* Display the user icon and name */}
+                        {/* Display the user icon and name ---------------- */}
                         <div className = "user-profile">
                             <img
                                 id = "userIcon"
@@ -227,7 +227,7 @@ class App extends Component {
                             </h3>
                         </div>
 
-                        {/* Display the cards of amps */}
+                        {/* Display the cards of amps --------------------- */}
                         <section className = "display-item">
                             <AmpCards
                                 items = {this.state.items}
