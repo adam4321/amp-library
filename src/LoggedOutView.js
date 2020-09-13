@@ -12,12 +12,22 @@ import './media-query.css';
 const LoggedOutView = (props) => {
     return (
         <div className = "wrapper">
-            <p id = "logComment">
+            <p id="logComment">
                 You must be logged in to see the Amp Library and to
                 submit to it.
             </p>
-            <button className = "back-button" id = "back-button-out" onClick={() => window.history.back()}> Back </button>
-            <button className = "back-button" id = "back-button-out-mobile" onClick = {() => window.history.back()}> Back </button>
+            
+            <button className="back-button" id="back-button-out" onClick={() => window.history.back()}> Back </button>
+            <button className="back-button" id="back-button-out-mobile" onClick={() => window.history.back()}> Back </button>
+        
+            <a
+                id="gh-link" 
+                href="https://github.com/adam4321/amp-library" 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+                <div>Open GitHub repo in a new tab</div>
+            </a>
         </div>
     )
 }

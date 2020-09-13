@@ -54,6 +54,7 @@
     } 
   }
   
+
   /* Media query below 1200 px */
   
   @media only screen and (max-width: 1200px) {
@@ -89,12 +90,14 @@
     }
   
     #back-button-out-mobile {
-      left: 44vw;
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
       margin-top: 60px;
       width: 120px;
       height: 30px;
       background-color: #04536d;
-      position: absolute;
+      /* position: absolute; */
       border-radius: 11px;
       font-family: verdana;
       font-size: 18px;
@@ -276,17 +279,27 @@
     }
   
     #back-button-out-mobile {
-      left: 33vw;
+      /* left: 33vw; */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       margin-top: 60px;
       width: 120px;
       height: 30px;
       background-color  :#04536d;
-      position: absolute;
+      /* position: absolute; */
       border-radius: 11px;
       font-family: verdana;
       font-size: 18px;
       padding-top: 5px;
       box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+    }
+
+    #gh-link {
+        font-size: 20px;
+        padding-bottom: 10px;
+        width: 90%;
+        height: 100%;
     }
   
     #logComment {
