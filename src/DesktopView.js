@@ -11,78 +11,76 @@ import './media-query.css';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 
 
-class DesktopView extends React.Component {
-    render() {
-        return (
-            <div className = "ampAddBox">
+function DesktopView(props) {
+    return (
+        <div className = "ampAddBox">
 
-                <h3 id = "enterText">Enter a New Amp</h3>
+            <h3 id = "enterText">Enter a New Amp</h3>
 
-                <form id = "desktopForm" onSubmit = {this.props.handleSubmit}>
+            <form id = "desktopForm" onSubmit = {props.handleSubmit}>
 
-                    {/* Amp Type input field ------------------------------ */}
-                    <input
-                        className = "inputReqire"
-                        id = "ampNameField"
-                        type = "text"
-                        name = "currentItem"
-                        placeholder = "What is the Amp model?"
-                        onChange = {this.props.handleChange}
-                        value = {this.props.currentItem}
-                        required
-                    />
+                {/* Amp Type input field ------------------------------ */}
+                <input
+                    className = "inputReqire"
+                    id = "ampNameField"
+                    type = "text"
+                    name = "currentItem"
+                    placeholder = "What is the Amp model?"
+                    onChange = {props.handleChange}
+                    value = {props.currentItem}
+                    required
+                />
 
-                    {/* Upload the amp photo ------------------------------ */}
-                    <CustomUploadButton
-                        className = "ampImgButton"
-                        accept = "image/*"
-                        storageRef = {firebase.storage().ref('images')}
-                        onUploadStart = {this.props.handleUploadStart}
-                        onUploadError = {this.props.handleUploadError}
-                        onProgress = {this.props.handleProgress}
-                        handleImgUpload = {this.props.handleImgUpload}
-                        onUploadSuccess = {this.props.handleUploadSuccess}
-                    >
-                        Add a Photo of the Amp
-                    </CustomUploadButton>
+                {/* Upload the amp photo ------------------------------ */}
+                <CustomUploadButton
+                    className = "ampImgButton"
+                    accept = "image/*"
+                    storageRef = {firebase.storage().ref('images')}
+                    onUploadStart = {props.handleUploadStart}
+                    onUploadError = {props.handleUploadError}
+                    onProgress = {props.handleProgress}
+                    handleImgUpload = {props.handleImgUpload}
+                    onUploadSuccess = {props.handleUploadSuccess}
+                >
+                    Add a Photo of the Amp
+                </CustomUploadButton>
 
-                    {/* Amp Description input field ----------------------- */}
-                    <input
-                        className = "inputReqire"
-                        id = "descriptionField"
-                        type = "text"
-                        name = "ampDescription"
-                        placeholder = "Describe the Amplifier"
-                        onChange = {this.props.handleChange}
-                        value = {this.props.ampDescription}
-                        required
-                    />
+                {/* Amp Description input field ----------------------- */}
+                <input
+                    className = "inputReqire"
+                    id = "descriptionField"
+                    type = "text"
+                    name = "ampDescription"
+                    placeholder = "Describe the Amplifier"
+                    onChange = {props.handleChange}
+                    value = {props.ampDescription}
+                    required
+                />
 
-                    {/* Upload the amp schematic -------------------------- */}
-                    <CustomUploadButton
-                        className = "schematicButton"
-                        accept = "image/*"
-                        storageRef = {firebase.storage().ref('images')}
-                        onUploadStart = {this.props.handleUploadStart}
-                        onUploadError = {this.props.handleUploadError}
-                        onProgress = {this.props.handleProgress}
-                        handleImgUpload = {this.props.handleImgUpload}
-                        onUploadSuccess = {this.props.handleUploadSuccessSchematic}
-                    >
-                        Add the Amp's Schematic
-                    </CustomUploadButton>
+                {/* Upload the amp schematic -------------------------- */}
+                <CustomUploadButton
+                    className = "schematicButton"
+                    accept = "image/*"
+                    storageRef = {firebase.storage().ref('images')}
+                    onUploadStart = {props.handleUploadStart}
+                    onUploadError = {props.handleUploadError}
+                    onProgress = {props.handleProgress}
+                    handleImgUpload = {props.handleImgUpload}
+                    onUploadSuccess = {props.handleUploadSuccessSchematic}
+                >
+                    Add the Amp's Schematic
+                </CustomUploadButton>
 
-                    <button 
-                        className = "addButton"
-                        type = "submit"
-                    > 
-                        Add a new Amplifier 
-                    </button>
+                <button 
+                    className = "addButton"
+                    type = "submit"
+                > 
+                    Add a new Amplifier 
+                </button>
 
-                </form>
-            </div>
-        )
-    }
+            </form>
+        </div>
+    );
 }
 
 export default DesktopView;

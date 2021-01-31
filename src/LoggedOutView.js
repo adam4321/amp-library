@@ -10,7 +10,7 @@ import './App.css';
 import './media-query.css';
 
 
-const LoggedOutView = (props) => {
+const LoggedOutView = () => {
     return (
         <div className = "wrapper">
             <p id="logComment">
