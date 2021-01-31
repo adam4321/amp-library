@@ -11,34 +11,24 @@ import './App.css';
 import './media-query.css';
 
 
-class HeaderWrapper extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: null,
-            left: false
-        };
-    }
+function HeaderWrapper(props) {
+    return (
+        <div className="wrapper">
+            <h1>Amp Information Library</h1>
 
-    render() {
-        return (
-            <div className = "wrapper">
-                <h1>Amp Information Library</h1>
-
-                {this.props.user ? (
-                    <div>
-                        <button className = "logButton" onClick = {this.props.logout}> Log Out </button>
-                        <button id = "mobileMenu" onClick = {this.props.toggleDrawer('left', true)}> Enter a New Amp </button>
-                        <button className = "back-button" id="back-button-in" onClick={() => window.history.back()}> Back </button>   
-                    </div>
-                    ) : (
-                    <div>
-                        <button className = "logButton" onClick = {this.props.login}> Log In </button>
-                    </div>
-                )}
-            </div>
-        )
-    }
+            {props.user ? (
+                <div>
+                    <button className="logButton" onClick={props.logout}> Log Out </button>
+                    <button id="mobileMenu" onClick={props.toggleDrawer('left', true)}> Enter a New Amp </button>
+                    <button className="back-button" id="back-button-in" onClick={() => window.history.back()}> Back </button>   
+                </div>
+                ) : (
+                <div>
+                    <button className="logButton" onClick={props.login}> Log In </button>
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default HeaderWrapper;
