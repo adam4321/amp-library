@@ -12,37 +12,37 @@ import ModalImage from 'react-modal-image'
 
 function AmpCards(props) {
     return (
-        <div className = "wrapper">
+        <div className="wrapper">
             <ul>
 
                 {props.items.map(item => {
                     return (
-                        <li key = {item.id}>
+                        <li key={item.id}>
                             <h3>{item.title}</h3>
                             
                             <ModalImage
-                                className = "photo"
-                                alt = "Guitar amplifier"
-                                small = {item.photo}
-                                large = {item.photo}
+                                className="photo"
+                                alt="Guitar amplifier"
+                                small={item.photo}
+                                large={item.photo}
                             />
 
                             <p>{item.description}</p>
 
                             <ModalImage
-                                className = "schematic"
-                                alt = "Amp schematic"
-                                small = {item.layout}
-                                large = {item.layout}
+                                className="schematic"
+                                alt="Amp schematic"
+                                small={item.layout}
+                                large={item.layout}
                             />
                             
-                            <p id = "ampContributor">
+                            <p id="ampContributor">
                                 Contributed by{' '}
                                 {item.user}
                                 {item.user === props.user.displayName || item.user === props.user.email ? (
                                     <button
-                                        id = "removeButton"
-                                        onClick = {() => props.removeItem(item.id)}
+                                        id="removeButton"
+                                        onClick={() => props.removeItem(item.id)}
                                     >
                                         Remove Amplifier
                                     </button>

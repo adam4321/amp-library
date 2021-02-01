@@ -168,71 +168,71 @@ class App extends Component {
                 {/* Header with login and logout button ------------------- */}
                 <header>
                     <HeaderWrapper 
-                        user = {this.state.user}
-                        logout = {this.logout}
-                        login = {this.login}
-                        toggleDrawer = {this.toggleDrawer}
+                        user={this.state.user}
+                        logout={this.logout}
+                        login={this.login}
+                        toggleDrawer={this.toggleDrawer}
                     />
                 </header>
 
                 {/* If the user is logged in then display the library ----- */}
                 {this.state.user ? (
                     
-                    <div className = "container">
+                    <div className="container">
 
                         {/* Desktop Layout for Amp Entry */}
-                        <section className = "add-item">
+                        <section className="add-item">
                             <DesktopView 
-                                handleSubmit = {this.handleSubmit}
-                                handleChange = {this.handleChange}
-                                currentItem = {this.state.currentItem}
-                                ampDescription = {this.state.ampDescription}
-                                handleUploadStart = {this.handleUploadStart}
-                                handleUploadError = {this.handleUploadError}
-                                handleProgress = {this.handleProgress}
-                                handleImgUpload = {this.handleImgUpload}
-                                handleUploadSuccess = {this.handleUploadSuccess}
-                                handleUploadSuccessSchematic = {this.handleUploadSuccessSchematic}
+                                handleSubmit={this.handleSubmit}
+                                handleChange={this.handleChange}
+                                currentItem={this.state.currentItem}
+                                ampDescription={this.state.ampDescription}
+                                handleUploadStart={this.handleUploadStart}
+                                handleUploadError={this.handleUploadError}
+                                handleProgress={this.handleProgress}
+                                // handleImgUpload = {this.handleImgUpload}
+                                handleUploadSuccess={this.handleUploadSuccess}
+                                handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
                             />
                         </section>
 
                         {/* Mobile menu for Amp entry --------------------- */}
                         <section>
                             <MobileView
-                                handleSubmit = {this.handleSubmit}
-                                handleChange = {this.handleChange}
-                                currentItem = {this.state.currentItem}
-                                ampDescription = {this.state.ampDescription}
-                                handleUploadStart = {this.handleUploadStart}
-                                handleUploadError = {this.handleUploadError}
-                                handleProgress = {this.handleProgress}
-                                handleImgUpload = {this.handleImgUpload}
-                                handleUploadSuccess = {this.handleUploadSuccess}
-                                handleUploadSuccessSchematic = {this.handleUploadSuccessSchematic}
-                                user = {this.state.user}
-                                left = {this.state.left}
-                                toggleDrawer = {this.toggleDrawer}
+                                handleSubmit={this.handleSubmit}
+                                handleChange={this.handleChange}
+                                currentItem={this.state.currentItem}
+                                ampDescription={this.state.ampDescription}
+                                handleUploadStart={this.handleUploadStart}
+                                handleUploadError={this.handleUploadError}
+                                handleProgress={this.handleProgress}
+                                // handleImgUpload = {this.handleImgUpload}
+                                handleUploadSuccess={this.handleUploadSuccess}
+                                handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
+                                user={this.state.user}
+                                left={this.state.left}
+                                toggleDrawer={this.toggleDrawer}
                             />
                         </section>
 
                         {/* Display the user icon and name ---------------- */}
                         <div className = "user-profile">
                             <img
-                                id = "userIcon"
-                                alt = "user thumbnail"
-                                src = {this.state.user.photoURL}
+                                id="userIcon"
+                                alt="user thumbnail"
+                                src={this.state.user.photoURL}
                             />
-                            <h3 id = "userName">
+                            <h3 id="userName">
                                 {this.state.user.displayName || this.state.user.email}{' '}
                             </h3>
                         </div>
 
                         {/* Display the cards of amps --------------------- */}
-                        <section className = "display-item">
+                        <section className="display-item">
                             <AmpCards
-                                items = {this.state.items}
-                                user = {this.state.user}
-                                removeItem = {this.removeItem}
+                                items={this.state.items}
+                                user={this.state.user}
+                                removeItem={this.removeItem}
                             />
                         </section>
 

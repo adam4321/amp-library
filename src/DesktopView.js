@@ -13,67 +13,67 @@ import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadBut
 
 function DesktopView(props) {
     return (
-        <div className = "ampAddBox">
+        <div className="ampAddBox">
 
-            <h3 id = "enterText">Enter a New Amp</h3>
+            <h3 id="enterText">Enter a New Amp</h3>
 
-            <form id = "desktopForm" onSubmit = {props.handleSubmit}>
+            <form id="desktopForm" onSubmit={props.handleSubmit}>
 
                 {/* Amp Type input field ------------------------------ */}
                 <input
-                    className = "inputReqire"
-                    id = "ampNameField"
-                    type = "text"
-                    name = "currentItem"
-                    placeholder = "What is the Amp model?"
-                    onChange = {props.handleChange}
-                    value = {props.currentItem}
+                    className="inputReqire"
+                    id="ampNameField"
+                    type="text"
+                    name="currentItem"
+                    placeholder="What is the Amp model?"
+                    onChange={props.handleChange}
+                    value={props.currentItem}
                     required
                 />
 
                 {/* Upload the amp photo ------------------------------ */}
                 <CustomUploadButton
-                    className = "ampImgButton"
-                    accept = "image/*"
-                    storageRef = {firebase.storage().ref('images')}
-                    onUploadStart = {props.handleUploadStart}
-                    onUploadError = {props.handleUploadError}
-                    onProgress = {props.handleProgress}
-                    handleImgUpload = {props.handleImgUpload}
-                    onUploadSuccess = {props.handleUploadSuccess}
+                    className="ampImgButton"
+                    accept="image/*"
+                    storageRef={firebase.storage().ref('images')}
+                    onUploadStart={props.handleUploadStart}
+                    onUploadError={props.handleUploadError}
+                    onProgress={props.handleProgress}
+                    // handleImgUpload = {props.handleImgUpload}
+                    onUploadSuccess={props.handleUploadSuccess}
                 >
                     Add a Photo of the Amp
                 </CustomUploadButton>
 
                 {/* Amp Description input field ----------------------- */}
                 <input
-                    className = "inputReqire"
-                    id = "descriptionField"
-                    type = "text"
-                    name = "ampDescription"
-                    placeholder = "Describe the Amplifier"
-                    onChange = {props.handleChange}
-                    value = {props.ampDescription}
+                    className="inputReqire"
+                    id="descriptionField"
+                    type="text"
+                    name="ampDescription"
+                    placeholder="Describe the Amplifier"
+                    onChange={props.handleChange}
+                    value={props.ampDescription}
                     required
                 />
 
                 {/* Upload the amp schematic -------------------------- */}
                 <CustomUploadButton
-                    className = "schematicButton"
-                    accept = "image/*"
-                    storageRef = {firebase.storage().ref('images')}
-                    onUploadStart = {props.handleUploadStart}
-                    onUploadError = {props.handleUploadError}
-                    onProgress = {props.handleProgress}
-                    handleImgUpload = {props.handleImgUpload}
-                    onUploadSuccess = {props.handleUploadSuccessSchematic}
+                    className="schematicButton"
+                    accept="image/*"
+                    storageRef={firebase.storage().ref('images')}
+                    onUploadStart={props.handleUploadStart}
+                    onUploadError={props.handleUploadError}
+                    onProgress={props.handleProgress}
+                    // handleImgUpload = {props.handleImgUpload}
+                    onUploadSuccess={props.handleUploadSuccessSchematic}
                 >
                     Add the Amp's Schematic
                 </CustomUploadButton>
 
                 <button 
-                    className = "addButton"
-                    type = "submit"
+                    className="addButton"
+                    type="submit"
                 > 
                     Add a new Amplifier 
                 </button>

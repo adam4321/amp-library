@@ -15,104 +15,104 @@ import Divider from '@material-ui/core/Divider';
 
 function MobileView(props) {
     const sideList = (
-        <div className = "drawer">
+        <div className="drawer">
             <section>
-                <h3 id = "enterText">Enter a New Amp</h3>
+                <h3 id="enterText">Enter a New Amp</h3>
             </section>
         </div>
     );
 
     return (
         <>
-            <Drawer open = {props.left} onClose = {props.toggleDrawer('left', false)}>
+            <Drawer open={props.left} onClose={props.toggleDrawer('left', false)}>
                 <div
-                    tabIndex = {0}
-                    role = "button"
-                    onClick = {props.toggleDrawer('left', false)}
-                    onKeyDown = {props.toggleDrawer('left', false)}
-                    id = "drawerDiv"
+                    tabIndex={0}
+                    role="button"
+                    onClick={props.toggleDrawer('left', false)}
+                    onKeyDown={props.toggleDrawer('left', false)}
+                    id="drawerDiv"
                 >
                     {sideList}
                 </div>
 
                 <div>
-                    <h3 id = "mobileEnterText"> Enter a New Amp </h3>
+                    <h3 id="mobileEnterText"> Enter a New Amp </h3>
 
-                    <Divider id = "mobileDivide"/>
+                    <Divider id="mobileDivide"/>
 
-                    <form id="mobileForm" onSubmit = {props.handleSubmit}>
+                    <form id="mobileForm" onSubmit={props.handleSubmit}>
 
                         {/* Amp Type input field ---------------------- */}
                         <input
-                            className = "inputReqire"
-                            id = "mobileAmpNameField"
-                            type = "text"
-                            name = "currentItem"
-                            placeholder = "What is the Amp model?"
-                            onChange = {props.handleChange}
-                            value = {props.currentItem}
+                            className="inputReqire"
+                            id="mobileAmpNameField"
+                            type="text"
+                            name="currentItem"
+                            placeholder="What is the Amp model?"
+                            onChange={props.handleChange}
+                            value={props.currentItem}
                         />
 
                         {/* Upload the amp photo ---------------------- */}
                         <CustomUploadButton
-                            className = 'mobileAmpImgButton'
-                            accept = "image/*"
-                            storageRef = {firebase.storage().ref('images')}
-                            handleImgUpload = {props.handleImgUpload}
-                            onUploadStart = {props.handleUploadStart}
-                            onUploadError = {props.handleUploadError}
-                            onProgress = {props.handleProgress}
-                            onUploadSuccess = {props.handleUploadSuccess}
+                            className="mobileAmpImgButton"
+                            accept="image/*"
+                            storageRef={firebase.storage().ref('images')}
+                            // handleImgUpload = {props.handleImgUpload}
+                            onUploadStart={props.handleUploadStart}
+                            onUploadError={props.handleUploadError}
+                            onProgress={props.handleProgress}
+                            onUploadSuccess={props.handleUploadSuccess}
                         >
                             Add a Photo of the Amp
                         </CustomUploadButton>
 
                         {/* Amp Description input field --------------- */}
                         <input
-                            className = "inputReqire"
-                            id = "mobileDescriptionField"
-                            type = "text"
-                            name = "ampDescription"
-                            placeholder = "Describe the Amplifier"
-                            onChange = {props.handleChange}
-                            value = {props.ampDescription}
+                            className="inputReqire"
+                            id="mobileDescriptionField"
+                            type="text"
+                            name="ampDescription"
+                            placeholder="Describe the Amplifier"
+                            onChange={props.handleChange}
+                            value={props.ampDescription}
                         />
 
                         {/* Upload the amp schematic ------------------ */}
                         <CustomUploadButton
-                            className = 'mobileSchematicButton'
-                            accept = "image/*"
-                            storageRef = {firebase.storage().ref('images')}
-                            handleImgUpload = {props.handleImgUpload}
-                            onUploadStart = {props.handleUploadStart}
-                            onUploadError = {props.handleUploadError}
-                            onProgress = {props.handleProgress}
-                            onUploadSuccess = {props.handleUploadSuccessSchematic}
+                            className="mobileSchematicButton"
+                            accept="image/*"
+                            storageRef={firebase.storage().ref('images')}
+                            // handleImgUpload = {props.handleImgUpload}
+                            onUploadStart={props.handleUploadStart}
+                            onUploadError={props.handleUploadError}
+                            onProgress={props.handleProgress}
+                            onUploadSuccess={props.handleUploadSuccessSchematic}
                         >
                             Add the Amp's Schematic
                         </CustomUploadButton>
 
-                        <button className = "mobileAddButton" onClick={props.toggleDrawer('left', false)}> Add a new Amplifier </button>
+                        <button className="mobileAddButton" onClick={props.toggleDrawer('left', false)}> Add a new Amplifier </button>
                     </form>
                 </div>
 
-                <Divider id = "mobileDivide" />
+                <Divider id="mobileDivide" />
 
                 <button
-                    className = "back-button"
-                    id = "back-button-in-mobile"
-                    onClick = {() => window.history.back()}
+                    className="back-button"
+                    id="back-button-in-mobile"
+                    onClick={() => window.history.back()}
                 > 
                     Back 
                 </button>
 
                 <div className="mobile-user-profile">
                     <img
-                        id = "mobileUserIcon"
-                        alt = "user thumbnail"
-                        src = {props.user.photoURL}
+                        id="mobileUserIcon"
+                        alt="user thumbnail"
+                        src={props.user.photoURL}
                     />
-                    <h3 id = "mobileUserName"> {props.user.displayName || props.user.email}{' '} </h3>
+                    <h3 id="mobileUserName"> {props.user.displayName || props.user.email}{' '} </h3>
                 </div>
 
             </Drawer>

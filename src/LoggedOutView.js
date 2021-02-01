@@ -12,7 +12,7 @@ import './media-query.css';
 
 const LoggedOutView = () => {
     return (
-        <div className = "wrapper">
+        <div className="wrapper">
             <p id="logComment">
                 You must be logged in to see the Amp Library and to
                 submit to it.
