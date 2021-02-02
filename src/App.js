@@ -89,13 +89,13 @@ class App extends Component {
     }
 
     // Function to handle the form input fields
-    handleChange(e) {
-        this.setState({[e.target.name]: e.target.value});
+    handleChange(event) {
+        this.setState({[event.target.name]: event.target.value});
     }
 
     // Function to handle new amp submission
-    handleSubmit(e) {
-        e.preventDefault();
+    handleSubmit(event) {
+        event.preventDefault();
         const itemsRef = firebase.database().ref('items');
 
         const item = {
@@ -122,16 +122,16 @@ class App extends Component {
     }
 
     // Functions for uploading images to the database
-    handleImgUpload = event => this.setState({ username: event.target.value });
+    handleImgUpload = (event) => this.setState({ username: event.target.value });
     handleUploadStart = () => this.setState({ isUploading: true, progress: 0});
-    handleProgress = progress => this.setState({ progress });
-    handleUploadError = error => {
+    handleProgress = (progress) => this.setState({ progress });
+    handleUploadError = (error) => {
         this.setState({ isUploading: false });
         console.error(error);
     };
 
     // Function to change UI after image upload
-    handleUploadSuccess = filename => {
+    handleUploadSuccess = (filename) => {
         this.setState({ 
             ampImg: filename,
             progress: 100,
@@ -146,7 +146,7 @@ class App extends Component {
     };
 
     // Function for updating UI after schematic upload
-    handleUploadSuccessSchematic = filename => {
+    handleUploadSuccessSchematic = (filename) => {
         this.setState({
             schematic: filename,
             progress: 100,
@@ -190,7 +190,6 @@ class App extends Component {
                                 handleUploadStart={this.handleUploadStart}
                                 handleUploadError={this.handleUploadError}
                                 handleProgress={this.handleProgress}
-                                // handleImgUpload = {this.handleImgUpload}
                                 handleUploadSuccess={this.handleUploadSuccess}
                                 handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
                             />
@@ -206,7 +205,6 @@ class App extends Component {
                                 handleUploadStart={this.handleUploadStart}
                                 handleUploadError={this.handleUploadError}
                                 handleProgress={this.handleProgress}
-                                // handleImgUpload = {this.handleImgUpload}
                                 handleUploadSuccess={this.handleUploadSuccess}
                                 handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
                                 user={this.state.user}
