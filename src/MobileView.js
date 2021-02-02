@@ -51,6 +51,7 @@ function MobileView(props) {
                             placeholder="What is the Amp model?"
                             onChange={props.handleChange}
                             value={props.currentItem}
+                            required
                         />
 
                         {/* Upload the amp photo ---------------------- */}
@@ -58,7 +59,6 @@ function MobileView(props) {
                             className="mobileAmpImgButton"
                             accept="image/*"
                             storageRef={firebase.storage().ref('images')}
-                            // handleImgUpload = {props.handleImgUpload}
                             onUploadStart={props.handleUploadStart}
                             onUploadError={props.handleUploadError}
                             onProgress={props.handleProgress}
@@ -76,6 +76,7 @@ function MobileView(props) {
                             placeholder="Describe the Amplifier"
                             onChange={props.handleChange}
                             value={props.ampDescription}
+                            required
                         />
 
                         {/* Upload the amp schematic ------------------ */}
@@ -83,7 +84,6 @@ function MobileView(props) {
                             className="mobileSchematicButton"
                             accept="image/*"
                             storageRef={firebase.storage().ref('images')}
-                            // handleImgUpload = {props.handleImgUpload}
                             onUploadStart={props.handleUploadStart}
                             onUploadError={props.handleUploadError}
                             onProgress={props.handleProgress}
