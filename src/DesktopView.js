@@ -40,6 +40,7 @@ function DesktopView(props) {
                     onUploadError={props.handleUploadError}
                     onProgress={props.handleProgress}
                     onUploadSuccess={props.handleUploadSuccess}
+                    required
                 >
                     Add a Photo of the Amp
                 </CustomUploadButton>
@@ -65,6 +66,7 @@ function DesktopView(props) {
                     onUploadError={props.handleUploadError}
                     onProgress={props.handleProgress}
                     onUploadSuccess={props.handleUploadSuccessSchematic}
+                    required
                 >
                     Add the Amp's Schematic
                 </CustomUploadButton>
