@@ -84,6 +84,13 @@ header i {
     height: 100px;
 }
 
+#userIcon {
+    height: 60px;
+    position: fixed;
+    bottom: 40px;
+    left: 80px;
+}
+
 #userName {
     position: fixed;
     bottom: -40px;
