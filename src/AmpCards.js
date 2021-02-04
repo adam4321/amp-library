@@ -42,7 +42,7 @@ function AmpCards(props) {
                                 {item.user === props.user.displayName || item.user === props.user.email ? (
                                     <button
                                         id="removeButton"
-                                        onClick={() => props.removeItem(item.id)}
+                                        onClick={() => props.removeItem(item)}
                                     >
                                         Remove Amplifier
                                     </button>

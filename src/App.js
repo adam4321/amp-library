@@ -25,7 +25,7 @@ class App extends Component {
             left: false,
             username: '',
             currentItem: '',
-            description: '',
+            ampDescription: '',
             items: [],
             ampImg: '',
             schematic: '',
@@ -116,8 +116,14 @@ class App extends Component {
     }
 
     // Function For removing amps
-    removeItem(itemId) {
-        const itemRef = firebase.database().ref(`/items/${itemId}`);
+    removeItem(item) {
+        const schemRef = firebase.storage().refFromURL(item.layout);    // Firebase schematic record
+        const photoRef = firebase.storage().refFromURL(item.photo);     // Firebase amp photo record
+        const itemRef = firebase.database().ref(`/items/${item.id}`);   // Firebase db record
+        
+        // Remove the photo, schematic, and db record
+        schemRef.delete();
+        photoRef.delete();
         itemRef.remove();
     }
 
@@ -137,11 +143,7 @@ class App extends Component {
             progress: 100,
             isUploading: false 
         });
-        firebase
-            .storage()
-            .ref('images')
-            .child(filename)
-            .getDownloadURL()
+        firebase.storage().ref('images').child(filename).getDownloadURL()
             .then(url => this.setState({ampImgURL: url}));
     };
 
@@ -152,11 +154,7 @@ class App extends Component {
             progress: 100,
             isUploading: false
         });
-        firebase
-            .storage()
-            .ref('images')
-            .child(filename)
-            .getDownloadURL()
+        firebase.storage().ref('images').child(filename).getDownloadURL()
             .then(url => this.setState({schematicURL: url}));
     };
 
