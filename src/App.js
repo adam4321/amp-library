@@ -161,8 +161,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className = "app">
-
+            <>
                 {/* Header with login and logout button ------------------- */}
                 <header>
                     <HeaderWrapper 
@@ -178,7 +177,7 @@ class App extends Component {
                     
                     <div className="container">
 
-                        {/* Desktop Layout for Amp Entry */}
+                        {/* Desktop Layout for Amp Entry ------------------ */}
                         <section className="add-item">
                             <DesktopView 
                                 handleSubmit={this.handleSubmit}
@@ -235,10 +234,10 @@ class App extends Component {
                     </div>
                     
                 ) : (
-                    // Else user is not logged in, so display the logged out layout
+                    /* Else user is not logged in, so display the logged out layout */
                     <LoggedOutView />
                 )}
-            </div>
+            </>
         );
     }
 }
