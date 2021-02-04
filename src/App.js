@@ -115,7 +115,7 @@ class App extends Component {
         });
     }
 
-    // Function For removing amps
+    // Function For removing a user's stored amp
     removeItem(item) {
         const schemRef = firebase.storage().refFromURL(item.layout);    // Firebase schematic record
         const photoRef = firebase.storage().refFromURL(item.photo);     // Firebase amp photo record

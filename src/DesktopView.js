@@ -42,7 +42,7 @@ function DesktopView(props) {
                     onUploadSuccess={props.handleUploadSuccess}
                     required
                 >
-                    Add a Photo of the Amp
+                    Photo of the Amp
                 </CustomUploadButton>
 
                 {/* Amp Description input field ----------------------- */}
@@ -68,14 +68,14 @@ function DesktopView(props) {
                     onUploadSuccess={props.handleUploadSuccessSchematic}
                     required
                 >
-                    Add the Amp's Schematic
+                    Amp Schematic
                 </CustomUploadButton>
 
                 <button 
                     className="addButton"
                     type="submit"
                 > 
-                    Add a new Amplifier 
+                    Submit Amp 
                 </button>
 
             </form>

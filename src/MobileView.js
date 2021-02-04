@@ -64,7 +64,7 @@ function MobileView(props) {
                             onProgress={props.handleProgress}
                             onUploadSuccess={props.handleUploadSuccess}
                         >
-                            Add a Photo of the Amp
+                            Photo of the Amp
                         </CustomUploadButton>
 
                         {/* Amp Description input field --------------- */}
@@ -89,10 +89,16 @@ function MobileView(props) {
                             onProgress={props.handleProgress}
                             onUploadSuccess={props.handleUploadSuccessSchematic}
                         >
-                            Add the Amp's Schematic
+                            Amp Schematic
                         </CustomUploadButton>
 
-                        <button className="mobileAddButton" onClick={props.toggleDrawer('left', false)}> Add a new Amplifier </button>
+                        <button
+                            className="mobileAddButton" 
+                            onClick={props.toggleDrawer('left', false)}
+                        > 
+                            Submit Amp 
+                        </button>
+
                     </form>
                 </div>
 

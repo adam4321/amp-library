@@ -7,148 +7,30 @@ body {
     background-color: #fff;
 }
 
-#gh-link {
-    background-color: black;
-    color: white;
+button:hover {
+    cursor: pointer;
+    color: rgba(154, 182, 196, 0.582);
+    opacity: 0.7;
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+a {
+    text-decoration: none;
     text-align: center;
-    font-family: verdana;
-    font-size: 20px;
-    padding-top: 10px;
-    width: 350px;
-    margin-top: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 35px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
-    -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
-    box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
-}
-
-.wrapper {
-    margin: 0 auto;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 40px;
-    color: #fff;
-    background-color: #04536d;
-    padding: 33px 0 25px 15px;
-    -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
-    -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
-    box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
-}
-
-header .wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-
-header h1 {
-    font-size: 25px;
-    font-weight: 600;
-    letter-spacing: .004vw;
     display: inline-block;
-    margin: 0;
-    vertical-align: middle;
-    color: #fff;
-    margin-left: 5.5vw;
+    color: gold;
+    font-size:1.1vw;
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    text-decoration: none;
 }
 
-.fa {
-    font-size: 22px;
-    transform: translateY(50deg);  
-}
-
-header i {
-    vertical-align: middle;
-    margin-left: 12px;
-}
-
-#mobileMenu {
-    position: fixed;
-    margin-left: 9.5%;
-    top: 63px;
-    width: 90%;
-}
-
-.user-profile {
-    position: fixed;
-    bottom: 20px;
-    left: 40px;
-    width: 100px;
-    height: 100px;
-}
-
-#userIcon {
-    height: 60px;
-    position: fixed;
-    bottom: 40px;
-    left: 80px;
-}
-
-#userName {
-    position: fixed;
-    bottom: -40px;
-    left: 160px;
-    width: 200px;
-    height: 100px;
-}
-
-#mobileUserName {
-    position: fixed;
-    bottom: -40px;
-    left: 160px;
-    width: 200px;
-    height: 100px;
-}
-
-.user-profile img {
-    border-radius: 50%;
-    max-width: 100%;
-}
-
-#mobileDivide {
-    margin-top: 25px;
-    border: 1px solid;
-}
-
-
-/* Add Amplifier Boxes ----------------------------------------------------- */
-
-#enterText {
-    margin-top: -15px;
-    margin-bottom: 50px;
-    margin-left: 5vw;
-}
-
-#ampNameField {
-    display: block;
-    margin-bottom: 60px;
-}
-
-#descriptionField {
-    display: block;
-    margin-bottom: 40px;
-}
-
-.ampImgButton {
-    display: block;
-    margin-top: -45px;
-    margin-bottom: 40px;
-    margin-left: 15px;
-    width: 190px;
-    background-color: #142c3b44;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.ampImgButton:hover {
+a:hover {
     cursor: pointer;
     color: rgba(154, 182, 196, 0.582);
     opacity: 0.7;
@@ -156,136 +38,6 @@ header i {
     -moz-transition:  0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
-}
-
-.schematicButton {
-    display: block;
-    margin-top: -25px;
-    margin-left: 15px;
-    width: 190px;
-    background-color: #142c3b44;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.schematicButton:hover {
-    cursor: pointer;
-    color: rgba(154, 182, 196, 0.582);
-    opacity: 0.7;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-.invalid {
-    border:1px solid #ff0000
-}
-
-#drawerDiv {
-    width: 300px;
-    background-color: black;
-}
-
-#mobileEnterText {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    margin-left: 70px;
-}
-
-.mobileAmpImgButton {
-    display: block;
-    margin-top: -45px;
-    margin-bottom: 40px;
-    margin-left: 15px;
-    width:190px;
-    background-color: #142c3b44;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.mobileAmpImgButton:hover {
-    cursor: pointer;
-    color: rgba(154, 182, 196, 0.582);
-    opacity: 0.7;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-.mobileSchematicButton {
-    display: block;
-    margin-top: -25px;
-    margin-left: 15px;
-    width: 190px;
-    background-color: #142c3b44;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.mobileSchematicButton:hover {
-    cursor: pointer;
-    color: rgba(154, 182, 196, 0.582);
-    opacity: 0.7;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-#mobileAmpNameField {
-    display: block;
-    margin-bottom: 60px;
-    border-color: black;
-}
-
-#mobileDescriptionField {
-    display: block;
-    margin-bottom: 40px;
-}
-
-.addButton {
-    font-size: 17px;
-    height: 42px;
-    margin-top: 65px;
-    margin-left:.5vw;
-    width: 19vw;
-}
-
-.mobileAddButton {
-    font-size: 18px;
-    height: 40px;
-    margin-top: 65px;
-    margin-left: 20px;
-    width: 260px;
-}
-
-.mobileAmpNameField {
-    display: block;
-    margin-bottom: 60px;
-}
-
-
-
-.display-item {
-    width: 75%;
-    height: 10vw;
-    margin-left: 28vw;
-    margin-top: 90px;
-}
-
-#removeButton {
-    margin-bottom: 15px;
-    float: right;
-    height: 40px;
-}
-
-#ampContributor {
-    margin-left: 2%;
 }
 
 input {
@@ -357,6 +109,283 @@ button {
     padding: 10px 6px;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    background-color: #04536d;
+    padding: 33px 0 25px 15px;
+    -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+    -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
+    box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
+}
+
+header i {
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
+header h1 {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .004vw;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    color: #fff;
+    margin-left: 5.5vw;
+}
+
+
+
+/* Classes and Ids --------------------------------------------------------- */
+
+#gh-link {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+    padding-top: 10px;
+    width: 350px;
+    margin-top: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+    -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
+    box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa {
+    font-size: 22px;
+    transform: translateY(50deg);  
+}
+
+#mobileMenu {
+    position: fixed;
+    margin-left: 9.5%;
+    top: 63px;
+    width: 90%;
+}
+
+.user-profile {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    width: 100px;
+    height: 100px;
+}
+
+#userIcon {
+    height: 60px;
+    position: fixed;
+    bottom: 40px;
+    left: 80px;
+}
+
+#userName {
+    position: fixed;
+    bottom: -40px;
+    left: 160px;
+    width: 200px;
+    height: 100px;
+}
+
+#mobileUserName {
+    position: fixed;
+    bottom: -40px;
+    left: 160px;
+    width: 200px;
+    height: 100px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+#mobileDivide {
+    margin-top: 25px;
+    border: 1px solid;
+}
+
+
+/* Add Amplifier Boxes ----------------------------------------------------- */
+
+#enterText {
+    margin-top: -25px;
+    margin-bottom: 50px;
+    margin-left: 5vw;
+}
+
+#ampNameField {
+    display: block;
+    margin-bottom: 60px;
+}
+
+#descriptionField {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.ampImgButton {
+    display: block;
+    margin-top: -40px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    width: 140px;
+    background-color: #142c3b44;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.ampImgButton:hover {
+    cursor: pointer;
+    color: rgb(113, 128, 136);
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.schematicButton {
+    display: block;
+    margin-top: -20px;
+    margin-left: 20px;
+    width: 140px;
+    background-color: #142c3b44;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.schematicButton:hover {
+    cursor: pointer;
+    color: rgb(113, 128, 136);
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.invalid {
+    border:1px solid #ff0000
+}
+
+.MuiDrawer-paper {
+    width: 300px;
+}
+
+#mobileEnterText {
+    margin: 25px 0 25px 65px;
+}
+
+.mobileAmpImgButton {
+    display: block;
+    margin: -40px 0 40px 25px;
+    width: 140px;
+    background-color: #142c3b44;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.mobileAmpImgButton:hover {
+    cursor: pointer;
+    color: rgb(113, 128, 136);
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.mobileSchematicButton {
+    display: block;
+    margin: -20px 0 0 25px;
+    width: 140px;
+    background-color: #142c3b44;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.mobileSchematicButton:hover {
+    cursor: pointer;
+    color: rgb(113, 128, 136);
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+#mobileAmpNameField {
+    display: block;
+    width: 230px;
+    margin: 10px 0 60px 10px;
+    border: 1px solid rgba(24, 24, 24, 0.722);
+}
+
+#mobileDescriptionField {
+    display: block;
+    width: 230px;
+    margin: 10px 0 40px 10px;
+    border: 1px solid rgba(24, 24, 24, 0.722);
+}
+
+.addButton {
+    display: block;
+    font-size: 17px;
+    height: 40px;
+    margin: 65px auto 0 auto;
+    width: 50%;
+}
+
+.mobileAddButton {
+    font-size: 18px;
+    height: 40px;
+    margin-top: 65px;
+    margin-left: 20px;
+    width: 260px;
+}
+
+.mobileAmpNameField {
+    display: block;
+    margin-bottom: 60px;
+}
+
+
+.display-item {
+    width: 75%;
+    height: 10vw;
+    margin-left: 28vw;
+    margin-top: 90px;
+}
+
+#removeButton {
+    margin-bottom: 15px;
+    float: right;
+    height: 40px;
+}
+
+#ampContributor {
+    margin-left: 2%;
+}
+
 .logButton {
     background-color: #ffffffea;
     color: black;
@@ -424,37 +453,4 @@ button {
     -o-transition: 0.4s;
     transition: 0.4s;
     text-decoration: none;
-}
-
-button:hover {
-    cursor: pointer;
-    color: rgba(154, 182, 196, 0.582);
-    opacity: 0.7;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-a {
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    color: gold;
-    font-size:1.1vw;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-    text-decoration: none;
-}
-
-a:hover {
-    cursor: pointer;
-    color: rgba(154, 182, 196, 0.582);
-    opacity: 0.7;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
 }

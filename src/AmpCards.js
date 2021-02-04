@@ -44,7 +44,7 @@ function AmpCards(props) {
                                         id="removeButton"
                                         onClick={() => props.removeItem(item)}
                                     >
-                                        Remove Amplifier
+                                        Remove Amp
                                     </button>
                                 ) : null}
                             </p>
