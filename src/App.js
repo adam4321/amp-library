@@ -117,14 +117,18 @@ class App extends Component {
 
     // Function For removing a user's stored amp
     removeItem(item) {
-        const schemRef = firebase.storage().refFromURL(item.layout);    // Firebase schematic record
-        const photoRef = firebase.storage().refFromURL(item.photo);     // Firebase amp photo record
-        const itemRef = firebase.database().ref(`/items/${item.id}`);   // Firebase db record
-        
-        // Remove the photo, schematic, and db record
-        schemRef.delete();
-        photoRef.delete();
-        itemRef.remove();
+        let conf = window.confirm('You sure you want to delete it?');
+
+        if (conf === true) {
+            const schemRef = firebase.storage().refFromURL(item.layout);    // Firebase schematic record
+            const photoRef = firebase.storage().refFromURL(item.photo);     // Firebase amp photo record
+            const itemRef = firebase.database().ref(`/items/${item.id}`);   // Firebase db record
+            
+            // Remove the photo, schematic, and db record
+            schemRef.delete();
+            photoRef.delete();
+            itemRef.remove();
+        }
     }
 
     // Functions for uploading images to the database
