@@ -18,8 +18,11 @@ function AmpCards(props) {
                 {props.items.map(item => {
                     return (
                         <li key={item.id}>
+
+                            {/* Display the amp name */}
                             <h3>{item.title}</h3>
                             
+                            {/* Display modal of amplifier image */}
                             <ModalImage
                                 className="photo"
                                 alt="Guitar amplifier"
@@ -27,8 +30,10 @@ function AmpCards(props) {
                                 large={item.photo}
                             />
 
+                            {/* Display the amp description */}
                             <p>{item.description}</p>
 
+                            {/* Display modal of the amp schematic */}
                             <ModalImage
                                 className="schematic"
                                 alt="Amp schematic"
@@ -36,6 +41,7 @@ function AmpCards(props) {
                                 large={item.layout}
                             />
                             
+                            {/* Display contributor and a remove button for their contributions */}
                             <p id="ampContributor">
                                 Contributed by{' '}
                                 {item.user}
@@ -48,6 +54,7 @@ function AmpCards(props) {
                                     </button>
                                 ) : null}
                             </p>
+                            
                         </li>
                     );
                 })}
