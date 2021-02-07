@@ -19,16 +19,37 @@ function HeaderWrapper(props) {
 
             {props.user ? (
                 <div>
-                    <button className="logButton" onClick={props.logout}> Log Out </button>
 
+                    {/* Log out button */}
+                    <button 
+                        className="logButton" 
+                        onClick={props.logout}
+                    > 
+                        Log Out 
+                    </button>
+
+                    {/* Open mobile drawer */}
                     <div className="btnBackground">
-                        <button id="mobileMenu" onClick={props.toggleDrawer('left', true)}> Enter a New Amp </button>
+                        <button 
+                            id="mobileMenu" 
+                            onClick={props.toggleDrawer('left', true)}
+                        > 
+                            Enter a New Amp 
+                        </button>
                     </div>
                       
                 </div>
             ) : (
                 <div>
-                    <button className="logButton" onClick={props.login}> Log In </button>
+
+                    {/* Log in button */}
+                    <button 
+                        className="logButton" 
+                        onClick={props.login}
+                    > 
+                        Log In 
+                    </button>
+                    
                 </div>
             )}
 
