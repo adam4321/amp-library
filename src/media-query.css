@@ -23,23 +23,11 @@
     }
   
     #back-button-in-mobile {
-        left: 35%;
-        margin-top: 750px;
+        margin: 120px 0 0 80px;
         width: 120px;
         height: 28px;
-        position: absolute;
-        padding-top: 7px;
-        padding-bottom: 25px;
-    }
-  
-    #back-button-out-mobile {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 60px;
-        width: 120px;
-        height: 30px;
         padding-top: 5px;
+        padding-bottom: 27px;
     }
   
     #back-button-in {
@@ -129,33 +117,14 @@
   
     #mobileUserName {
         top: 530px;
-        left: 160px;
+        left: 140px;
         width: 200px;
         height: 100px;
     }
   
     #mobileUserIcon {
-        margin-top: 525px;
+        margin: 525px 0 0 25px;
         height: 60px;
-        margin-left: 45px;
-    }
-  
-    #back-button-in-mobile {
-        left: 32%;
-        margin-top: 635px;
-        width: 100px;
-        height:24px;
-        background-color: #04536d;
-        position: absolute;
-        border-radius: 11px;
-        font-family: verdana;
-        font-size: 17px;
-        padding-top: 5px;
-        box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
-    }
-  
-    #back-button-out {
-        display: none;
     }
 }
 
@@ -184,6 +153,10 @@
         margin-bottom: 30px;
         box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
     }
+
+    .logButton {
+        margin-right: 25px;
+    }
   
     #drawerDiv {
         width: 320px;
@@ -209,43 +182,18 @@
     }
   
     #mobileUserName {
-        top: 510px;
-        left: 160px;
+        top: 535px;
+        left: 140px;
         width: 200px;
         height: 100px;
     }
   
     #mobileUserIcon {
-        margin-top: 500px;
+        margin: 530px 0 0 25px;
     }
   
     #back-button-in-mobile {
-        left: 32%;
-        margin-top: 600px;
-        width: 100px;
-        height: 24px;
-        background-color: #04536d;
-        position: absolute;
-        border-radius: 11px;
-        font-family: verdana;
-        font-size: 17px;
-        padding-top: 5px;
-        box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
-    }
-  
-    #back-button-out-mobile {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 60px;
-        width: 120px;
-        height: 30px;
-        background-color  :#04536d;
-        border-radius: 11px;
-        font-family: verdana;
-        font-size: 18px;
-        padding-top: 5px;
-        box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+
     }
 
     #gh-link {

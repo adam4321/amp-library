@@ -464,21 +464,3 @@ header h1 {
     margin: 0 auto;
     padding-top: 35px;
 }
-
-#back-button-in-mobile {
-    left: 35%;
-    margin-top: 750px;
-    width: 120px;
-    height: 28px;
-    background-color: #04536d;
-    position: absolute;
-    border-radius: 11px;
-    font-family: verdana;
-    font-size: 18px;
-    padding-top: 7px;
-    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
-}
-
-#back-button-out-mobile {
-    display: none;
-} 
