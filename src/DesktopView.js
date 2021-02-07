@@ -71,6 +71,7 @@ function DesktopView(props) {
                     Amp Schematic
                 </CustomUploadButton>
 
+                {/* Submission button to manually trigger upload and rerender */}
                 <button 
                     className="addButton"
                     type="submit"
@@ -80,6 +81,7 @@ function DesktopView(props) {
 
             </form>
 
+            {/* Button to return to portfolio site */}
             <button 
                 className="back-button" 
                 id="back-button-in" 

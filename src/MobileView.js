@@ -92,6 +92,7 @@ function MobileView(props) {
                             Amp Schematic
                         </CustomUploadButton>
 
+                        {/* Submission button to manually trigger upload and rerender */}
                         <button
                             className="mobileAddButton" 
                             onClick={props.toggleDrawer('left', false)}
@@ -104,6 +105,7 @@ function MobileView(props) {
 
                 <Divider id="mobileDivide" />
 
+                {/* Button to return to portfolio site */}
                 <button
                     className="back-button"
                     id="back-button-in-mobile"
@@ -112,6 +114,7 @@ function MobileView(props) {
                     Back 
                 </button>
 
+                {/* Display the user icon and name ---------------- */}
                 <div className="mobile-user-profile">
                     <img
                         id="mobileUserIcon"
