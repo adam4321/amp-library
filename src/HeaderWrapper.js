@@ -13,20 +13,25 @@ import './media-query.css';
 
 function HeaderWrapper(props) {
     return (
-        <div className="wrapper">
+        <div className="titleWrapper">
+
             <h1>Amp Information Library</h1>
 
             {props.user ? (
                 <div>
                     <button className="logButton" onClick={props.logout}> Log Out </button>
-                    <button id="mobileMenu" onClick={props.toggleDrawer('left', true)}> Enter a New Amp </button>
-                    <button className="back-button" id="back-button-in" onClick={() => window.history.back()}> Back </button>   
+
+                    <div className="btnBackground">
+                        <button id="mobileMenu" onClick={props.toggleDrawer('left', true)}> Enter a New Amp </button>
+                    </div>
+                      
                 </div>
-                ) : (
+            ) : (
                 <div>
                     <button className="logButton" onClick={props.login}> Log In </button>
                 </div>
             )}
+
         </div>
     );
 }

@@ -13,11 +13,11 @@ import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadBut
 
 function DesktopView(props) {
     return (
-        <div className="ampAddBox">
+        <div className="desktopSidebar">
+                
+            <form className="ampForm" onSubmit={props.handleSubmit}>
 
-            <h3 id="enterText">Enter a New Amp</h3>
-
-            <form id="desktopForm" onSubmit={props.handleSubmit}>
+                <h3 id="enterText">Enter a New Amp</h3>
 
                 {/* Amp Type input field ------------------------------ */}
                 <input
@@ -79,6 +79,27 @@ function DesktopView(props) {
                 </button>
 
             </form>
+
+            <button 
+                className="back-button" 
+                id="back-button-in" 
+                onClick={() => window.history.back()}
+            > 
+                Back 
+            </button> 
+
+            {/* Display the user icon and name ---------------- */}
+            <div className = "user-profile">
+                <img
+                    id="userIcon"
+                    alt="user thumbnail"
+                    src={props.user.photoURL}
+                />
+                <h3 id="userName">
+                    {props.user.displayName || props.user.email}{' '}
+                </h3>
+            </div>
+
         </div>
     );
 }

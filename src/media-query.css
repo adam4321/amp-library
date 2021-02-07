@@ -3,62 +3,10 @@
 **                layouts
 ******************************************************************
 
-/* Media Query above 1200 px ----------------------------------------------- */
-
-@media only screen and (min-width: 1200px) {
-
-    #mobileMenu {
-        display: none;
-    }
-  
-    .add-item form {
-        width: 88%;
-    }
-  
-    .add-item {
-        position: fixed;
-        border-radius: 2px;
-        border-top: 3px solid #8371382d;
-        background-color: rgb(237, 237, 237);
-        padding: 60px 18px;
-        box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-        margin-top: 90px;
-        margin-bottom: 30px;  
-        width: 20%;
-        height: 400px;
-    }
-  
-    .container {
-        display: flex;
-        max-width: 92vw;
-        margin: 0 auto;
-        padding-top: 35px;
-    }
-  
-    #back-button-in-mobile {
-        left: 35%;
-        margin-top: 750px;
-        width: 120px;
-        height: 28px;
-        background-color: #04536d;
-        position: absolute;
-        border-radius: 11px;
-        font-family: verdana;
-        font-size: 18px;
-        padding-top: 7px;
-        box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
-    }
-  
-    #back-button-out-mobile {
-        display: none;
-    } 
-}
-  
 
 /* Media query below 1200 px --------------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
-
     .add-item {
         display: none;
     }
@@ -79,14 +27,9 @@
         margin-top: 750px;
         width: 120px;
         height: 28px;
-        background-color: #04536d;
         position: absolute;
-        border-radius: 11px;
-        font-family: verdana;
-        font-size: 18px;
         padding-top: 7px;
         padding-bottom: 25px;
-        box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
     }
   
     #back-button-out-mobile {
@@ -96,28 +39,42 @@
         margin-top: 60px;
         width: 120px;
         height: 30px;
-        background-color: #04536d;
-        border-radius: 11px;
-        font-family: verdana;
-        font-size: 18px;
         padding-top: 5px;
-        box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
     }
   
     #back-button-in {
         display: none;
     }
-  
-    #mobileMenu {
+
+    .btnBackground {
+        width: 100%;
+        background-color: #fff;
+        display: block;
         font-size: 16px;
         position: absolute;
-        margin-top: 43px;
-        left: -5.5vw;
+        margin-top: 30px;
+        left: 0vw;
+        height: 48px;
+    }
+  
+    #mobileMenu {
+        position: fixed;
+        margin-left: 9.5%;
+        top: 63px;
+        width: 91.5%;
+        display: block;
+        font-size: 16px;
+        /* position: absolute; */
+        margin: 43px 0 0 4%;
+        left: 0vw;
+    }
+
+    .wrapper {
+        margin: 0 0 0 0;
+        width: 100%;
     }
   
     .container {
-        display: flex;
-        margin: 0 auto;
         padding-top: 35px;
     }
   

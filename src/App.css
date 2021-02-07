@@ -135,7 +135,7 @@ header h1 {
     margin: 0;
     vertical-align: middle;
     color: #fff;
-    margin-left: 5.5vw;
+    margin-left: 3.5vw;
 }
 
 
@@ -150,10 +150,8 @@ header h1 {
     font-size: 20px;
     padding-top: 10px;
     width: 350px;
-    margin-top: 200px;
+    margin: 200px auto 0 auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     height: 35px;
     border-radius: 3px;
     -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
@@ -163,9 +161,10 @@ header h1 {
 
 .wrapper {
     margin: 0 auto;
+    width: 90%;
 }
 
-header .wrapper {
+.titleWrapper {
     display: flex;
     justify-content: space-between;
 }
@@ -176,10 +175,7 @@ header .wrapper {
 }
 
 #mobileMenu {
-    position: fixed;
-    margin-left: 9.5%;
-    top: 63px;
-    width: 90%;
+    display: none;
 }
 
 .user-profile {
@@ -191,16 +187,16 @@ header .wrapper {
 }
 
 #userIcon {
-    height: 60px;
+    height: 55px;
     position: fixed;
     bottom: 40px;
-    left: 80px;
+    left: 128px;
 }
 
 #userName {
     position: fixed;
     bottom: -40px;
-    left: 160px;
+    left: 200px;
     width: 200px;
     height: 100px;
 }
@@ -226,19 +222,45 @@ header .wrapper {
 
 /* Add Amplifier Boxes ----------------------------------------------------- */
 
+/* .add-item {
+    width: 100%;
+} */
+
+.desktopSidebar {
+    /* height: 100%; */
+    width: 100%;
+    margin-left: 50px;
+    float: left;
+}
+
+.ampForm {
+    /* position: fixed; */
+    /* position: relative; */
+    /* display: block; */
+    border-radius: 2px;
+    border-top: 3px solid #8371382d;
+    background-color: rgb(237, 237, 237);
+    padding: 60px 18px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+    margin: 90px 0 30px 10px;
+    width: 110%;
+    height: 400px;
+}
+
 #enterText {
-    margin-top: -25px;
-    margin-bottom: 50px;
-    margin-left: 5vw;
+    width: 160px;
+    margin: -25px auto 50px auto;
 }
 
 #ampNameField {
     display: block;
+    width: 85%;
     margin-bottom: 60px;
 }
 
 #descriptionField {
     display: block;
+    width: 85%;
     margin-bottom: 40px;
 }
 
@@ -352,7 +374,7 @@ header .wrapper {
     font-size: 17px;
     height: 40px;
     margin: 65px auto 0 auto;
-    width: 50%;
+    width: 90%;
 }
 
 .mobileAddButton {
@@ -370,9 +392,9 @@ header .wrapper {
 
 
 .display-item {
-    width: 75%;
+    /* width: 100%; */
     height: 10vw;
-    margin-left: 28vw;
+    margin-left: 10vw;
     margin-top: 90px;
 }
 
@@ -414,43 +436,66 @@ header .wrapper {
 
 #back-button-out {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
+    margin: 50px auto 0 auto;
     width: 120px;
     height: 30px;
-    background-color: #04536d;
-    border-radius: 11px;
-    font-family: verdana;
-    font-size: 18px;
     padding-top: 5px;
     padding-bottom: 26px;
-    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
 
 #back-button-in {
-    left: 10.5vw;
-    margin-top: 650px;
+    /* left: 25%; */
+    display: block;
+    margin: 65px auto 0 32%;
     width: 150px;
     height: 30px;
-    background-color: #04536d;
-    position: absolute;
-    border-radius: 11px;
-    font-family: verdana;
+    position: relative;
     padding-top: 5px;
     padding-bottom: 27px;
-    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+    
 }
 
 .back-button {
+    /* display: inline-block; */
     text-decoration: none;
     text-align: center;
-    display: inline-block;
+    background-color: #04536d;
     color: gold;
+    border-radius: 11px;
+    font-family: verdana;
     font-size: 18px;
     -webkit-transition: 0.4s;
     -moz-transition:  0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
-    text-decoration: none;
+    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
+
+
+
+
+
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 35px;
+}
+
+#back-button-in-mobile {
+    left: 35%;
+    margin-top: 750px;
+    width: 120px;
+    height: 28px;
+    background-color: #04536d;
+    position: absolute;
+    border-radius: 11px;
+    font-family: verdana;
+    font-size: 18px;
+    padding-top: 7px;
+    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+}
+
+#back-button-out-mobile {
+    display: none;
+} 

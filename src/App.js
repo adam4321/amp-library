@@ -193,6 +193,7 @@ class App extends Component {
                                 handleProgress={this.handleProgress}
                                 handleUploadSuccess={this.handleUploadSuccess}
                                 handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
+                                user={this.state.user}
                             />
                         </section>
 
@@ -213,18 +214,6 @@ class App extends Component {
                                 toggleDrawer={this.toggleDrawer}
                             />
                         </section>
-
-                        {/* Display the user icon and name ---------------- */}
-                        <div className = "user-profile">
-                            <img
-                                id="userIcon"
-                                alt="user thumbnail"
-                                src={this.state.user.photoURL}
-                            />
-                            <h3 id="userName">
-                                {this.state.user.displayName || this.state.user.email}{' '}
-                            </h3>
-                        </div>
 
                         {/* Display the cards of amps --------------------- */}
                         <section className="display-item">
