@@ -7,106 +7,10 @@ body {
     background-color: #fff;
 }
 
-button:hover {
-    cursor: pointer;
-    color: rgba(154, 182, 196, 0.582);
-    opacity: 0.7;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-a {
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    color: gold;
-    font-size:1.1vw;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-    text-decoration: none;
-}
-
-a:hover {
-    cursor: pointer;
-    color: rgba(154, 182, 196, 0.582);
-    opacity: 0.7;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-input {
-    font-size: 22px;
-    color: #000;
-    padding: 18px 22px;
-    font-size: 16px;
-    margin-bottom: 17px;
-    border: 0;
-    display: block;
-    width: 100%;  
-}
-
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    width: calc(50% - 50px);
-    list-style-type: none;
-    margin-right: 50px;
-    background-color: rgb(237, 237, 237);
-    color: #000;
-    margin-bottom: 30px;
-    box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-}
-
 h2 {
     padding: 0;
     margin: 0;
     font-weight: 400;
-}
-
-li h3 {
-    background-color: #0e4b5fb2;
-    margin: 0;
-    color: #fff;
-    font-weight: 300;
-    padding: 15px;
-}
-
-li p {
-    padding: 15px;
-}
-
-form button {
-    width: 95%;
-    margin-top: 10px;
-    margin-left: 25px;
-}
-
-input:required {
-    box-shadow:none;
-}
-
-button {
-    border-radius: 2px;
-    min-width: 88px;
-    background-color: #3f5080;
-    cursor: pointer;
-    border: 0;
-    min-width: 120px;
-    color: #fff;
-    font-size: 14px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-    padding: 10px 6px;
 }
 
 header {
@@ -138,11 +42,86 @@ header h1 {
     margin-left: 3.5vw;
 }
 
+input {
+    font-size: 22px;
+    color: #000;
+    padding: 18px 22px;
+    font-size: 16px;
+    margin-bottom: 17px;
+    border: 0;
+    display: block;
+    width: 100%;  
+}
+
+input:required {
+    box-shadow:none;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    width: calc(50% - 50px);
+    list-style-type: none;
+    margin-right: 50px;
+    background-color: rgb(237, 237, 237);
+    color: #000;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.14),
+                0 3px 3px -2px rgba(0,0,0,.12),
+                0 1px 8px 0 rgba(0,0,0,.2);
+}
+
+li h3 {
+    background-color: #0e4b5fb2;
+    margin: 0;
+    color: #fff;
+    font-weight: 300;
+    padding: 15px;
+}
+
+li p {
+    padding: 15px;
+}
+
+form button {
+    width: 95%;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+button {
+    border-radius: 2px;
+    min-width: 88px;
+    background-color: #3f5080;
+    cursor: pointer;
+    border: 0;
+    min-width: 120px;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    padding: 10px 6px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: rgba(154, 182, 196, 0.582);
+    opacity: 0.7;
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
 
 
-/* Classes and Ids --------------------------------------------------------- */
+/* Logged out component ---------------------------------------------------- */
 
 #gh-link {
+    text-decoration: none;
     background-color: black;
     color: white;
     text-align: center;
@@ -159,73 +138,23 @@ header h1 {
     box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
 }
 
-.wrapper {
-    margin: 0 auto;
-    width: 90%;
-}
-
-.titleWrapper {
-    display: flex;
-    justify-content: space-between;
-}
-
-.fa {
-    font-size: 22px;
-    transform: translateY(50deg);  
-}
-
-#mobileMenu {
-    display: none;
-}
-
-.user-profile {
-    position: fixed;
-    bottom: 20px;
-    left: 40px;
-    width: 100px;
-    height: 100px;
-}
-
-#userIcon {
-    height: 55px;
-    position: fixed;
-    bottom: 40px;
-    left: 128px;
-}
-
-#userName {
-    position: fixed;
-    bottom: -40px;
-    left: 200px;
-    width: 200px;
-    height: 100px;
-}
-
-#mobileUserName {
-    position: fixed;
-    bottom: -40px;
-    left: 160px;
-    width: 200px;
-    height: 100px;
-}
-
-.user-profile img {
-    border-radius: 50%;
-    max-width: 100%;
-}
-
-#mobileDivide {
-    margin-top: 25px;
-    border: 1px solid;
+#gh-link:hover {
+    color: rgba(154, 182, 196, 0.582);
+    opacity: 0.7;
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
 }
 
 
-/* Add Amplifier Boxes ----------------------------------------------------- */
+/* Desktop Add Amplifier Form ---------------------------------------------- */
 
 .desktopSidebar {
-    width: 100%;
+    width: 275px;
     margin-left: 50px;
-    float: left;
+    display: block;
+    position: fixed;
 }
 
 .ampForm {
@@ -301,66 +230,6 @@ header h1 {
     border:1px solid #ff0000
 }
 
-.MuiDrawer-paper {
-    width: 300px;
-}
-
-#mobileEnterText {
-    margin: 25px 0 25px 65px;
-}
-
-.mobileAmpImgButton {
-    display: block;
-    margin: -40px 0 40px 25px;
-    width: 140px;
-    background-color: #142c3b44;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 2px;
-}
-
-.mobileAmpImgButton:hover {
-    cursor: pointer;
-    color: rgb(113, 128, 136);
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-.mobileSchematicButton {
-    display: block;
-    margin: -20px 0 0 25px;
-    width: 140px;
-    background-color: #142c3b44;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 2px;
-}
-
-.mobileSchematicButton:hover {
-    cursor: pointer;
-    color: rgb(113, 128, 136);
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-#mobileAmpNameField {
-    display: block;
-    width: 230px;
-    margin: 10px 0 60px 10px;
-    border: 1px solid rgba(24, 24, 24, 0.722);
-}
-
-#mobileDescriptionField {
-    display: block;
-    width: 230px;
-    margin: 10px 0 40px 10px;
-    border: 1px solid rgba(24, 24, 24, 0.722);
-}
-
 .addButton {
     display: block;
     font-size: 17px;
@@ -369,17 +238,97 @@ header h1 {
     width: 90%;
 }
 
-.mobileAddButton {
+.back-button {
+    text-decoration: none;
+    text-align: center;
+    background-color: #04536d;
+    color: gold;
+    border-radius: 11px;
+    font-family: verdana;
     font-size: 18px;
-    height: 40px;
-    margin-top: 65px;
-    margin-left: 20px;
-    width: 260px;
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
 }
 
-.mobileAmpNameField {
+#back-button-out {
     display: block;
-    margin-bottom: 60px;
+    margin: 50px auto 0 auto;
+    width: 120px;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 26px;
+}
+
+#back-button-in {
+    display: block;
+    margin: 65px auto 0 100px;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 27px;
+}
+
+#userIcon {
+    height: 55px;
+    position: fixed;
+    bottom: 40px;
+    left: 142px;
+}
+
+#userName {
+    position: fixed;
+    bottom: -40px;
+    left: 213px;
+    width: 200px;
+    height: 100px;
+}
+
+.user-profile {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    width: 100px;
+    height: 100px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+
+/* Desktop Amp Cards ------------------------------------------------------- */
+
+#mobileMenu {
+    display: none;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 35px;
+}
+
+.wrapper {
+    position: relative;
+    margin: 0 auto 0 225px;
+    width: 73%;
+    left: 9%;
+    z-index: -1;
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa {
+    font-size: 22px;
+    transform: translateY(50deg);  
 }
 
 .display-item {
@@ -422,45 +371,4 @@ header h1 {
     width: 23vw;
     padding-top: 1vw;
     margin-left: 20px;
-}
-
-#back-button-out {
-    display: block;
-    margin: 50px auto 0 auto;
-    width: 120px;
-    height: 30px;
-    padding-top: 5px;
-    padding-bottom: 26px;
-}
-
-#back-button-in {
-    display: block;
-    margin: 65px auto 0 32%;
-    width: 150px;
-    height: 30px;
-    position: relative;
-    padding-top: 5px;
-    padding-bottom: 27px;
-    
-}
-
-.back-button {
-    text-decoration: none;
-    text-align: center;
-    background-color: #04536d;
-    color: gold;
-    border-radius: 11px;
-    font-family: verdana;
-    font-size: 18px;
-    -webkit-transition: 0.4s;
-    -moz-transition:  0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-    box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
-}
-
-.container {
-    display: flex;
-    margin: 0 auto;
-    padding-top: 35px;
 }

@@ -7,12 +7,12 @@
 
 import React from 'react';
 import './App.css';
-import './media-query.css';
+import './mobileStyles.css';
 
 
 const LoggedOutView = () => {
     return (
-        <div className="wrapper">
+        <>
 
             <p id="logComment">
                 You must be logged in to see the Amp Library and to
@@ -38,7 +38,7 @@ const LoggedOutView = () => {
                 <div>Open GitHub repo in a new tab</div>
             </a>
             
-        </div>
+        </>
     )
 }
 

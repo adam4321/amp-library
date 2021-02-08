@@ -7,7 +7,7 @@
 import React from 'react';
 import firebase from './firebase.js';
 import './App.css';
-import './media-query.css';
+import './mobileStyles.css';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 
 
@@ -71,7 +71,7 @@ function DesktopView(props) {
                     Amp Schematic
                 </CustomUploadButton>
 
-                {/* Submission button to manually trigger upload and rerender */}
+                {/* Submission button to manually trigger upload and */}
                 <button 
                     className="addButton"
                     type="submit"

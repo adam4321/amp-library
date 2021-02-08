@@ -6,7 +6,7 @@
 
 import React from 'react';
 import './App.css';
-import './media-query.css';
+import './mobileStyles.css';
 import ModalImage from 'react-modal-image'
 
 
@@ -54,7 +54,7 @@ function AmpCards(props) {
                                     </button>
                                 ) : null}
                             </p>
-                            
+
                         </li>
                     );
                 })}

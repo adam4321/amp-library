@@ -1,7 +1,96 @@
 /*****************************************************************
 **  Description:  Css file for media queries for mobile responsive
 **                layouts
-******************************************************************
+*****************************************************************/
+
+
+/* Mobile only css styles -------------------------------------------------- */
+
+.MuiDrawer-paper {
+    width: 300px;
+}
+
+#mobileEnterText {
+    margin: 25px 0 25px 65px;
+}
+
+.mobileAmpImgButton {
+    display: block;
+    margin: -40px 0 40px 25px;
+    width: 140px;
+    background-color: #142c3b44;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.mobileAmpImgButton:hover {
+    cursor: pointer;
+    color: rgb(113, 128, 136);
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.mobileSchematicButton {
+    display: block;
+    margin: -20px 0 0 25px;
+    width: 140px;
+    background-color: #142c3b44;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.mobileSchematicButton:hover {
+    cursor: pointer;
+    color: rgb(113, 128, 136);
+    -webkit-transition: 0.4s;
+    -moz-transition:  0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+#mobileAmpNameField {
+    display: block;
+    width: 230px;
+    margin: 10px 0 60px 10px;
+    border: 1px solid rgba(24, 24, 24, 0.722);
+}
+
+#mobileDescriptionField {
+    display: block;
+    width: 230px;
+    margin: 10px 0 40px 10px;
+    border: 1px solid rgba(24, 24, 24, 0.722);
+}
+
+#mobileUserName {
+    position: fixed;
+    bottom: -40px;
+    left: 160px;
+    width: 200px;
+    height: 100px;
+}
+
+#mobileDivide {
+    margin-top: 25px;
+    border: 1px solid;
+}
+
+.mobileAddButton {
+    font-size: 18px;
+    height: 40px;
+    margin-top: 65px;
+    margin-left: 20px;
+    width: 260px;
+}
+
+.mobileAmpNameField {
+    display: block;
+    margin-bottom: 60px;
+}
 
 
 /* Media query below 1200 px --------------------------------------------- */
@@ -57,6 +146,7 @@
     }
 
     .wrapper {
+        position: static;
         margin: 0 0 0 0;
         width: 100%;
     }
@@ -190,10 +280,6 @@
   
     #mobileUserIcon {
         margin: 530px 0 0 25px;
-    }
-  
-    #back-button-in-mobile {
-
     }
 
     #gh-link {

@@ -8,7 +8,7 @@
 
 import React from 'react';
 import './App.css';
-import './media-query.css';
+import './mobileStyles.css';
 
 
 function HeaderWrapper(props) {
