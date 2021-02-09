@@ -117,6 +117,10 @@ button:hover {
     transition: 0.4s;
 }
 
+.headerWrapper {
+    z-index: 1;
+}
+
 
 /* Logged out component ---------------------------------------------------- */
 
@@ -308,6 +312,7 @@ button:hover {
 }
 
 .container {
+    position: absolute;
     display: flex;
     margin: 0 auto;
     padding-top: 35px;
@@ -318,12 +323,13 @@ button:hover {
     margin: 0 auto 0 225px;
     width: 73%;
     left: 9%;
-    z-index: -1;
 }
 
 .titleWrapper {
     display: flex;
+    position: relative;
     justify-content: space-between;
+    z-index: 5;
 }
 
 .fa {
@@ -332,9 +338,10 @@ button:hover {
 }
 
 .display-item {
-    height: 10vw;
+    height: 0;
     margin-left: 10vw;
     margin-top: 90px;
+    position: relative;
 }
 
 #removeButton {
