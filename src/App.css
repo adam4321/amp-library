@@ -5,6 +5,8 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #fff;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h2 {
@@ -320,8 +322,8 @@ button:hover {
 
 .wrapper {
     position: relative;
-    margin: 0 auto 0 225px;
-    width: 73%;
+    margin: 0 auto 0 220px;
+    width: 72.5%;
     left: 9%;
 }
 
