@@ -20,19 +20,22 @@ import AmpCards from './AmpCards.js';
 class App extends Component {
     constructor(props) {
         super(props);
+
+        this.ampRef = React.createRef();
+        this.schemRef = React.createRef();
+
         this.state = {
-            user: null,
-            left: false,
-            username: '',
-            currentItem: '',
-            ampDescription: '',
-            items: [],
-            ampImg: '',
-            schematic: '',
-            ampImgURL: '',
-            schematicURL: '',
-            isUploading: false,
-            progress: 0
+            user: null,             // Firebase user object (setting to null logs user out)
+            left: false,            // State of the mobile drawer (slides in from the left)
+            currentItem: '',        // Name of the amp
+            ampDescription: '',     // Description of the amp
+            items: [],              // Array of amp information objects
+            ampImg: '',             // Client-side amp image file name
+            schematic: '',          // Client-side schematic image file name
+            ampImgURL: '',          // Url to currently uploaded amp img in Firebase filestore
+            schematicURL: '',       // Url to currently uploaded schematic img in Firebase filestore
+            isUploading: false,     // State of current upload to Firebase filestore
+            progress: 0             // Progress of current upload to Firebase filestore
         };
         
         this.handleChange = this.handleChange.bind(this);
@@ -70,10 +73,13 @@ class App extends Component {
                 this.setState({user});
             }
         });
+
         const itemsRef = firebase.database().ref('items');
+
         itemsRef.on('value', snapshot => {
             let items = snapshot.val();
             let newState = [];
+
             for (let item in items) {
                 newState.push({
                     id: item,
@@ -84,6 +90,7 @@ class App extends Component {
                     layout: items[item].layout
                 });
             }
+
             this.setState({items: newState});
         });
     }
@@ -92,6 +99,38 @@ class App extends Component {
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
     }
+
+    // Functions for uploading images to the database
+    handleUploadStart = () => this.setState({ isUploading: true, progress: 0});
+    handleProgress = (progress) => this.setState({ progress });
+    handleUploadError = (error) => {
+        this.setState({ isUploading: false });
+        console.error(error);
+    };
+
+    // Function to change UI after image upload
+    handleUploadSuccess = (filename) => {
+        this.setState({ 
+            ampImg: filename,
+            progress: 100,
+            isUploading: false 
+        });
+
+        firebase.storage().ref('images').child(filename).getDownloadURL()
+            .then(url => this.setState({ampImgURL: url}));
+    };
+
+    // Function for updating UI after schematic upload
+    handleUploadSuccessSchematic = (filename) => {
+        this.setState({
+            schematic: filename,
+            progress: 100,
+            isUploading: false
+        });
+
+        firebase.storage().ref('images').child(filename).getDownloadURL()
+            .then(url => this.setState({schematicURL: url}));
+    };
 
     // Function to handle new amp submission
     handleSubmit(event) {
@@ -105,7 +144,9 @@ class App extends Component {
             photo: this.state.ampImgURL,
             layout: this.state.schematicURL
         };
+
         itemsRef.push(item);
+
         this.setState({
             currentItem: '',
             username: '',
@@ -131,43 +172,12 @@ class App extends Component {
         }
     }
 
-    // Functions for uploading images to the database
-    handleImgUpload = (event) => this.setState({ username: event.target.value });
-    handleUploadStart = () => this.setState({ isUploading: true, progress: 0});
-    handleProgress = (progress) => this.setState({ progress });
-    handleUploadError = (error) => {
-        this.setState({ isUploading: false });
-        console.error(error);
-    };
-
-    // Function to change UI after image upload
-    handleUploadSuccess = (filename) => {
-        this.setState({ 
-            ampImg: filename,
-            progress: 100,
-            isUploading: false 
-        });
-        firebase.storage().ref('images').child(filename).getDownloadURL()
-            .then(url => this.setState({ampImgURL: url}));
-    };
-
-    // Function for updating UI after schematic upload
-    handleUploadSuccessSchematic = (filename) => {
-        this.setState({
-            schematic: filename,
-            progress: 100,
-            isUploading: false
-        });
-        firebase.storage().ref('images').child(filename).getDownloadURL()
-            .then(url => this.setState({schematicURL: url}));
-    };
-
-
+    
     render() {
         return (
             <>
                 {/* Header with login and logout button ------------------- */}
-                <header>
+                <header className="headerWrapper">
                     <HeaderWrapper 
                         user={this.state.user}
                         logout={this.logout}
@@ -183,35 +193,40 @@ class App extends Component {
 
                         {/* Desktop Layout for Amp Entry ------------------ */}
                         <section className="add-item">
-                            <DesktopView 
-                                handleSubmit={this.handleSubmit}
-                                handleChange={this.handleChange}
+                            <DesktopView
+                                user={this.state.user}
                                 currentItem={this.state.currentItem}
                                 ampDescription={this.state.ampDescription}
+                                ampImg={this.state.ampImg}
+                                schemImg={this.state.schematic}
+                                handleSubmit={this.handleSubmit}
+                                handleChange={this.handleChange}
                                 handleUploadStart={this.handleUploadStart}
                                 handleUploadError={this.handleUploadError}
                                 handleProgress={this.handleProgress}
                                 handleUploadSuccess={this.handleUploadSuccess}
                                 handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
-                                user={this.state.user}
+                                
                             />
                         </section>
 
                         {/* Mobile menu for Amp entry --------------------- */}
                         <section>
                             <MobileView
-                                handleSubmit={this.handleSubmit}
-                                handleChange={this.handleChange}
+                                user={this.state.user}
                                 currentItem={this.state.currentItem}
                                 ampDescription={this.state.ampDescription}
+                                left={this.state.left}
+                                toggleDrawer={this.toggleDrawer}
+                                handleSubmit={this.handleSubmit}
+                                handleChange={this.handleChange}
                                 handleUploadStart={this.handleUploadStart}
                                 handleUploadError={this.handleUploadError}
                                 handleProgress={this.handleProgress}
                                 handleUploadSuccess={this.handleUploadSuccess}
                                 handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
-                                user={this.state.user}
-                                left={this.state.left}
-                                toggleDrawer={this.toggleDrawer}
+                                
+
                             />
                         </section>
 

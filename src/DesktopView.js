@@ -12,6 +12,7 @@ import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadBut
 
 
 function DesktopView(props) {
+
     return (
         <div className="desktopSidebar">
                 
@@ -23,24 +24,24 @@ function DesktopView(props) {
                 <input
                     className="inputReqire"
                     id="ampNameField"
+                    required
                     type="text"
                     name="currentItem"
                     placeholder="What is the Amp model?"
                     onChange={props.handleChange}
                     value={props.currentItem}
-                    required
                 />
 
                 {/* Upload the amp photo ------------------------------ */}
                 <CustomUploadButton
                     className="ampImgButton"
+                    required
                     accept="image/*"
                     storageRef={firebase.storage().ref('images')}
                     onUploadStart={props.handleUploadStart}
                     onUploadError={props.handleUploadError}
                     onProgress={props.handleProgress}
                     onUploadSuccess={props.handleUploadSuccess}
-                    required
                 >
                     Photo of the Amp
                 </CustomUploadButton>
@@ -49,29 +50,29 @@ function DesktopView(props) {
                 <input
                     className="inputReqire"
                     id="descriptionField"
+                    required
                     type="text"
                     name="ampDescription"
                     placeholder="Describe the Amplifier"
                     onChange={props.handleChange}
                     value={props.ampDescription}
-                    required
                 />
 
                 {/* Upload the amp schematic -------------------------- */}
                 <CustomUploadButton
                     className="schematicButton"
+                    required
                     accept="image/*"
                     storageRef={firebase.storage().ref('images')}
                     onUploadStart={props.handleUploadStart}
                     onUploadError={props.handleUploadError}
                     onProgress={props.handleProgress}
                     onUploadSuccess={props.handleUploadSuccessSchematic}
-                    required
                 >
                     Amp Schematic
                 </CustomUploadButton>
 
-                {/* Submission button to manually trigger upload and */}
+                {/* Submission button to manually trigger img upload and save record to db */}
                 <button 
                     className="addButton"
                     type="submit"

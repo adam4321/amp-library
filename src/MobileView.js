@@ -14,6 +14,7 @@ import Divider from '@material-ui/core/Divider';
 
 
 function MobileView(props) {
+    
     const sideList = (
         <div className="drawer">
             <section>
