@@ -21,25 +21,12 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.ampRef = React.createRef();
-        this.schemRef = React.createRef();
-
         this.state = {
             user: null,             // Firebase user object (setting to null logs user out)
             left: false,            // State of the mobile drawer (slides in from the left)
-            currentItem: '',        // Name of the amp
-            ampDescription: '',     // Description of the amp
             items: [],              // Array of amp information objects
-            ampImg: '',             // Client-side amp image file name
-            schematic: '',          // Client-side schematic image file name
-            ampImgURL: '',          // Url to currently uploaded amp img in Firebase filestore
-            schematicURL: '',       // Url to currently uploaded schematic img in Firebase filestore
-            isUploading: false,     // State of current upload to Firebase filestore
-            progress: 0             // Progress of current upload to Firebase filestore
         };
         
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
     }
@@ -95,67 +82,6 @@ class App extends Component {
         });
     }
 
-    // Function to handle the form input fields
-    handleChange(event) {
-        this.setState({[event.target.name]: event.target.value});
-    }
-
-    // Functions for uploading images to the database
-    handleUploadStart = () => this.setState({ isUploading: true, progress: 0});
-    handleProgress = (progress) => this.setState({ progress });
-    handleUploadError = (error) => {
-        this.setState({ isUploading: false });
-        console.error(error);
-    };
-
-    // Function to change UI after image upload
-    handleUploadSuccess = (filename) => {
-        this.setState({ 
-            ampImg: filename,
-            progress: 100,
-            isUploading: false 
-        });
-
-        firebase.storage().ref('images').child(filename).getDownloadURL()
-            .then(url => this.setState({ampImgURL: url}));
-    };
-
-    // Function for updating UI after schematic upload
-    handleUploadSuccessSchematic = (filename) => {
-        this.setState({
-            schematic: filename,
-            progress: 100,
-            isUploading: false
-        });
-
-        firebase.storage().ref('images').child(filename).getDownloadURL()
-            .then(url => this.setState({schematicURL: url}));
-    };
-
-    // Function to handle new amp submission
-    handleSubmit(event) {
-        event.preventDefault();
-        const itemsRef = firebase.database().ref('items');
-
-        const item = {
-            title: this.state.currentItem,
-            user: this.state.user.displayName || this.state.user.email,
-            description: this.state.ampDescription,
-            photo: this.state.ampImgURL,
-            layout: this.state.schematicURL
-        };
-
-        itemsRef.push(item);
-
-        this.setState({
-            currentItem: '',
-            username: '',
-            ampDescription: '',
-            photo: '',
-            layout: ''
-        });
-    }
-
     // Function For removing a user's stored amp
     removeItem(item) {
         let conf = window.confirm('You sure you want to delete it?');
@@ -166,14 +92,19 @@ class App extends Component {
             const itemRef = firebase.database().ref(`/items/${item.id}`);   // Firebase db record
             
             // Remove the photo, schematic, and db record
-            schemRef.delete();
-            photoRef.delete();
-            itemRef.remove();
+            try {
+                schemRef.delete();
+                photoRef.delete();
+                itemRef.remove();
+            }
+            catch {
+                console.error(`Error in removing this amp record - ${item.id}`);
+            }
         }
     }
 
-    
     render() {
+        
         return (
             <>
                 {/* Header with login and logout button ------------------- */}
@@ -195,18 +126,6 @@ class App extends Component {
                         <section className="add-item">
                             <DesktopView
                                 user={this.state.user}
-                                currentItem={this.state.currentItem}
-                                ampDescription={this.state.ampDescription}
-                                ampImg={this.state.ampImg}
-                                schemImg={this.state.schematic}
-                                handleSubmit={this.handleSubmit}
-                                handleChange={this.handleChange}
-                                handleUploadStart={this.handleUploadStart}
-                                handleUploadError={this.handleUploadError}
-                                handleProgress={this.handleProgress}
-                                handleUploadSuccess={this.handleUploadSuccess}
-                                handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
-                                
                             />
                         </section>
 
@@ -214,19 +133,8 @@ class App extends Component {
                         <section>
                             <MobileView
                                 user={this.state.user}
-                                currentItem={this.state.currentItem}
-                                ampDescription={this.state.ampDescription}
                                 left={this.state.left}
                                 toggleDrawer={this.toggleDrawer}
-                                handleSubmit={this.handleSubmit}
-                                handleChange={this.handleChange}
-                                handleUploadStart={this.handleUploadStart}
-                                handleUploadError={this.handleUploadError}
-                                handleProgress={this.handleProgress}
-                                handleUploadSuccess={this.handleUploadSuccess}
-                                handleUploadSuccessSchematic={this.handleUploadSuccessSchematic}
-                                
-
                             />
                         </section>
 
