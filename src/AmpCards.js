@@ -11,6 +11,7 @@ import ModalImage from 'react-modal-image'
 
 
 function AmpCards(props) {
+    
     return (
         <div className="wrapper">
             <ul>
