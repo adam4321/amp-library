@@ -70,6 +70,7 @@ class App extends Component {
             for (let item in items) {
                 newState.push({
                     id: item,
+                    userId: items[item].userId,
                     title: items[item].title,
                     user: items[item].user,
                     description: items[item].description,
@@ -78,6 +79,8 @@ class App extends Component {
                 });
             }
 
+            // Store the current amps with newest records first
+            newState.reverse();
             this.setState({items: newState});
         });
     }

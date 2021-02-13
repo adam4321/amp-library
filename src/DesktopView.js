@@ -10,6 +10,7 @@ import './App.css';
 import './mobileStyles.css';
 import FileUploader from 'react-firebase-file-uploader';
 
+
 function DesktopView(props) {
 
     const ampRef = useRef(null);                            // Ref to the FileUploader handling amp images
@@ -76,6 +77,7 @@ function DesktopView(props) {
             const itemsRef = firebase.database().ref('items');
 
             const item = {
+                userId: props.user.uid,
                 title: ampName,
                 user: props.user.displayName || props.user.email,
                 description: ampDesc,
@@ -92,7 +94,7 @@ function DesktopView(props) {
             setSchemUrl('');
             setAmpImgUrl('');
         }
-    }, [ampImgURL, schemURL, ampName, props.user.displayName, props.user.email, ampDesc, ampImg, schemImg, isUploading, progress]);
+    }, [props.user, ampImgURL, schemURL, ampName, ampDesc, ampImg, schemImg, isUploading, progress]);
 
 
     return (

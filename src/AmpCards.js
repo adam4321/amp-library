@@ -11,7 +11,7 @@ import ModalImage from 'react-modal-image'
 
 
 function AmpCards(props) {
-    
+
     return (
         <div className="wrapper">
             <ul>
@@ -46,7 +46,7 @@ function AmpCards(props) {
                             <p id="ampContributor">
                                 Contributed by{' '}
                                 {item.user}
-                                {item.user === props.user.displayName || item.user === props.user.email ? (
+                                {item.userId === props.user.uid ? (
                                     <button
                                         id="removeButton"
                                         onClick={() => props.removeItem(item)}
