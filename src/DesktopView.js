@@ -168,19 +168,10 @@ function DesktopView(props) {
                     Submit Amp 
                 </button>
 
-            </form>
-
-            {/* Button to return to portfolio site */}
-            <button 
-                className="back-button" 
-                id="back-button-in" 
-                onClick={() => window.history.back()}
-            > 
-                Back 
-            </button> 
+            </form> 
 
             {/* Display the user icon and name ---------------- */}
-            <div className = "user-profile">
+            <div className="user-profile">
                 <img
                     id="userIcon"
                     alt="user thumbnail"
@@ -190,6 +181,15 @@ function DesktopView(props) {
                     {props.user.displayName || props.user.email}{' '}
                 </h3>
             </div>
+
+            {/* Button to return to portfolio site */}
+            <button 
+                className="back-button" 
+                id="back-button-in" 
+                onClick={() => window.history.back()}
+            > 
+                Back 
+            </button>
 
         </div>
     );

@@ -18,7 +18,7 @@ function AmpCards(props) {
 
                 {props.items.map(item => {
                     return (
-                        <li key={item.id}>
+                        <li key={item.id} className="ampCards">
 
                             {/* Display the amp name */}
                             <h3>{item.title}</h3>
@@ -43,18 +43,21 @@ function AmpCards(props) {
                             />
                             
                             {/* Display contributor and a remove button for their contributions */}
-                            <p id="ampContributor">
-                                Contributed by{' '}
-                                {item.user}
+                            <div className="contributor">
+                                <p className="ampContributor">
+                                    Posted by{' '}
+                                    {item.user}
+                                </p>
+
                                 {item.userId === props.user.uid ? (
                                     <button
-                                        id="removeButton"
+                                        className="removeButton"
                                         onClick={() => props.removeItem(item)}
                                     >
                                         Remove Amp
                                     </button>
                                 ) : null}
-                            </p>
+                            </div>
 
                         </li>
                     );

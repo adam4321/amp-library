@@ -37,9 +37,10 @@ function MobileView(props) {
                 </div>
 
                 <div>
-                    <h3 id="mobileEnterText"> Enter a New Amp </h3>
-
-                    <Divider id="mobileDivide"/>
+                    
+                    <div id="mobileMenuTitleBox">
+                        <h3 id="mobileMenuTitle"> Enter a New Amp </h3>
+                    </div>
 
                     <form id="mobileForm" onSubmit={props.handleSubmit}>
 
@@ -101,28 +102,31 @@ function MobileView(props) {
                             Submit Amp 
                         </button>
 
+                        <Divider id="mobileDivide1" />
+
+                        {/* Display the user icon and name ---------------- */}
+                        <div className="mobile-user-profile">
+                            <img
+                                id="mobileUserIcon"
+                                alt="user thumbnail"
+                                src={props.user.photoURL}
+                            />
+                            <h3 id="mobileUserName"> {props.user.displayName || props.user.email}{' '} </h3>
+                        </div>
+
+                        <Divider id="mobileDivide2" />
+
                     </form>
-                </div>
 
-                <Divider id="mobileDivide" />
+                    {/* Button to return to portfolio site */}
+                    <button
+                        className="back-button"
+                        id="back-button-in-mobile"
+                        onClick={() => window.history.back()}
+                    > 
+                        Back 
+                    </button>
 
-                {/* Button to return to portfolio site */}
-                <button
-                    className="back-button"
-                    id="back-button-in-mobile"
-                    onClick={() => window.history.back()}
-                > 
-                    Back 
-                </button>
-
-                {/* Display the user icon and name ---------------- */}
-                <div className="mobile-user-profile">
-                    <img
-                        id="mobileUserIcon"
-                        alt="user thumbnail"
-                        src={props.user.photoURL}
-                    />
-                    <h3 id="mobileUserName"> {props.user.displayName || props.user.email}{' '} </h3>
                 </div>
 
             </Drawer>

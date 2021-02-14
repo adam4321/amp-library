@@ -10,8 +10,16 @@
     width: 300px;
 }
 
-#mobileEnterText {
-    margin: 25px 0 25px 65px;
+#mobileMenuTitleBox {
+    padding: 25px 0 25px 0;
+    width: auto;
+    margin: 0 0 0 0;
+    background-color: #04536d;
+}
+
+#mobileMenuTitle {
+    margin: 0 0 0 65px;
+    color: #fff;
 }
 
 .mobileAmpImgButton {
@@ -55,7 +63,8 @@
 #mobileAmpNameField {
     display: block;
     width: 230px;
-    margin: 10px 0 60px 10px;
+    margin: 15px 0 60px 10px;
+    height: 15px;
     border: 1px solid rgba(24, 24, 24, 0.722);
 }
 
@@ -63,33 +72,49 @@
     display: block;
     width: 230px;
     margin: 10px 0 40px 10px;
+    height: 15px;
     border: 1px solid rgba(24, 24, 24, 0.722);
 }
 
-#mobileUserName {
+.mobile-user-profile {
     position: fixed;
-    bottom: -40px;
-    left: 160px;
-    width: 200px;
-    height: 100px;
+    left: 35px;
+    margin: 15px 0 10px 0;
+}
+  
+#mobileUserIcon {
+    border-radius: 50%;
+    height: 45px;
+    margin: -5px 0 -12px -10px;
 }
 
-#mobileDivide {
-    margin-top: 25px;
-    border: 1px solid;
+#mobileUserName {
+    display: inline;
+    margin: 0 0 0 0;
+}
+
+#mobileDivide1 {
+    margin-top: 30px;
+}
+
+#mobileDivide2 {
+    margin-top: 63px;
 }
 
 .mobileAddButton {
     font-size: 18px;
     height: 40px;
-    margin-top: 65px;
+    margin-top: 55px;
     margin-left: 20px;
     width: 260px;
 }
 
-.mobileAmpNameField {
-    display: block;
-    margin-bottom: 60px;
+#back-button-in-mobile {
+    margin: 35px 0 0 80px;
+    width: 120px;
+    height: 28px;
+    padding-top: 5px;
+    padding-bottom: 27px;
 }
 
 
@@ -109,14 +134,6 @@
         height: 10vw;
         margin-left: 4vw;
         margin-top: 120px;
-    }
-  
-    #back-button-in-mobile {
-        margin: 120px 0 0 80px;
-        width: 120px;
-        height: 28px;
-        padding-top: 5px;
-        padding-bottom: 27px;
     }
   
     #back-button-in {
@@ -155,7 +172,7 @@
     }
   
     #drawerDiv {
-        width:350px;
+        width: 350px;
         background-color: black;
     }
   
@@ -177,43 +194,6 @@
         width: 35vw;
         padding-top: 1vw;
         margin-left: 20px;
-    }
-  
-    .mobileAmpNameField {
-        display: block;
-        margin-bottom: 60px;
-        border-color: black;
-        background-color: #b0bdc544;
-        width: 80%;
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-    
-    .mobileDescriptionField {
-        display: block;
-        margin-bottom: 40px;
-        background-color: #b0bdc544;
-        width: 80%;
-        margin-left: 10px;
-    }
-  
-    .mobile-user-profile {
-        position: fixed;
-        left: 40px;
-        width: 100px;
-        height: 100px;
-    }
-  
-    #mobileUserName {
-        top: 530px;
-        left: 140px;
-        width: 200px;
-        height: 100px;
-    }
-  
-    #mobileUserIcon {
-        margin: 525px 0 0 25px;
-        height: 60px;
     }
 }
 
@@ -270,23 +250,6 @@
         width: 70vw;
         padding-top: 1vw;
         margin-left: 20px;
-    }
-  
-    #mobileEnterText {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        margin-left: 70px;
-    }
-  
-    #mobileUserName {
-        top: 535px;
-        left: 140px;
-        width: 200px;
-        height: 100px;
-    }
-  
-    #mobileUserIcon {
-        margin: 530px 0 0 25px;
     }
 
     #gh-link {

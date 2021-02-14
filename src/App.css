@@ -175,8 +175,8 @@ button:hover {
 }
 
 #enterText {
-    width: 160px;
-    margin: -25px auto 50px auto;
+    width: 157px;
+    margin: -20px auto 40px auto;
 }
 
 #ampNameField {
@@ -244,6 +244,30 @@ button:hover {
     width: 90%;
 }
 
+.user-profile {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    width: 100px;
+    height: 100px;
+}
+
+#userIcon {
+    border-radius: 50%;
+    height: 50px;
+    position: fixed;
+    bottom: 25px;
+    left: 50px;
+}
+
+#userName {
+    position: fixed;
+    bottom: -65px;
+    left: 115px;
+    width: 200px;
+    height: 105px;
+}
+
 .back-button {
     text-decoration: none;
     text-align: center;
@@ -270,40 +294,12 @@ button:hover {
 
 #back-button-in {
     display: block;
-    margin: 65px auto 0 100px;
+    margin: 40px auto 0 100px;
     width: 150px;
     height: 30px;
     position: relative;
     padding-top: 5px;
     padding-bottom: 27px;
-}
-
-#userIcon {
-    height: 55px;
-    position: fixed;
-    bottom: 40px;
-    left: 142px;
-}
-
-#userName {
-    position: fixed;
-    bottom: -40px;
-    left: 213px;
-    width: 200px;
-    height: 100px;
-}
-
-.user-profile {
-    position: fixed;
-    bottom: 20px;
-    left: 40px;
-    width: 100px;
-    height: 100px;
-}
-
-.user-profile img {
-    border-radius: 50%;
-    max-width: 100%;
 }
 
 
@@ -339,6 +335,10 @@ button:hover {
     transform: translateY(50deg);  
 }
 
+.ampCards {
+    height: 100%;
+}
+
 .display-item {
     height: 0;
     margin-left: 10vw;
@@ -346,14 +346,26 @@ button:hover {
     position: relative;
 }
 
-#removeButton {
-    margin-bottom: 15px;
-    float: right;
-    height: 40px;
+.contributor {
+    position: relative;
+    margin-top: 15px;
 }
 
-#ampContributor {
-    margin-left: 2%;
+.ampContributor {
+    margin-left: 5px;
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    float: left;
+}
+
+.removeButton {
+    display: inline;
+    margin: 0 20px 20px 0;
+    height: 40px;
+    right: 0;
+    position: absolute;
+    bottom: 0;
 }
 
 .logButton {
@@ -377,7 +389,7 @@ button:hover {
 }
 
 .schematic {
-    width: 23vw;
-    padding-top: 1vw;
-    margin-left: 20px;
+    width: 91%;
+    padding-top: 5px;
+    margin: 0 0 65px 20px;
 }
