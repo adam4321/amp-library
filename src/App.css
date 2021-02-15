@@ -232,6 +232,18 @@ button:hover {
     transition: 0.4s;
 }
 
+.ampUpName {
+    position: absolute;
+    margin: -36px 0 0 22px;
+    font-size: smaller;
+}
+
+.schemUpName {
+    position: absolute;
+    margin: 3px 0 0 22px;
+    font-size: smaller;
+}
+
 .invalid {
     border:1px solid #ff0000
 }

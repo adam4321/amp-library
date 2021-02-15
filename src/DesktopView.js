@@ -132,6 +132,7 @@ function DesktopView(props) {
                         onUploadSuccess={handleUploadSuccess}
                     />
                 </label>
+                <p className="ampUpName">{ampImg ? ampImg.name : ""}</p>
 
                 {/* Amp Description input field ----------------------- */}
                 <input
@@ -161,6 +162,7 @@ function DesktopView(props) {
                         onUploadSuccess={handleUploadSuccessSchematic}
                     />
                 </label>
+                <p className="schemUpName">{schemImg ? schemImg.name : ""}</p>
 
                 {/* Submission button to manually trigger img upload and save record to db */}
                 <button 
