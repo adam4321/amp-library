@@ -29,6 +29,7 @@ class App extends Component {
         
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
+        this.toggleDrawer = this.toggleDrawer.bind(this);
     }
 
 
@@ -64,6 +65,7 @@ class App extends Component {
         const itemsRef = firebase.database().ref('items');
 
         itemsRef.on('value', snapshot => {
+            this.setState({left: false});
             let items = snapshot.val();
             let newState = [];
 
@@ -93,15 +95,15 @@ class App extends Component {
             const schemRef = firebase.storage().refFromURL(item.layout);    // Firebase schematic record
             const photoRef = firebase.storage().refFromURL(item.photo);     // Firebase amp photo record
             const itemRef = firebase.database().ref(`/items/${item.id}`);   // Firebase db record
-            
+
             // Remove the photo, schematic, and db record
             try {
                 schemRef.delete();
                 photoRef.delete();
                 itemRef.remove();
             }
-            catch {
-                console.error(`Error in removing this amp record - ${item.id}`);
+            catch(e) {
+                console.error(`Error in removing this amp record - ${item.id} - ${e}`);
             }
         }
     }

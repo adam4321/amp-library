@@ -18,10 +18,10 @@ function DesktopView(props) {
 
     const [ampImg, setAmpImg] = useState(null);             // Client-side amp image file name
     const [schemImg, setSchemImg] = useState(null);         // Client-side schematic image file name
-    const [ampName, setAmpName] = useState('');             // Client-side schematic image file name - was currentItem
-    const [ampDesc, setAmpDesc] = useState('');             // Description of the amp - was ampDescription
+    const [ampName, setAmpName] = useState('');             // Client-side schematic image file name
+    const [ampDesc, setAmpDesc] = useState('');             // Description of the amp
     const [ampImgURL, setAmpImgUrl] = useState('');         // Url to currently uploaded amp img in Firebase filestore
-    const [schemURL, setSchemUrl] = useState('');           // Url to currently uploaded schematic img in Firebase filestore - was schematicURL
+    const [schemURL, setSchemUrl] = useState('');           // Url to currently uploaded schematic img in Firebase filestore
     const [isUploading, setIsUploading] = useState(false)   // State of current upload to Firebase filestore
     const [progress, setProgress] = useState(0)             // Progress of current upload to Firebase filestore
 
@@ -122,6 +122,7 @@ function DesktopView(props) {
                         hidden
                         required
                         accept="image/*"
+                        randomizeFilename
                         ref={ampRef}
                         storageRef={firebase.storage().ref('images')}
                         onChange={handleSetAmpImg}
@@ -150,6 +151,7 @@ function DesktopView(props) {
                         hidden
                         required
                         accept="image/*"
+                        randomizeFilename
                         ref={schemRef}
                         storageRef={firebase.storage().ref('images')}
                         onChange={handleSetSchemImg}
