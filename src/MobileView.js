@@ -37,6 +37,7 @@ function MobileView(props) {
     const handleUpload = (e) => {
         e.preventDefault();
 
+        props.startSpinner();
         ampRef.current.startUpload(ampImg);
         schemRef.current.startUpload(schemImg);
     }
@@ -87,8 +88,10 @@ function MobileView(props) {
                 layout: schemURL
             };
     
+            // Store the new amp record to Firebase
             itemsRef.push(item);
     
+            // Clear out the previous state of the amp form
             setAmpName('');
             setAmpDesc('');
             setAmpImg('');
@@ -157,7 +160,7 @@ function MobileView(props) {
                                 onUploadSuccess={handleUploadSuccess}
                             />
                         </label>
-                            
+                        <p className="ampUpNameMobile">{ampImg ? ampImg.name : ""}</p>   
 
                         {/* Amp Description input field --------------- */}
                         <input
@@ -187,6 +190,7 @@ function MobileView(props) {
                                 onUploadSuccess={handleUploadSuccessSchematic}
                             />
                         </label>
+                        <p className="schemUpNameMobile">{schemImg ? schemImg.name : ""}</p>
 
                         {/* Submission button to manually trigger upload and rerender */}
                         <button

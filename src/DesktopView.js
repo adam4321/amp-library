@@ -35,6 +35,7 @@ function DesktopView(props) {
     const handleUpload = (e) => {
         e.preventDefault();
 
+        props.startSpinner();
         ampRef.current.startUpload(ampImg);
         schemRef.current.startUpload(schemImg);
     }
@@ -85,8 +86,10 @@ function DesktopView(props) {
                 layout: schemURL
             };
     
+            // Store the new amp record to Firebase
             itemsRef.push(item);
     
+            // Clear out the previous state of the amp form
             setAmpName('');
             setAmpDesc('');
             setAmpImg('');

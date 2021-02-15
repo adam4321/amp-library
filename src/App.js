@@ -24,12 +24,13 @@ class App extends Component {
         this.state = {
             user: null,             // Firebase user object (setting to null logs user out)
             left: false,            // State of the mobile drawer (slides in from the left)
+            spinner: false,         // True displays an overlay and spinner | False displays nothing
             items: [],              // Array of amp information objects
         };
         
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
-        this.toggleDrawer = this.toggleDrawer.bind(this);
+        this.startSpinner = this.startSpinner.bind(this);
     }
 
 
@@ -54,6 +55,11 @@ class App extends Component {
         this.setState({[side]: open});
     };
 
+    // Turn on the opaque overlay and spinner
+    startSpinner() {
+        this.setState({spinner: true});
+    }
+
     // Function return cards from the database after a user is logged in
     componentDidMount() {
         auth.onAuthStateChanged(user => {
@@ -65,10 +71,13 @@ class App extends Component {
         const itemsRef = firebase.database().ref('items');
 
         itemsRef.on('value', snapshot => {
-            this.setState({left: false});
             let items = snapshot.val();
             let newState = [];
 
+            // Close the mobile drawer
+            this.setState({left: false});
+
+            // Create an array of the current amp objects from Firebase
             for (let item in items) {
                 newState.push({
                     id: item,
@@ -84,6 +93,7 @@ class App extends Component {
             // Store the current amps with newest records first
             newState.reverse();
             this.setState({items: newState});
+            this.setState({spinner: false});
         });
     }
 
@@ -112,6 +122,12 @@ class App extends Component {
         
         return (
             <>
+                {this.state.spinner ? (
+                    <div className="spinnerBackground">
+                        <div className="spinner"></div>
+                    </div>
+                ) : (null)}
+
                 {/* Header with login and logout button ------------------- */}
                 <header className="headerWrapper">
                     <HeaderWrapper 
@@ -131,6 +147,7 @@ class App extends Component {
                         <section className="add-item">
                             <DesktopView
                                 user={this.state.user}
+                                startSpinner={this.startSpinner}
                             />
                         </section>
 
@@ -140,6 +157,7 @@ class App extends Component {
                                 user={this.state.user}
                                 left={this.state.left}
                                 toggleDrawer={this.toggleDrawer}
+                                startSpinner={this.startSpinner}
                             />
                         </section>
 

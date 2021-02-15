@@ -60,6 +60,18 @@
     transition: 0.4s;
 }
 
+.ampUpNameMobile {
+    position: absolute;
+    margin: -36px 0 0 25px;
+    font-size: smaller;
+}
+
+.schemUpNameMobile {
+    position: absolute;
+    margin: 3px 0 0 25px;
+    font-size: smaller;
+}
+
 #mobileAmpNameField {
     display: block;
     width: 230px;
@@ -79,18 +91,20 @@
 .mobile-user-profile {
     position: fixed;
     left: 35px;
-    margin: 15px 0 10px 0;
+    margin: 15px 0 0 0;
 }
   
 #mobileUserIcon {
     border-radius: 50%;
-    height: 45px;
-    margin: -5px 0 -12px -10px;
+    height: 35px;
+    margin: -5px 0 -10px -12px;
 }
 
 #mobileUserName {
     display: inline;
     margin: 0 0 0 0;
+    top: 15px;
+    font-size: medium;
 }
 
 #mobileDivide1 {
@@ -98,7 +112,7 @@
 }
 
 #mobileDivide2 {
-    margin-top: 63px;
+    margin-top: 55px;
 }
 
 .mobileAddButton {
