@@ -8,17 +8,31 @@ import React from 'react';
 import './App.css';
 import './mobileStyles.css';
 import ModalImage from 'react-modal-image'
+import Masonry from 'react-masonry-css'
 
 
 function AmpCards(props) {
 
+    // Object to define the number of colums at each breakpoint
+    const breakpointColumnsObj = {
+        default: 2,
+        650: 1
+    };
+
     return (
         <div className="wrapper">
-            <ul>
 
+            {/* React masonry component to allow columns of uneven card heights */}
+            <Masonry
+                className="cardList"
+                columnClassName="cardListGridColumn"
+                breakpointCols={breakpointColumnsObj}
+            >
+
+                {/* Map over the array of amp objects and display them */}
                 {props.items.map(item => {
                     return (
-                        <li key={item.id} className="ampCards">
+                        <li key={item.id}>
 
                             {/* Display the amp name */}
                             <h3>{item.title}</h3>
@@ -63,7 +77,8 @@ function AmpCards(props) {
                     );
                 })}
 
-            </ul>
+            </Masonry>
+            
         </div>
     );
 }

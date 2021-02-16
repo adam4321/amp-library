@@ -155,23 +155,31 @@
     }
 
     .btnBackground {
-        width: 100%;
+        width: 105%;
         background-color: #fff;
         display: block;
         font-size: 16px;
         position: absolute;
         margin-top: 30px;
-        left: 0vw;
+        left: -20px;
         height: 48px;
+    }
+
+    .cardList {
+        margin: 0 3px 20px 0;
+    }
+
+    .cardListGridColumn {
+        padding-right: 30px;
     }
   
     #mobileMenu {
         position: fixed;
         top: 63px;
-        width: calc(96% - 50px);
+        width: calc(95.6% - 26px);
         display: block;
         font-size: 16px;
-        margin: 43px 0 0 4%;
+        margin: 43px 0 0 3.85%;
         left: 0vw;
     }
 
@@ -226,6 +234,10 @@
         margin: 0;
         padding: 0;
     }
+
+    .cardListGridColumn {
+        padding: 0;
+    }
   
     li {
         width: 95%;
@@ -251,7 +263,8 @@
     }
 
     #mobileMenu {
-        width: 91.5%;
+        width: 91.30%;
+        margin-left: 4%;
     }
   
     .photo {

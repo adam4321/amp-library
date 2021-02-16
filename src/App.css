@@ -59,17 +59,8 @@ input:required {
     box-shadow:none;
 }
 
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-}
-
 li {
-    width: calc(50% - 50px);
     list-style-type: none;
-    margin-right: 50px;
     background-color: rgb(237, 237, 237);
     color: #000;
     margin-bottom: 30px;
@@ -305,7 +296,6 @@ button:hover {
 
 .user-profile {
     position: fixed;
-    bottom: 20px;
     left: 40px;
     width: 100px;
     height: 100px;
@@ -394,8 +384,15 @@ button:hover {
     transform: translateY(50deg);  
 }
 
-.ampCards {
-    height: 100%;
+.cardList {
+    display: flex;
+    margin: 0 10px 15px 0;
+    padding: 0;
+}
+
+.cardListGridColumn {
+    padding-right: 40px;            /* gutter size */
+    background-clip: padding-box;
 }
 
 .display-item {
@@ -420,7 +417,7 @@ button:hover {
 
 .removeButton {
     display: inline;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 25px 0;
     height: 40px;
     right: 0;
     position: absolute;
